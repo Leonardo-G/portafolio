@@ -1,0 +1,13 @@
+.layout{
+    display: flex;
+    min-height: 100vh;
+}
+
+.layout__nav{
+    width: 58px;
+    background-color: #000;
+}
+
+.layout__main{
+    flex: 1;
+}

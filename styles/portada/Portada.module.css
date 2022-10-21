@@ -1,0 +1,125 @@
+.portada{
+    margin-top: 100px;
+    position: relative;
+    height: 1080px;
+}
+
+.caja_1{
+    position: absolute;
+    width: 120px;
+    height: 156px;
+    background-color: #FFDC00;
+    left: 20%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_2{
+    position: absolute;
+    width: 111px;
+    height: 78px;
+    background-color: #FFDC00;
+    top: 7%;
+    right: 40%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_3{
+    position: absolute;
+    width: 289px;
+    height: 56px;
+    background-color: #FFDC00;
+    top: 9%;
+    right: 5%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_4{
+    position: absolute;
+    width: 80px;
+    height: 110px;
+    background-color: #FFDC00;
+    top: 30%;
+    left: 5%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_5{
+    position: absolute;
+    width: 80px;
+    height: 125px;
+    background-color: #FFDC00;
+    top: 22%;
+    left: 22%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_6{
+    position: absolute;
+    width: 94px;
+    height: 82px;
+    background-color: #FFDC00;
+    top: 42%;
+    left: 25%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_7{
+    position: absolute;
+    width: 143px;
+    height: 187px;
+    background-color: #FFDC00;
+    top: 28%;
+    left: 42%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_8{
+    position: absolute;
+    width: 175px;
+    height: 164px;
+    background-color: #FFDC00;
+    top: 48%;
+    left: 0%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_9{
+    position: absolute;
+    width: 78px;
+    height: 125px;
+    background-color: #FFDC00;
+    top: 57%;
+    left: 42%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_10{
+    position: absolute;
+    width: 167px;
+    height: 86px;
+    background-color: #FFDC00;
+    top: 62%;
+    left: 55%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.caja_11{
+    position: absolute;
+    width: 310px;
+    height: 46px;
+    background-color: #FFDC00;
+    top: 55%;
+    left: 70%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
