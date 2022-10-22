@@ -1,0 +1,17 @@
+.nosotros{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+}
+
+.nosotros__texto{
+    font-weight: 400;
+    font-size: 28px;
+    flex: 1;
+    padding: 20px;
+    line-height: 45px;
+}
+
+.nosotros__texto p{
+    width: 90%;
+}

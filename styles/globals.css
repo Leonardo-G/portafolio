@@ -9,7 +9,8 @@ body{
 }
 
 p, h1, h2, a{
-  font-family: "Roboto", sans-serif;
+  font-family: "Playfair Display", sans-serif;
+  letter-spacing: 0.06em;
 }
 
 .container{
