@@ -1,7 +1,7 @@
 .portada{
     margin-top: 100px;
     position: relative;
-    height: 1080px;
+    height: 700px;
 }
 
 .caja_1{
@@ -31,7 +31,7 @@
     height: 56px;
     background-color: #FFDC00;
     top: 9%;
-    right: 5%;
+    right: 7%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
 }
@@ -41,7 +41,7 @@
     width: 80px;
     height: 110px;
     background-color: #FFDC00;
-    top: 30%;
+    top: 43%;
     left: 5%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -52,7 +52,7 @@
     width: 80px;
     height: 125px;
     background-color: #FFDC00;
-    top: 22%;
+    top: 32%;
     left: 22%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -63,7 +63,7 @@
     width: 94px;
     height: 82px;
     background-color: #FFDC00;
-    top: 42%;
+    top: 60%;
     left: 25%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -74,7 +74,7 @@
     width: 143px;
     height: 187px;
     background-color: #FFDC00;
-    top: 28%;
+    top: 35%;
     left: 42%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -85,7 +85,7 @@
     width: 175px;
     height: 164px;
     background-color: #FFDC00;
-    top: 48%;
+    top: 65%;
     left: 0%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -96,7 +96,7 @@
     width: 78px;
     height: 125px;
     background-color: #FFDC00;
-    top: 57%;
+    top: 80%;
     left: 42%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -107,8 +107,8 @@
     width: 167px;
     height: 86px;
     background-color: #FFDC00;
-    top: 62%;
-    left: 55%;
+    top: 78%;
+    left: 52%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
 }
@@ -118,8 +118,19 @@
     width: 310px;
     height: 46px;
     background-color: #FFDC00;
-    top: 55%;
-    left: 70%;
+    top: 68%;
+    left: 68%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
+}
+
+/* Imagen */
+.imgContainer{
+    position: relative;
+    position: absolute;
+    height: 460px;
+    width: 460px;
+    top: 12%;
+    right: 5%;
+    z-index: -1;
 }

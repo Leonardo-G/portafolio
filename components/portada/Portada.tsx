@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import styles from "../../styles/portada/Portada.module.css";
 
@@ -16,6 +17,14 @@ export const Portada = () => {
             <div className={ styles.caja_9 }></div>
             <div className={ styles.caja_10 }></div>
             <div className={ styles.caja_11 }></div>
+            <div className={ styles.imgContainer }>
+                <Image
+                    src="/static/portfolio.jpg"
+                    alt='Image Portafolio'
+                    layout='fill'
+                    objectFit='contain'
+                />  
+            </div>
         </div>
     )
 }
