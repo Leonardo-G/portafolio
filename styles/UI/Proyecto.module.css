@@ -1,0 +1,14 @@
+.proyecto{
+    
+}
+
+.proyecto p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.proyecto__img{
+    position: relative;
+    width: auto;
+    height: 600px;
+}

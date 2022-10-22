@@ -1,0 +1,10 @@
+.proyectos{
+    display: flex;
+    padding: 100px 0;
+}
+
+.proyectos__fila1{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
