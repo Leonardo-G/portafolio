@@ -1,0 +1,21 @@
+.file{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    width: auto;
+}
+
+.file__titulo{
+    font-size: 22px;
+    font-family: "Inter", sans-serif;
+}
+
+.file__icono{
+    font-size: 85px;
+}
+
+.file__img{
+    position: relative;
+    width: 80px;
+    height: 80px;
+}

@@ -1,7 +1,7 @@
 .nosotros{
     display: flex;
     justify-content: space-between;
-    padding-top: 100px;
+    padding: 100px 0px;
 }
 
 .nosotros__texto{
