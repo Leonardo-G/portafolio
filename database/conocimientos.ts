@@ -81,20 +81,27 @@ export const conocimientosDB: IConocimientos[] = [
     },
     {
         id: 11,
+        type: "img",
+        file: "/icons/firebase.svg",
+        title: "Firebase",
+        color: "#FFB800"
+    },
+    {
+        id: 12,
         type: "icon",
         file: faNpm,
         title: "NPM",
         color: "#D50000"
     },
     {
-        id: 12,
+        id: 13,
         type: "icon",
         file: faGitAlt,
         title: "GIT",
         color: "#F4511E"
     },
     {
-        id: 13,
+        id: 14,
         type: "icon",
         file: faGithub,
         title: "GitHub",

@@ -9,12 +9,18 @@
 .proyecto__img{
     position: relative;
     width: 100%;
+    transition: transform .3s;
+}
+
+.proyecto__img:hover{
+    transform: scale(.98);
+    transition: transform .3s;
 }
 
 .proyecto__texto{
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .proyecto__texto--iconos{

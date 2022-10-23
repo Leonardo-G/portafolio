@@ -1,0 +1,36 @@
+.contacto{
+    display: flex;
+    align-items: center;
+}
+
+.contacto__titulo{
+    width: 50%;
+}
+
+.contacto__campos{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.contacto__campos--input{
+    border: none;
+    border-bottom: 1px solid #000000;
+    min-width: 350px;
+    margin: 0 auto;
+    padding: 15px;
+    margin-bottom: 30px;
+    outline: none;
+    font-size: 21px;
+}
+
+.contacto__campos--textarea{
+    border: none;
+    border-bottom: 1px solid #000000;
+    min-width: 350px;
+    margin: 0 auto;
+    padding: 15px;
+    min-height: 150px;
+    outline: none;
+    font-size: 21px;
+}

@@ -14,6 +14,7 @@ export type ITecnologia =    "HTML" |
                              "React.js" | 
                              "Next.js" | 
                              "Typescript" | 
+                             "Firebase" |
                              "Node.js" | 
                              "Express.js" | 
                              "Mongodb" | 

@@ -8,8 +8,8 @@ body{
   box-sizing: border-box;
 }
 
-p, h1, h2, a{
-  font-family: "Playfair Display", sans-serif;
+p, h1, h2, a, input, textarea{
+  font-family: "Inter", sans-serif;
   letter-spacing: 0.06em;
 }
 

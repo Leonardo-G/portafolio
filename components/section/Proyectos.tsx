@@ -19,6 +19,7 @@ export const Proyectos = () => {
                         )
                     })
                 }
+                <p>Y más código en mi GitHub</p>
             </div>
             <div className={ style.proyectos__fila1 }>
                 <TituloSection title='PROYECTOS'/>

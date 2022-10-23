@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React, { FC, ReactNode } from 'react';
 
 import styles from "../../styles/layout/LayoutPage.module.css";
+import { Footer } from '../section/Footer';
 import { Nav } from '../UI/Nav';
 
 interface Props {
@@ -26,9 +27,6 @@ export const LayoutPage: FC<Props> = ({ children }) => {
                     </div>
                 </div>
             </main>
-            <footer>
-
-            </footer>
         </>
     )
 }

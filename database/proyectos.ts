@@ -11,7 +11,7 @@ export const proyectosDB: IProyectos[] = [
     {
         id: 2,
         titulo: "Ecommerce - Final CoderHouse",
-        conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "NPM", "GIT", "GitHub"],
+        conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "Firebase", "NPM", "GIT", "GitHub"],
         img: "/proyectos/ecommerce-react.png",
         heigth: "290px"
     },
