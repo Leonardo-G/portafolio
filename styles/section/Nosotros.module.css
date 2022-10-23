@@ -7,9 +7,9 @@
 .nosotros__texto{
     font-weight: 400;
     font-size: 28px;
-    flex: 1;
     padding: 20px;
     line-height: 45px;
+    width: 100%;
 }
 
 .nosotros__texto p{

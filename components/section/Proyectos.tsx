@@ -11,12 +11,27 @@ export const Proyectos = () => {
         <div className={ style.proyectos }>
             <div className={ style.proyectos__fila1 }>
                 {
-                    proyectosDB.map( p => (
-                        <Proyecto key={ p.id } proyecto={ p } />
-                    ))
+                    proyectosDB.map( p => {
+                        if ( p.id > 5 ) return;
+
+                        return (
+                            <Proyecto key={ p.id } proyecto={ p } />
+                        )
+                    })
                 }
             </div>
-            <TituloSection title='PROYECTOS'/>
+            <div className={ style.proyectos__fila1 }>
+                <TituloSection title='PROYECTOS'/>
+                {
+                    proyectosDB.map( p => {
+                        if ( p.id <= 5 ) return (<></>);
+                        
+                        return (
+                            <Proyecto key={ p.id } proyecto={ p } />
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }

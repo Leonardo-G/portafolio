@@ -1,5 +1,4 @@
 .proyecto{
-    
 }
 
 .proyecto p {
@@ -9,6 +8,15 @@
 
 .proyecto__img{
     position: relative;
-    width: auto;
-    height: 600px;
+    width: 100%;
+}
+
+.proyecto__texto{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.proyecto__texto--iconos{
+    margin-left: 5px;
 }

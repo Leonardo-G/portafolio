@@ -3,6 +3,7 @@ export interface IProyectos {
     titulo: string;
     conocimientos: ITecnologia[];
     img: string;
+    heigth: string; // En pixeles
 }
 
 export type ITecnologia =    "HTML" |

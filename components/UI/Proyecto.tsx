@@ -1,6 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image'
 import React, { FC } from 'react'
+import Image from 'next/image'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { conocimientosDB } from '../../database/conocimientos';
 import { IProyectos } from '../../interface/proyectos';
 
@@ -10,11 +12,11 @@ interface Props {
     proyecto: IProyectos
 }
 
-export const Proyecto: FC<Props> = ({ proyecto: { img, titulo, conocimientos } }) => {
+export const Proyecto: FC<Props> = ({ proyecto: { img, titulo, conocimientos, heigth } }) => {
 
     return (
         <div className={ styles.proyecto }>
-            <div className={ styles.proyecto__img }>
+            <div className={ styles.proyecto__img } style={{ height: heigth }}>
                 <Image 
                     src={ img }
                     alt={ titulo }
@@ -22,33 +24,38 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, titulo, conocimientos } }
                     objectFit='contain'
                 />
             </div>
-            <p>{ titulo }</p>
-            {
-                conocimientos.map( c => {
-                    const conocimiento = conocimientosDB.filter( con => con.title === c )[0];
+            <div className={ styles.proyecto__texto }>
 
-                    return (
-                        <>
+                <p className=''>{ titulo }</p>
+                <div>
+                    {
+                        conocimientos.map( c => {
+                            const conocimiento = conocimientosDB.filter( con => con.title === c )[0];
 
-                            {
-                                conocimiento.type === "icon" ?
-                                    <FontAwesomeIcon icon={ conocimiento.file } style={{ color: conocimiento.color, fontSize: "25px" }}/>
+                            return (
+                                <>
 
-                                : 
-                                    <div style={{ position: "relative", width: "25px", height: "25px" }}>
-                                        <Image 
-                                            src={ conocimiento.file }
-                                            alt={ conocimiento.title }
-                                            layout="fill"
-                                            objectFit='contain'
-                                        />
-                                    </div>
+                                    {
+                                        conocimiento.type === "icon" ?
+                                            <FontAwesomeIcon className={ styles['proyecto__texto--iconos'] } icon={ conocimiento.file } style={{ color: conocimiento.color, fontSize: "25px" }}/>
 
-                            }
-                        </>
-                    )
-                })
-            }
+                                        : 
+                                            <div className={ styles['proyecto__texto--iconos'] } style={{ position: "relative", width: "25px", height: "25px", display: "inline-block" }}>
+                                                <Image 
+                                                    src={ conocimiento.file }
+                                                    alt={ conocimiento.title }
+                                                    layout="fill"
+                                                    objectFit='contain'
+                                                />
+                                            </div>
+
+                                    }
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                </div>
         </div>
     )
 }
