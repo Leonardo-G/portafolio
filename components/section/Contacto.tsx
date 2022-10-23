@@ -1,12 +1,27 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import { TituloSection } from '../UI/TituloSection'
 
 import styles from "../../styles/section/Contacto.module.css";
+import { UIContext } from '../../context/UI/UIContext';
+import { useInView } from 'react-intersection-observer';
 
 export const Contacto = () => {
+
+    const { changeCampoNav } = useContext(UIContext)
+
+    const { ref, inView } = useInView({
+        threshold: 0.5
+    })
+
+    useEffect(() => {
+        if ( inView ) {
+            changeCampoNav( "contacto" )
+        }
+    }, [inView])
+
     return (
-        <section className={ styles.contacto }>
+        <section ref={ ref } className={ styles.contacto } id="contacto">
             <div className={ styles.contacto__titulo }>
                 <TituloSection title='Contacto'/>
             </div>

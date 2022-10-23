@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Image from 'next/image';
 
 import styles from "../../styles/section/Portada.module.css";
+import { useInView } from 'react-intersection-observer';
+import { UIContext } from '../../context/UI/UIContext';
 
 export const Portada = () => {
+
+    
+    const { changeCampoNav } = useContext(UIContext)
+
+    const { ref, inView } = useInView({
+        threshold: 0.5
+    })
+
+    useEffect(() => {
+        if ( inView ) {
+            changeCampoNav( "inicio" )
+        }
+    }, [inView])
+
     return (
-        <div className={ styles.portada }>
+        <div ref={ ref } className={ styles.portada } id="inicio">
             <div className={ styles.portada__texto }>
                 <p>BIENVENIDO!</p>
                 <h1>Hola! Me llamo Leonardo Guanuco y soy Desarrollador de JavaScript</h1>
