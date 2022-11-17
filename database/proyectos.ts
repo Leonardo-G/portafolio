@@ -39,18 +39,12 @@ export const proyectosDB: IProyectos[] = [
     },
     {
         id: 5,
-        titulo: "Presupuesto - Curso",
+        titulo: "Administrador de Proyectos - Curso",
         conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "NPM", "GIT", "GitHub"],
-        img: "/proyectos/presupuesto.png",
-        heigth: "490px"
-    },
-    {
-        id: 6,
-        titulo: "Feria Vanguardia - Freelancer",
-        conocimientos: ["HTML", "CSS3", "Sass", "JavaScript", "GIT"],
-        img: "/proyectos/API.png",
-        heigth: "370px",
-        url: "Arquitectura y construcción"
+        img: "/proyectos/administrador-clientes.png",
+        heigth: "550px",
+        repositorio: "https://github.com/Leonardo-G/react-administrador-proyectos",
+        url: "https://serene-bardeen-2bafba.netlify.app/proyectos"
     },
     {
         id: 7,
@@ -92,5 +86,13 @@ export const proyectosDB: IProyectos[] = [
         img: "/proyectos/dotimages.png",
         heigth: "360px",
         repositorio: "https://github.com/Leonardo-G/dotimages-front"
+    },
+    {
+        id: 12,
+        titulo: "Adminstrador de Proyectos | Backend - API",
+        conocimientos: ["Node.js", "Express.js", "Mongodb", "GIT", "GitHub"],
+        img: "/proyectos/API.png",
+        heigth: "360px",
+        repositorio: "https://github.com/Leonardo-G/node-api-cliente"
     },
 ]

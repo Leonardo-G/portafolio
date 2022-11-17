@@ -7,16 +7,37 @@ import { conocimientosDB } from '../../database/conocimientos';
 import { IProyectos } from '../../interface/proyectos';
 
 import styles from "../../styles/UI/Proyecto.module.css";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 interface Props {
     proyecto: IProyectos
 }
 
-export const Proyecto: FC<Props> = ({ proyecto: { img, titulo, conocimientos, heigth } }) => {
+export const Proyecto: FC<Props> = ({ proyecto: { img, titulo, conocimientos, heigth, repositorio, url } }) => {
 
     return (
         <div className={ styles.proyecto }>
             <div className={ styles.proyecto__img } style={{ height: heigth }}>
+                <div className={ styles.proyecto__buttons }>
+                    {
+                        repositorio &&
+                        <Link href={ repositorio }>
+                            <a target="_blank" rel="noopener noreferrer" className={ styles['proyecto__buttons--href'] }>
+                                <FontAwesomeIcon icon={ faGithub }/>
+                            </a>
+                        </Link>
+                    }
+                    {
+                        url &&
+                        <Link href={ url }>
+                            <a target="_blank" rel="noopener noreferrer" className={ styles['proyecto__buttons--href'] }>
+                                <FontAwesomeIcon icon={ faGlobe }/>
+                            </a>
+                        </Link>
+                    }
+                </div>
                 <Image 
                     src={ img }
                     alt={ titulo }

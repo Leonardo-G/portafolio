@@ -18,6 +18,7 @@ export const Conocimientos = () => {
         if( inView && !isHover ){
             setIsHover( true )
         }
+
     }, [inView])
 
     return (
