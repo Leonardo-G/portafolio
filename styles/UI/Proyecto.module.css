@@ -9,12 +9,14 @@
 .proyecto__img{
     position: relative;
     width: 100%;
-    transition: transform .3s;
+    transition: all .3s;
 }
 
 .proyecto__img:hover{
     transform: scale(.98);
-    transition: transform .3s;
+    transition: all .3s;
+    cursor: url("/static/cursor.svg") 32 32, auto;
+    filter: brightness(95%);
 }
 
 .proyecto__texto{
@@ -25,4 +27,10 @@
 
 .proyecto__texto--iconos{
     margin-left: 5px;
+    transition: all ease .1s
+}
+
+.proyecto__texto--iconos:hover{
+    transform: scale(130%);
+    transition: all ease .1s
 }

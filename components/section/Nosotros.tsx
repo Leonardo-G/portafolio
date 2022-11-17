@@ -17,6 +17,8 @@ export const Nosotros = () => {
         if ( inView ) {
             changeCampoNav( "nosotros" )
         }
+        
+        //eslint-disable-next-line
     }, [inView])
 
     return (

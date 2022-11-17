@@ -20,17 +20,19 @@ export const Proyectos = () => {
         if ( inView ) {
             changeCampoNav( "proyectos" )
         }
+
+        //eslint-disable-next-line
     }, [inView])
 
     return (
         <div ref={ ref } className={ style.proyectos } id="proyectos">
             <div className={ style.proyectos__fila1 }>
                 {
-                    proyectosDB.map( p => {
+                    proyectosDB.filter(i => i.id <= 6).map( p => {
                         if ( p.id > 5 ) return;
 
                         return (
-                            <Proyecto key={ p.id } proyecto={ p } />
+                            <Proyecto key={ p.id + p.titulo + "75" } proyecto={ p } />
                         )
                     })
                 }
@@ -39,9 +41,7 @@ export const Proyectos = () => {
             <div className={ style.proyectos__fila1 }>
                 <TituloSection title='PROYECTOS'/>
                 {
-                    proyectosDB.map( p => {
-                        if ( p.id <= 5 ) return (<></>);
-                        
+                    proyectosDB.filter(i => i.id > 6).map( p => {
                         return (
                             <Proyecto key={ p.id } proyecto={ p } />
                         )

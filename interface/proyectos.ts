@@ -4,6 +4,8 @@ export interface IProyectos {
     conocimientos: ITecnologia[];
     img: string;
     heigth: string; // En pixeles
+    repositorio?: string; // Repositorio de github
+    url?: string; // URL del proyecto, si es que está alojado.
 }
 
 export type ITecnologia =    "HTML" |
@@ -20,4 +22,6 @@ export type ITecnologia =    "HTML" |
                              "Mongodb" | 
                              "NPM" | 
                              "GIT" | 
-                             "GitHub"
+                             "GitHub" |
+                             "Mysql"  |
+                             "Sequelize"

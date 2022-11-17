@@ -17,7 +17,10 @@ export const LayoutPage: FC<Props> = ({ children }) => {
             </Head>
             <main>
                 <div className={ styles.layout }>
-                    <div className={ styles.layout__nav }>
+                    <div 
+                        
+                        className={ styles.layout__nav }
+                    >
                         <Nav />
                     </div>
                     <div className={ styles.layout__main }>

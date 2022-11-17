@@ -1,12 +1,13 @@
-import React, { useContext, useEffect } from 'react'
+import React, { FC, useContext, useEffect } from 'react'
 
-import { TituloSection } from '../UI/TituloSection'
-
-import styles from "../../styles/section/Contacto.module.css";
-import { UIContext } from '../../context/UI/UIContext';
 import { useInView } from 'react-intersection-observer';
 
-export const Contacto = () => {
+import { TituloSection } from '../UI/TituloSection'
+import { UIContext } from '../../context/UI/UIContext';
+
+import styles from "../../styles/section/Contacto.module.css";
+
+export const Contacto: FC = () => {
 
     const { changeCampoNav } = useContext(UIContext)
 
@@ -18,6 +19,8 @@ export const Contacto = () => {
         if ( inView ) {
             changeCampoNav( "contacto" )
         }
+        
+        //eslint-disable-next-line
     }, [inView])
 
     return (

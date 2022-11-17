@@ -64,3 +64,13 @@
     font-size: 75px;
     font-weight: 700;
 }
+
+.caja__hover .caja{
+    transform: translateX(7%);
+    transition: 2s all ease;
+}
+
+.caja__nohover .caja{
+    transform: translateX(0%);
+    transition: 1s all ease;
+}

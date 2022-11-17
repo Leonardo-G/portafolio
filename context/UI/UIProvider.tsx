@@ -8,17 +8,29 @@ interface Props {
 export const UIProvider: FC<Props> = ({ children }) => {
 
     const [campo, setCampo] = useState("inicio");
+    const [isHover, setIsHover] = useState(false);
 
     const changeCampoNav = ( campoNav: string ) => {
         setCampo( campoNav )
     }
 
+    const onHover = () => {
+        setIsHover(true);
+    }
+
+    const outHover = () => {
+        setIsHover(false);
+    }
+
     return (
         <UIContext.Provider value={{
             campo,
+            isHover,
 
             //methods
-            changeCampoNav
+            changeCampoNav,
+            onHover,
+            outHover
         }}>
             { children }
         </UIContext.Provider>

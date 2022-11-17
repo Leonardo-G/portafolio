@@ -37,10 +37,10 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, titulo, conocimientos, he
 
                                     {
                                         conocimiento.type === "icon" ?
-                                            <FontAwesomeIcon title={ conocimiento.title } className={ styles['proyecto__texto--iconos'] } icon={ conocimiento.file } style={{ color: conocimiento.color, fontSize: "25px" }}/>
+                                            <FontAwesomeIcon key={ conocimiento.id + titulo } title={ conocimiento.title } className={ styles['proyecto__texto--iconos'] } icon={ conocimiento.file } style={{ color: conocimiento.color, fontSize: "25px" }}/>
 
                                         : 
-                                            <div title={ conocimiento.title } className={ styles['proyecto__texto--iconos'] } style={{ position: "relative", width: "25px", height: "25px", display: "inline-block" }}>
+                                            <div key={ conocimiento.id + titulo } title={ conocimiento.title } className={ styles['proyecto__texto--iconos'] } style={{ position: "relative", width: "25px", height: "25px", display: "inline-block" }}>
                                                 <Image 
                                                     src={ conocimiento.file }
                                                     alt={ conocimiento.title }

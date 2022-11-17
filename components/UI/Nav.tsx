@@ -8,11 +8,18 @@ import { UIContext } from '../../context/UI/UIContext';
 
 export const Nav = () => {
 
-    const { campo } = useContext(  UIContext )
+    const { campo, onHover, outHover } = useContext(  UIContext )
 
     return (
-        <div className={ styles.nav }>
-            <a className={`${ styles.enlace } ${ campo === "inicio" && styles['background-hover'] }`} href="#inicio">
+        <div 
+            className={ styles.nav } 
+            onMouseOver={ onHover }
+            onMouseOut={ outHover }
+        >
+            <a 
+                className={`${ styles.enlace } ${ campo === "inicio" && styles['background-hover'] }`} 
+                href="#inicio"
+            >
                 <p>I<br/>n<br/>i<br/>c<br/>i<br/>o</p>
             </a>
             <a className={`${ styles.enlace } ${ campo === "nosotros" && styles['background-hover'] }`} href="#nosotros">

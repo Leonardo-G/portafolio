@@ -4,11 +4,11 @@ import Image from 'next/image';
 import styles from "../../styles/section/Portada.module.css";
 import { useInView } from 'react-intersection-observer';
 import { UIContext } from '../../context/UI/UIContext';
+import useState from 'react';
 
 export const Portada = () => {
 
-    
-    const { changeCampoNav } = useContext(UIContext)
+    const { changeCampoNav, isHover } = useContext(UIContext)
 
     const { ref, inView } = useInView({
         threshold: 0.5
@@ -18,10 +18,12 @@ export const Portada = () => {
         if ( inView ) {
             changeCampoNav( "inicio" )
         }
+
+        //eslint-disable-next-line
     }, [inView])
 
     return (
-        <div ref={ ref } className={ styles.portada } id="inicio">
+        <div ref={ ref } className={` ${styles.portada} ${ isHover ? styles.caja__hover : styles.caja__nohover} `} id="inicio">
             <div className={ styles.portada__texto }>
                 <p>BIENVENIDO!</p>
                 <h1>Hola! Me llamo Leonardo Guanuco y soy Desarrollador de JavaScript</h1>
