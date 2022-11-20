@@ -69,3 +69,19 @@
     color: #000;
     background: #fff;
 }
+
+@media (max-width: 920px) {
+    .proyecto__img{
+        width: 100%;
+    }
+
+    .proyecto__texto{
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .proyecto__buttons{
+        transform: translate(0%);
+        right: 5%;
+    }
+}

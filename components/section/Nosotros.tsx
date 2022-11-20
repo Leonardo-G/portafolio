@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from 'react'
 import { TituloSection } from '../UI/TituloSection';
 
-import styles from "../../styles/section/Nosotros.module.css";
 import { useInView } from 'react-intersection-observer';
 import { UIContext } from '../../context/UI/UIContext';
+
+import styles from "../../styles/section/Nosotros.module.css";
 
 export const Nosotros = () => {
 

@@ -1,7 +1,7 @@
 .tituloSection{
     position: relative;
     height: 450px;
-    width: 100%;
+    width: 90%;
     margin-top: 25px;
 }
 
@@ -78,5 +78,33 @@
 @media (max-width: 1180px) {
     .tituloSection h2{
         font-size: 50px;
+    }
+}
+
+@media (max-width: 920px) {
+    .caja_1{
+        width: 20%;
+    }
+
+    .caja_2{
+        width: 20%;
+        height: 100px;
+        top: 35%;
+    }
+
+    .caja_3{
+        width: 50%;
+        right: 0%;
+    }
+
+    .caja_4{
+        width: 20%;
+        right: 10%;
+    }
+
+    .caja_5{
+        width: 40%;
+        right: 15%;
+        top: 80%;
     }
 }

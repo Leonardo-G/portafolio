@@ -10,3 +10,13 @@
     row-gap: 100px;
     width: 50%;
 }
+
+@media (max-width: 920px) {
+    .proyectos{
+        column-gap: 40px;
+    }
+
+    .proyectos__fila1{
+        row-gap: 20px;
+    }
+}

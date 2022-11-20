@@ -1,15 +1,15 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 import { conocimientosDB } from '../../database/conocimientos';
 import { IProyectos } from '../../interface/proyectos';
 
 import styles from "../../styles/UI/Proyecto.module.css";
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
 
 interface Props {
     proyecto: IProyectos

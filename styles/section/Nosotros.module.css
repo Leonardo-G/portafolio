@@ -1,6 +1,7 @@
 .nosotros{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 100px 0px;
 }
 
@@ -14,4 +15,13 @@
 
 .nosotros__texto p{
     width: 90%;
+}
+
+@media (max-width: 920px) {
+    .nosotros {
+    }
+    .nosotros__texto{
+        font-size: 18px;
+        line-height: 30px;
+    }
 }
