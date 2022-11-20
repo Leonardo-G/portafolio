@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import Image from 'next/image';
 
-import styles from "../../styles/section/Portada.module.css";
 import { useInView } from 'react-intersection-observer';
 import { UIContext } from '../../context/UI/UIContext';
-import useState from 'react';
+
+import styles from "../../styles/section/Portada.module.css";
 
 export const Portada = () => {
 
