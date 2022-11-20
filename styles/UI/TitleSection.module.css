@@ -108,3 +108,44 @@
         top: 80%;
     }
 }
+
+@media (max-width: 720px) {
+    .tituloSection{
+        width: 80%;
+    }
+
+    .tituloSection h2{
+        font-size: 25px;
+    }
+
+    .caja_1{
+        height: 50px;
+        top: 25%;
+    }
+
+    .caja_2{
+        height: 50px;
+        top: 40%;
+    }
+
+    .caja_3{
+        height: 50px;
+        top: 25%;
+    }
+
+    .caja_4{
+        height: 30px;
+        top: 45%;
+    }
+
+    .caja_5{
+        height: 50px;
+        top: 55%;
+    }
+
+    .caja_6{
+        height: 50px;
+        top: 65%;
+        left: 0%;
+    }
+}

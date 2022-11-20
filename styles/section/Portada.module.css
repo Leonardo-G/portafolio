@@ -251,3 +251,60 @@
         line-height: 35px;
     }
 }
+
+@media (max-width: 720px) {
+    .portada{
+        margin: 100px 0;
+        position: relative;
+        height: 500px;
+    }
+
+    .portada__texto p{
+        font-size: 35px;
+    }
+
+    .portada__texto h1{
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .caja_1{
+        height: 100px;
+    }
+
+    .caja_2{
+        height: 50px;
+    }
+
+    .caja_3{
+        height: 45px;
+    }
+
+    .caja_4{
+        height: 55px;
+    }
+
+    .caja_5{
+        height: 85px;
+    }
+
+    .caja_6{
+        height: 65px;
+    }
+
+    .caja_7{
+        height: 105px;
+    }
+
+    .caja_8{
+        height: 105px;
+    }
+
+    .caja_9{
+        height: 35px;
+    }
+
+    .caja_10{
+        height: 65px;
+    }
+}

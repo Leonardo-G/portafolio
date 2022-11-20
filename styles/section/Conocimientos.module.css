@@ -25,3 +25,14 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 720px) {
+    .conocimientos__titulo{
+        font-size: 35px;
+    }
+
+    .conocimientos__iconos{
+        column-gap: 10px;
+        row-gap: 50px;
+    }
+}

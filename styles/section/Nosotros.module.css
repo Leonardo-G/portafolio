@@ -18,10 +18,23 @@
 }
 
 @media (max-width: 920px) {
-    .nosotros {
-    }
     .nosotros__texto{
         font-size: 18px;
         line-height: 30px;
+    }
+}
+
+@media (max-width: 720px) {
+    .nosotros{
+        padding: 0;
+    }
+
+    .nosotros__texto{
+        padding: 0;
+    }
+    
+    .nosotros__texto p{
+        font-size: 14px;
+        line-height: 25px;
     }
 }

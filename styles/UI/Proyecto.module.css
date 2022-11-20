@@ -35,7 +35,11 @@
 
 .proyecto__texto--iconos{
     margin-left: 5px;
-    transition: all ease .1s
+    transition: all ease .1s;
+    position: relative; 
+    width: 25px;
+    height: 25px;
+    display: inline-block; 
 }
 
 .proyecto__texto--iconos:hover{
@@ -83,5 +87,25 @@
     .proyecto__buttons{
         transform: translate(0%);
         right: 5%;
+    }
+}
+
+@media (max-width: 720px) {
+    .proyecto p {
+        font-size: 14px;
+    }
+
+    .proyecto__texto--iconos{
+        width: 22px;
+        height: 22px;
+        margin-left: 2px;
+    }
+    .proyecto__buttons--href{
+        font-size: 25px;
+        margin-left: 5px;
+    }
+
+    .proyecto__img{
+        max-height: 350px;
     }
 }

@@ -13,7 +13,7 @@ export const Proyectos = () => {
     const { changeCampoNav } = useContext(UIContext)
 
     const { ref, inView } = useInView({
-        rootMargin: "50px 0px 50px 0px"
+        threshold: 0.1
     })
 
     useEffect(() => {
