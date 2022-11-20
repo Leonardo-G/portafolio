@@ -21,10 +21,24 @@
 
 .file__icono{
     font-size: 85px;
+    transform: translateX(-150%);
+    transition: all ease .8s;
+}
+
+.file__icono--hover{
+    transform: translateX(0%);
+    transition: all ease .8s;
 }
 
 .file__img{
     position: relative;
     width: 80px;
     height: 80px;
+    transform: translateX(-150%);
+    transition: all ease .8s;
+}
+
+.file__img--hover{
+    transform: translateX(0%);
+    transition: all ease .8s;
 }

@@ -1,15 +1,20 @@
+import React, { FC, ReactNode, useState } from 'react';
 import Head from 'next/head';
-import React, { FC, ReactNode } from 'react';
+
+import { Nav } from '../UI/Nav';
 
 import styles from "../../styles/layout/LayoutPage.module.css";
-import { Footer } from '../section/Footer';
-import { Nav } from '../UI/Nav';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
     children?: ReactNode
 }
 
 export const LayoutPage: FC<Props> = ({ children }) => {
+    
+    const [isOpenNav, setIsOpenNav] = useState(false);
+
     return (
         <>
             <Head>
@@ -18,10 +23,26 @@ export const LayoutPage: FC<Props> = ({ children }) => {
             <main>
                 <div className={ styles.layout }>
                     <div 
-                        
-                        className={ styles.layout__nav }
+                        className={` ${ styles.layout__nav } ${ isOpenNav && styles['layout__nav--open']} `}
                     >
                         <Nav />
+                    </div>
+                    
+                    <div 
+                        className={ styles.button__navbar }
+                        onClick={ () => isOpenNav ? setIsOpenNav( false ) : setIsOpenNav( true ) }    
+                    >
+                        {
+                            isOpenNav ?
+                                <FontAwesomeIcon 
+                                    icon={ faXmark }
+                                    style={{ color: "#fff" }}
+                                />
+                            :
+                                <FontAwesomeIcon 
+                                    icon={ faBars }
+                                />
+                        }
                     </div>
                     <div className={ styles.layout__main }>
                         <div className='container'>

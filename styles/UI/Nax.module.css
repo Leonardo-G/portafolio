@@ -16,6 +16,8 @@
     font-size: 15px;
 }
 
+
+
 .nav .enlace p{
     font-family: 'Playfair Display', serif;
 }
@@ -47,3 +49,17 @@
     background-color: #FFDC00;
 }
 
+@media (max-width: 920px) {
+    .nav{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+    }
+
+    .nav .enlace {
+        display: flex;
+        text-transform: uppercase;
+        column-gap: 3px;
+        justify-content: center;
+    }
+}

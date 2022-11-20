@@ -30,7 +30,6 @@ export const Conocimientos = () => {
                         <ConocimientoFile 
                             conocimiento={ c } 
                             key={ c.id } 
-                            inView={ inView }
                             number={ idx }
                             isHover={ isHover }
                         />

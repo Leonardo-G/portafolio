@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC } from 'react'
 import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,20 +9,22 @@ import styles from "../../styles/UI/ConocimientoFile.module.css";
 
 interface Props{
     conocimiento: IConocimientos;
-    inView: boolean;
     number: number;
     isHover: boolean;
 }
 
-export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type, color }, inView, number, isHover }) => {
+export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type, color }, number, isHover }) => {
 
     if ( type === "icon" ){
         return (
             <div className={ styles.file }>
                 <FontAwesomeIcon 
-                    className={ styles.file__icono }
+                    className={`${ styles.file__icono } ${ isHover && styles['file__icono--hover'] } `}
                     icon={ file }
-                    style={{ color: color }}
+                    style={{ 
+                        color,
+                        transitionDelay: `${ (number / 3) + "s" }`
+                    }}
                 />
                 <p 
                     className={`${ styles.file__titulo } ${ isHover && styles['file__titulo--hover'] } `}
@@ -37,7 +39,12 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
 
     return (
         <div className={ styles.file }>
-            <div className={ styles.file__img }>
+            <div 
+                className={`${ styles.file__img } ${ isHover && styles['file__img--hover'] } `}
+                style={{
+                    transitionDelay: `${(number / 3) + "s"}`
+                }}    
+            >
                 <Image 
                     src={ file }
                     alt={ title }
@@ -46,7 +53,7 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
                 />
             </div>
             <p 
-                    className={`${ styles.file__titulo } ${ isHover && styles['file__titulo--hover'] }`}
+                className={`${ styles.file__titulo } ${ isHover && styles['file__titulo--hover'] }`}
                 style={{ 
                     color, 
                     transitionDelay: `${(number / 3) + "s"}`
