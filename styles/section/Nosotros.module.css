@@ -17,10 +17,39 @@
     width: 90%;
 }
 
+.nosotros__button{
+    margin-top: 50px;
+    border: none;
+}
+
+.nosotros__button a{
+    margin-top: 50px;
+    padding: 20px 50px;
+    border-radius: 6px;
+    background-color: #FFDC00;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 20px;
+    color: #000;
+}
+
+.nosotros__button a {
+    text-decoration: none;
+}
+
+.nosotros__button a:hover{
+    background-color: #ecd958;
+}
+
 @media (max-width: 920px) {
     .nosotros__texto{
         font-size: 18px;
         line-height: 30px;
+    }
+
+    .nosotros__button a{
+        font-size: 18px;
     }
 }
 
@@ -36,5 +65,10 @@
     .nosotros__texto p{
         font-size: 14px;
         line-height: 25px;
+    }
+
+    .nosotros__button a{
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }

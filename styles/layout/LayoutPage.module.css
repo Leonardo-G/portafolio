@@ -4,7 +4,7 @@
 }
 
 .layout__nav{
-    width: 54px;
+    width: 60px;
     background-color: #000;
 }
 
@@ -21,6 +21,7 @@
     z-index: 9999;
     transform: translateX(0%);
     padding: 20px;
+    display: none;
 }
 
 @media (max-width: 920px) {
@@ -39,5 +40,9 @@
         transform: translateX(0%);
         visibility: visible;
         transition: .6s all ease;
+    }
+
+    .button__navbar{
+        display: inherit;
     }
 }

@@ -5,6 +5,13 @@
     height: 100%;
     width: 60px;
     position: fixed;
+    transform: translateX(-100%);
+    transition: 1.2s all ease;
+}
+
+.nav--on{
+    transform: translateX(0%);
+    transition: 1.2s all ease;
 }
 
 .nav .enlace{
@@ -15,8 +22,6 @@
     border-bottom: 3px solid #fff;
     font-size: 15px;
 }
-
-
 
 .nav .enlace p{
     font-family: 'Playfair Display', serif;

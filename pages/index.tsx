@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+
 import { LayoutPage } from '../components/layout/LayoutPage'
 import { Conocimientos } from '../components/section/Conocimientos'
 import { Contacto } from '../components/section/Contacto'
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
             <Nosotros />
             <Conocimientos />
             <Proyectos />
-            {/* <Contacto /> */}
+            <Contacto />
             <Footer />
         </LayoutPage>
     )

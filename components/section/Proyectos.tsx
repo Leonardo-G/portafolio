@@ -4,9 +4,10 @@ import { TituloSection } from '../UI/TituloSection';
 import { proyectosDB } from '../../database/proyectos';
 import { Proyecto } from '../UI/Proyecto';
 
-import style from "../../styles/section/Proyectos.module.css";
 import { useInView } from 'react-intersection-observer';
 import { UIContext } from '../../context/UI/UIContext';
+
+import style from "../../styles/section/Proyectos.module.css";
 
 export const Proyectos = () => {
     

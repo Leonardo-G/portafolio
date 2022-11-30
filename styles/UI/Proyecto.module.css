@@ -106,6 +106,18 @@
     }
 
     .proyecto__img{
-        max-height: 350px;
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 520px) {
+    .proyecto{
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .proyecto__img{
+        max-height: 250px;
     }
 }

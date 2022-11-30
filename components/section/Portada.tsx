@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { useInView } from 'react-intersection-observer';
@@ -8,11 +8,16 @@ import styles from "../../styles/section/Portada.module.css";
 
 export const Portada = () => {
 
-    const { changeCampoNav, isHover } = useContext(UIContext)
+    const { changeCampoNav, isHover } = useContext(UIContext);
+    const [isOn, setIsOn] = useState(false);
 
     const { ref, inView } = useInView({
         threshold: 0.5
     })
+
+    useEffect(() => {
+        setIsOn( true );
+    }, [])
 
     useEffect(() => {
         if ( inView ) {
@@ -28,17 +33,17 @@ export const Portada = () => {
                 <p>BIENVENIDO!</p>
                 <h1>Hola! Me llamo Leonardo Guanuco y soy Desarrollador de JavaScript</h1>
             </div>
-            <div className={`${ styles.caja } ${ styles.caja_1 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_2 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_3 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_4 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_5 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_6 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_7 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_8 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_9 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_10 } `}></div>
-            <div className={`${ styles.caja } ${ styles.caja_11} `}></div>
+            <div className={`${ styles.caja } ${ styles.caja_1 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_2 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_3 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_4 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_5 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_6 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_7 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_8 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_9 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_10 } ${ isOn && styles['caja--on'] }`}></div>
+            <div className={`${ styles.caja } ${ styles.caja_11} ${ isOn && styles['caja--on']}`}></div>
             <div className={ styles.imgContainer }>
                 <Image
                     src="/static/portfolio.jpg"

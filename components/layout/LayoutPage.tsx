@@ -3,9 +3,10 @@ import Head from 'next/head';
 
 import { Nav } from '../UI/Nav';
 
-import styles from "../../styles/layout/LayoutPage.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+
+import styles from "../../styles/layout/LayoutPage.module.css";
 
 interface Props {
     children?: ReactNode
