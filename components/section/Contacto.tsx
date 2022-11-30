@@ -62,7 +62,9 @@ export const Contacto: FC = () => {
     return (
         <section ref={ ref } className={ styles.contacto } id="contacto">
             
-            <TituloSection title='Contacto'/>
+            <div className={ styles.contacto__campos }>
+                <TituloSection title='Contacto'/>
+            </div>
 
             <div className={ styles.contacto__campos }>
                 <input 

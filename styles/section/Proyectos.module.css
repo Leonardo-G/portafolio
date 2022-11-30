@@ -11,6 +11,15 @@
     width: 50%;
 }
 
+.proyectos__enlace{
+    text-decoration: none;
+    color: #000;
+}
+
+.proyectos__enlace:hover{
+    text-decoration: underline;
+}
+
 @media (max-width: 920px) {
     .proyectos{
         column-gap: 40px;

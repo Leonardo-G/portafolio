@@ -37,7 +37,7 @@ export const Proyectos = () => {
                         )
                     })
                 }
-                <p>Y más código en mi GitHub</p>
+                <a href='https://github.com/Leonardo-G' className={ style.proyectos__enlace }>Y más código en mi GitHub</a>
             </div>
             <div className={ style.proyectos__fila1 }>
                 <TituloSection title='PROYECTOS'/>
