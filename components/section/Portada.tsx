@@ -44,14 +44,6 @@ export const Portada = () => {
             <div className={`${ styles.caja } ${ styles.caja_9 } ${ isOn && styles['caja--on'] }`}></div>
             <div className={`${ styles.caja } ${ styles.caja_10 } ${ isOn && styles['caja--on'] }`}></div>
             <div className={`${ styles.caja } ${ styles.caja_11} ${ isOn && styles['caja--on']}`}></div>
-            <div className={ styles.imgContainer }>
-                <Image
-                    src="/static/portfolio.jpg"
-                    alt='Image Portafolio'
-                    layout='fill'
-                    objectFit='contain'
-                />  
-            </div>
         </div>
     )
 }
