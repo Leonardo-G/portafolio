@@ -44,7 +44,7 @@ export const Portada = () => {
                 right="40%"
             ></BoxWhite>
             <BoxWhite 
-                height={ 78 }
+                height={ 56 }
                 width="36%"
                 right="5%"
                 top='9%'
@@ -73,10 +73,30 @@ export const Portada = () => {
                 top="35%"
                 left='42%'
             ></BoxWhite>
-            <div className={`${ styles.caja } ${ styles.caja_8 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_9 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_10 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_11} ${ isOn && styles['caja--on']}`}></div>
+            <BoxWhite
+                width="15%"
+                height={ 164 }
+                top="65%"
+                left='0%'
+            ></BoxWhite>
+            <BoxWhite
+                height={ 125 }
+                width="5%"
+                top="80%"
+                left='42%'
+            ></BoxWhite>
+            <BoxWhite
+                height={ 86 }
+                width="20%"
+                top="78%"
+                left="52%"
+            ></BoxWhite>
+            <BoxWhite
+                width='30%'
+                top='68%'
+                height={46}
+                left="68%"
+            ></BoxWhite>
         </div>
     )
 }
