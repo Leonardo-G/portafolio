@@ -23,18 +23,24 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, titulo, conocimientos, he
                 <div className={ styles.proyecto__buttons }>
                     {
                         repositorio &&
-                        <Link href={ repositorio }>
-                            <a target="_blank" rel="noopener noreferrer" className={ styles['proyecto__buttons--href'] }>
-                                <FontAwesomeIcon icon={ faGithub }/>
-                            </a>
+                        <Link 
+                            href={ repositorio } 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className={ styles['proyecto__buttons--href'] }
+                        >
+                            <FontAwesomeIcon icon={ faGithub }/>
                         </Link>
                     }
                     {
                         url &&
-                        <Link href={ url }>
-                            <a target="_blank" rel="noopener noreferrer" className={ styles['proyecto__buttons--href'] }>
-                                <FontAwesomeIcon icon={ faGlobe }/>
-                            </a>
+                        <Link 
+                            href={ url }
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className={ styles['proyecto__buttons--href'] }
+                        >
+                            <FontAwesomeIcon icon={ faGlobe }/>
                         </Link>
                     }
                 </div>

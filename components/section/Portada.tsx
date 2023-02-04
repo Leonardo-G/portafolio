@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Image from 'next/image';
 
 import { useInView } from 'react-intersection-observer';
 import { UIContext } from '../../context/UI/UIContext';
 
 import styles from "../../styles/section/Portada.module.css";
+import { BoxWhite } from '../../styled/ui';
 
 export const Portada = () => {
 
@@ -33,13 +33,46 @@ export const Portada = () => {
                 <p>BIENVENIDO!</p>
                 <h1>Hola! Me llamo Leonardo Guanuco y soy Desarrollador de JavaScript</h1>
             </div>
-            <div className={`${ styles.caja } ${ styles.caja_1 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_2 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_3 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_4 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_5 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_6 } ${ isOn && styles['caja--on'] }`}></div>
-            <div className={`${ styles.caja } ${ styles.caja_7 } ${ isOn && styles['caja--on'] }`}></div>
+            <BoxWhite 
+                height={ 156 }
+                width="10%"
+                left="10%"
+            ></BoxWhite>
+            <BoxWhite 
+                height={ 78 }
+                width="12.5%"
+                right="40%"
+            ></BoxWhite>
+            <BoxWhite 
+                height={ 78 }
+                width="36%"
+                right="5%"
+                top='9%'
+            ></BoxWhite>
+            <BoxWhite 
+                height={ 110 }
+                width="9%"
+                top="43%"
+                left='5%'
+            ></BoxWhite>
+            <BoxWhite 
+                height={ 125 }
+                width="10%"
+                top="32%"
+                left='22%'
+            ></BoxWhite>
+            <BoxWhite 
+                height={ 82 }
+                width="14%"
+                top="60%"
+                left='25%'
+            ></BoxWhite>
+            <BoxWhite 
+                height={ 187 }
+                width="18%"
+                top="35%"
+                left='42%'
+            ></BoxWhite>
             <div className={`${ styles.caja } ${ styles.caja_8 } ${ isOn && styles['caja--on'] }`}></div>
             <div className={`${ styles.caja } ${ styles.caja_9 } ${ isOn && styles['caja--on'] }`}></div>
             <div className={`${ styles.caja } ${ styles.caja_10 } ${ isOn && styles['caja--on'] }`}></div>

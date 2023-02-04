@@ -65,15 +65,11 @@ export const Nav = () => {
                 <p>o</p>
             </a>
             <div className={ styles.enlace__redes }>
-                <Link href="https://www.linkedin.com/in/leonardo-guanuco-frontend/">
-                    <a target="_blank" rel="noopener noreferrer"  className={ styles['icon--redes'] }>
+                <Link href="https://www.linkedin.com/in/leonardo-guanuco-frontend/" target="_blank" rel="noopener noreferrer"  className={ styles['icon--redes'] }>
                         <FontAwesomeIcon icon={ faLinkedin }/>
-                    </a>
                 </Link>
-                <Link href="https://github.com/Leonardo-G">
-                    <a target="_blank" rel="noopener noreferrer" className={ styles['icon--redes'] }>
-                        <FontAwesomeIcon icon={ faGithub }/>
-                    </a>
+                <Link href="https://github.com/Leonardo-G" target="_blank" rel="noopener noreferrer" className={ styles['icon--redes'] }>
+                    <FontAwesomeIcon icon={ faGithub }/>
                 </Link>
             </div>
         </div>
