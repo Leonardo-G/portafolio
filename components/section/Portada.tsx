@@ -5,6 +5,9 @@ import { UIContext } from '../../context/UI/UIContext';
 
 import styles from "../../styles/section/Portada.module.css";
 import { BoxWhite } from '../../styled/ui';
+import { Text, TitleMain } from '../../styled/text/text';
+import { Section } from '../../styled/globals';
+import { Position } from '../../styled/position/position';
 
 export const Portada = () => {
 
@@ -28,11 +31,16 @@ export const Portada = () => {
     }, [inView])
 
     return (
-        <div ref={ ref } className={` ${styles.portada} ${ isHover ? styles.caja__hover : styles.caja__nohover} `} id="inicio">
-            <div className={ styles.portada__texto }>
-                <p>BIENVENIDO!</p>
-                <h1>Hola! Me llamo Leonardo Guanuco y soy Desarrollador de JavaScript</h1>
-            </div>
+        <Section 
+            ref={ ref } 
+            id="inicio"
+            height={ 700 }
+            background="#ffff00"
+        >
+            <Position top="40%">
+                <TitleMain size={ 80 }>Hola, Soy Leonardo Guanuco</TitleMain>
+                <Text size={ 35 }>Desarrollador JavaScript/TypeScript</Text>
+            </Position>
             <BoxWhite 
                 height={ 156 }
                 width="10%"
@@ -97,6 +105,6 @@ export const Portada = () => {
                 height={46}
                 left="68%"
             ></BoxWhite>
-        </div>
+        </Section>
     )
 }

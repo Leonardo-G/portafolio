@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BoxWhite = styled.div`
     border-radius: 4px;
     position: absolute;
-    background-color: #FFDC00;
+    background-color: #fff;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     width: ${ ({ width }: { 
         width: string;
