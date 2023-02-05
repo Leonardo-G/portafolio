@@ -21,3 +21,7 @@ p, h1, h2, a, input, textarea{
   margin: 0 auto;
   width: min(1200px, 90%);
 }
+
+.relative {
+  position: relative;
+}

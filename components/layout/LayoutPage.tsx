@@ -46,7 +46,7 @@ export const LayoutPage: FC<Props> = ({ children }) => {
                         }
                     </div>
                     <div className={ styles.layout__main }>
-                        <div className='container'>
+                        <div>
                             { children }
                         </div>
                     </div>

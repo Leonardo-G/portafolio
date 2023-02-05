@@ -8,5 +8,5 @@ export const Section = styled.section`
      }) => height ? `${ height }px` : "fit-content" };
     background: ${ ({ background }) => background ? background : "transparent" };
     position: relative;
-    margin: 100px 0;
+    padding: 100px 0;
 `

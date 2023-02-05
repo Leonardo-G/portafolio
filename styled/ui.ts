@@ -34,3 +34,15 @@ export const BoxWhite = styled.div`
         transition: all ease .5s;
     }
 `
+
+export const LineHead = styled.div`
+    background: ${ ({ background }: {
+        background: string;
+        height?: number;
+    }) => background && background };
+    border-bottom: 3px solid #fff;
+    border-top: 3px solid #fff;
+    text-align: center;
+    overflow: hidden;
+    width: 150%;
+`
