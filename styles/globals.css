@@ -17,6 +17,12 @@ p, h1, h2, a, input, textarea{
   letter-spacing: 0.06em;
 }
 
+a{
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
 .container{
   margin: 0 auto;
   width: min(1200px, 90%);

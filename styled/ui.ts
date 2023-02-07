@@ -46,3 +46,11 @@ export const LineHead = styled.div`
     overflow: hidden;
     width: 150%;
 `
+
+export const Button = styled.button`
+    border: none;
+    color: #fff;
+    background: #000;
+    padding: 20px;
+    margin-top: 50px;
+`

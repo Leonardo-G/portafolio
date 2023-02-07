@@ -1,9 +1,7 @@
 .file{
-    display: flex;
     align-items: center;
     column-gap: 15px;
     width: auto;
-    overflow: hidden;
 }
 
 .file__titulo{
@@ -20,7 +18,6 @@
 
 .file__icono{
     font-size: 85px;
-    transform: translateX(-150%);
     transition: all ease .8s;
 }
 
@@ -33,7 +30,6 @@
     position: relative;
     width: 80px;
     height: 80px;
-    transform: translateX(-150%);
     transition: all ease .8s;
 }
 

@@ -21,18 +21,10 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
                 <FontAwesomeIcon 
                     className={`${ styles.file__icono } ${ isHover && styles['file__icono--hover'] } `}
                     icon={ file }
-                    style={{ 
-                        color,
+                    style={{
                         transitionDelay: `${ (number / 3) + "s" }`
                     }}
                 />
-                <p 
-                    className={`${ styles.file__titulo } ${ isHover && styles['file__titulo--hover'] } `}
-                    style={{ 
-                        color,
-                        transitionDelay: `${(number / 3) + "s"}`
-                    }}
-                >{ title }</p>
             </div>
         )
     }
@@ -48,17 +40,9 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
                 <Image 
                     src={ file }
                     alt={ title }
-                    layout="fill"
-                    objectFit="contain"
+                    fill
                 />
             </div>
-            <p 
-                className={`${ styles.file__titulo } ${ isHover && styles['file__titulo--hover'] }`}
-                style={{ 
-                    color, 
-                    transitionDelay: `${(number / 3) + "s"}`
-                }}
-            >{ title }</p>
         </div>
     )
 }

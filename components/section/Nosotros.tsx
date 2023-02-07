@@ -1,17 +1,21 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { TituloSection } from '../UI/TituloSection';
 
 import { useInView } from 'react-intersection-observer';
 import { UIContext } from '../../context/UI/UIContext';
 
-import styles from "../../styles/section/Nosotros.module.css";
 import { LineHead } from '../../styled/ui';
-import { Title } from '../../styled/text/text';
-import { Flex } from '../../styled/box/box';
+import { Text, Title } from '../../styled/text/text';
+import { Box, Flex } from '../../styled/box/box';
+import { Section } from '../../styled/globals';
+import { conocimientosDB } from '../../database/conocimientos';
+import { ConocimientoFile } from '../UI/ConocimientoFile';
+import { ButtonDownload } from '../button/ButtonDownload';
 
 export const Nosotros = () => {
 
-    const { changeCampoNav } = useContext(UIContext)
+    const { changeCampoNav } = useContext(UIContext);
+    const [isHover, setIsHover] = useState(false);
 
     const { ref, inView } = useInView({
         threshold: 0.5
@@ -38,17 +42,37 @@ export const Nosotros = () => {
                     <Title className='f-auto' size={ 55 }>SOBRE MI</Title>
                 </Flex>
             </LineHead>
-            <section ref={ ref } className={ styles.nosotros } id="nosotros">
-                <div className={ styles.nosotros__texto }>
-                    <p>Soy desarrollador manejando el lenguaje de JavaScript. Me especializo en la parte del front - end, aunque tambien tengo proyectos prácticos y conocimientos del lado del back - end. Me gusta construír aplicaciones complejas, creando interfaces e imaginar interacciones útiles centrado en el usuario</p>
-                    <button className={ styles.nosotros__button }>
-                        <a href="/file/Guanuco-Leonardo-cv-front.pdf" target="_blank" rel="noreferrer">
-                            Ver C.V
-                        </a>
-                    </button>
-                </div>
-                <TituloSection title='SOBRE MÍ' />
-            </section>
+            <Section 
+                background='#ff16b9ed' 
+                ref={ ref } 
+                id="nosotros"
+            >
+                <Box className='container'>
+                    <Flex colCenter columnGap={ 40 }>
+                        <Box className='container f-auto'>
+                            <Text color='#000'>
+                                Mi nombre es Leonardo y soy desarrollador de JavaScript, donde me especializo en el desarrollo FrontEnd y/o BackEnd. Llevo dos años practicando y estudiando de manera autodidacta creando proyectos y de manera freelance. Me apasiona el desarrollo de aplicaciones, en la cual distintos usuarios 
+                                puedan interactuar con las funcionalidades en la que fui desarrollando
+                            </Text>
+                            <ButtonDownload text='Descargar C.V'/>
+                        </Box>
+                        <Box className="f-auto">
+                            <Flex wrap gap={ 20 }>
+                                {
+                                    conocimientosDB.map( (c, idx) => (
+                                        <ConocimientoFile
+                                            conocimiento={ c } 
+                                            key={ c.id } 
+                                            number={ idx }
+                                            isHover={ isHover }
+                                        />
+                                    ))
+                                }
+                            </Flex>
+                        </Box>
+                    </Flex>
+                </Box>
+            </Section>
         </>
     )
 }

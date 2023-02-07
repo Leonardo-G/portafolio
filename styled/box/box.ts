@@ -11,11 +11,17 @@ export const Flex = styled.div`
     display: flex;
     justify-content: ${ ({ center }: { 
         center?: boolean;
+        colCenter?: boolean;
+        wrap?: boolean;
         columnGap?: number;
+        gap?: number;
     }) => center ? "center" : "inherit" };
     
-    ${ ({ columnGap }) => columnGap && { "column-gap": `${ columnGap }px` } };
+    ${ ({ gap, columnGap }) => gap ? { "gap": `${ gap }px` } : columnGap && { "column-gap": `${ columnGap }px` } };
+    ${ ({ wrap }) => wrap && { "flex-wrap": "wrap" } };
+    ${ ({ colCenter }) => colCenter && { "align-items": "center" } };
 
+    //clases para colocar a los elementos hijos.
     .f-auto{
         flex: 1
     }

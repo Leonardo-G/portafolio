@@ -68,7 +68,7 @@ export const conocimientosDB: IConocimientos[] = [
     {
         id: 10,
         type: "img",
-        file: "/icons/express.png",
+        file: "/icons/express.svg",
         title: "Express.js",
         color: "#212121"
     },
@@ -117,7 +117,7 @@ export const conocimientosDB: IConocimientos[] = [
     {
         id: 17,
         type: "img",
-        file: "/icons/mysql.png",
+        file: "/icons/mysql.svg",
         title: "Mysql",
         color: "#5882FA"
     },
