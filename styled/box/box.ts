@@ -10,13 +10,22 @@ export const Box = styled.div`
         background?: string;
         borderY?: string;
         width?: string;
+        transform?: string;
+        ovHidden?: boolean;
+        zIndex?: string;
+        transition?: boolean;
     }) => height ? height : "fit-content" };
-    ${ ({ border }) => border && { "border": border } };
     ${ ({ padding }) => padding && { "padding": padding } };
+    ${ ({ border }) => border && { "border": border } };
     ${ ({ borderY }) => borderY && { "border-left": borderY, "border-right": borderY } }
     ${ ({ borderTopNone }) => borderTopNone && { "border-top": "none" } };
     ${ ({ background }) => background && { "background": background } };
     ${ ({ width }) => width && { "width": width } };
+    ${ ({ transform }) => transform && { "transform": transform } };
+    ${ ({ ovHidden }) => ovHidden && { "overflow": "hidden" } };
+    ${ ({ zIndex }) => zIndex && { "z-index": zIndex } };
+    ${ ({ transition }) => transition && { "transition": ".3s all ease" } };
+    
 `
 
 //COMPONENTE para utilizar propiedades FLEX
