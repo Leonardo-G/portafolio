@@ -20,6 +20,20 @@ export const Text = styled.p`
     font-size: ${ ({ size }: {
         size?: number;    // Tamaño que va a tener la letra cuando este en tamaño de escritorio.
         color?: string;
+        weight?: number;
+        paddingBt?: boolean;
     }) => size ? `${ size }px` : "16px" };
-    ${ ({ color }) => color && { color } };
+    color: ${ ({ color }) => color ? color : "#000" };
+    ${ ({ weight }) => weight && `font-weight: ${ weight }` };
+    ${ ({ paddingBt }) => paddingBt && `padding-bottom: 15px` };
+`
+
+export const TextLink = styled.a`
+    font-size: ${ ({ size }: {
+        size?: number;    // Tamaño que va a tener la letra cuando este en tamaño de escritorio.
+        color?: string;
+        weight?: number;
+    }) => size ? `${ size }px` : "16px" };
+    color: ${ ({ color }) => color ? color : "#000" };
+    ${ ({ weight }) => weight && `font-weight: ${ weight }` };
 `
