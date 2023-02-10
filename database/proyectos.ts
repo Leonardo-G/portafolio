@@ -2,57 +2,23 @@ import { IProyectos } from "../interface/proyectos";
 
 export const proyectosDB: IProyectos[] = [
     {
-        id: 1,
-        titulo: "Mercado Libre - Clon",
-        conocimientos: ["HTML", "CSS3", "React.js", "Typescript", "Next.js", "NPM", "GIT", "GitHub"],
-        img: "/proyectos/clon-mercadolibre.png",
-        heigth: "290px",
-        repositorio: "https://github.com/Leonardo-G/clon-mercadolibre",
-        url: "https://clon-mercadolibre.vercel.app/"
-    },
-    {
-        id: 2,
-        titulo: "Ecommerce - Final CoderHouse",
-        conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "Firebase", "NPM", "GIT", "GitHub"],
-        img: "/proyectos/ecommerce-react.png",
-        heigth: "290px",
-        repositorio: "https://github.com/Leonardo-G/React-ecommerce-tecnologia",
-        url: "https://leonardo-g.github.io/React-ecommerce-tecnologia/"
-    },
-    {
-        id: 3,
-        titulo: "Movie App",
-        conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "NPM", "GIT", "GitHub"],
-        img: "/proyectos/movies.png",
-        heigth: "490px",
-        repositorio: "https://github.com/Leonardo-G/movie-app",
-        url: "https://legendary-mooncake-bb592b.netlify.app/"
-    },
-    {
-        id: 4,
-        titulo: "Presupuesto - Curso",
-        conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "NPM", "GIT", "GitHub"],
-        img: "/proyectos/presupuesto.png",
-        heigth: "490px",
-        repositorio: "https://github.com/Leonardo-G/react-presupuesto",
-        url: "https://distracted-aryabhata-26ea5b.netlify.app/"
-    },
-    {
         id: 5,
         titulo: "Administrador de Proyectos - Curso",
         conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "NPM", "GIT", "GitHub"],
         img: "/proyectos/administrador-clientes.png",
         heigth: "550px",
         repositorio: "https://github.com/Leonardo-G/react-administrador-proyectos",
-        url: "https://serene-bardeen-2bafba.netlify.app/proyectos"
+        url: "https://serene-bardeen-2bafba.netlify.app/proyectos",
+        columns: 6
     },
     {
-        id: 7,
-        titulo: "Feria Vanguardia - Freelancer",
-        conocimientos: ["HTML", "CSS3", "Sass", "Bootstrap", "JavaScript", "GIT"],
-        img: "/proyectos/feria.png",
-        heigth: "490px",
-        url: "https://lavanguardiaferia.com.ar/"
+        id: 11,
+        titulo: "DOTImages - FrontEnd",
+        conocimientos: ["HTML", "CSS3", "Next.js", "JavaScript", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/dotimages.png",
+        heigth: "360px",
+        repositorio: "https://github.com/Leonardo-G/dotimages-front",
+        columns: 6
     },
     {
         id: 8,
@@ -61,7 +27,57 @@ export const proyectosDB: IProyectos[] = [
         img: "/proyectos/arquitectura.png",
         heigth: "400px",
         repositorio: "https://github.com/Leonardo-G/Arquitectura-Proyecto",
-        url: "https://leonardo-g.github.io/Arquitectura-Proyecto/"
+        url: "https://leonardo-g.github.io/Arquitectura-Proyecto/",
+        columns: 4
+    },
+    {
+        id: 3,
+        titulo: "Movie App",
+        conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/movies.png",
+        heigth: "490px",
+        repositorio: "https://github.com/Leonardo-G/movie-app",
+        url: "https://legendary-mooncake-bb592b.netlify.app/",
+        columns: 4
+    },
+    {
+        id: 2,
+        titulo: "Ecommerce - Final CoderHouse",
+        conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "Firebase", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/ecommerce-react.png",
+        heigth: "290px",
+        repositorio: "https://github.com/Leonardo-G/React-ecommerce-tecnologia",
+        url: "https://leonardo-g.github.io/React-ecommerce-tecnologia/",
+        columns: 4
+    },
+    {
+        id: 7,
+        titulo: "Feria Vanguardia - Freelancer",
+        conocimientos: ["HTML", "CSS3", "Sass", "Bootstrap", "JavaScript", "GIT"],
+        img: "/proyectos/feria.png",
+        heigth: "490px",
+        url: "https://lavanguardiaferia.com.ar/",
+        columns: 4
+    },
+    {
+        id: 1,
+        titulo: "Mercado Libre - Clon",
+        conocimientos: ["HTML", "CSS3", "React.js", "Typescript", "Next.js", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/clon-mercadolibre.png",
+        heigth: "290px",
+        repositorio: "https://github.com/Leonardo-G/clon-mercadolibre",
+        url: "https://clon-mercadolibre.vercel.app/",
+        columns: 8
+    },
+    {
+        id: 4,
+        titulo: "Presupuesto - Curso",
+        conocimientos: ["HTML", "CSS3", "React.js", "JavaScript", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/presupuesto.png",
+        heigth: "490px",
+        repositorio: "https://github.com/Leonardo-G/react-presupuesto",
+        url: "https://distracted-aryabhata-26ea5b.netlify.app/",
+        columns: 4
     },
     {
         id: 9,
@@ -70,29 +86,6 @@ export const proyectosDB: IProyectos[] = [
         img: "/proyectos/API.png",
         heigth: "360px",
         repositorio: "https://github.com/Leonardo-G/api-clon-mercadolibre",
-    },
-    {
-        id: 10,
-        titulo: "DOTImages - Backend",
-        conocimientos: ["Node.js", "Express.js", "Sequelize", "Mysql", "NPM"],
-        img: "/proyectos/API.png",
-        heigth: "360px",
-        repositorio: "https://github.com/Leonardo-G/dotimage-back",
-    },
-    {
-        id: 11,
-        titulo: "DOTImages - FrontEnd",
-        conocimientos: ["HTML", "CSS3", "Next.js", "JavaScript", "NPM", "GIT", "GitHub"],
-        img: "/proyectos/dotimages.png",
-        heigth: "360px",
-        repositorio: "https://github.com/Leonardo-G/dotimages-front"
-    },
-    {
-        id: 12,
-        titulo: "Adminstrador de Proyectos | Backend - API",
-        conocimientos: ["Node.js", "Express.js", "Mongodb", "GIT", "GitHub"],
-        img: "/proyectos/API.png",
-        heigth: "360px",
-        repositorio: "https://github.com/Leonardo-G/node-api-cliente"
+        columns: 4
     },
 ]

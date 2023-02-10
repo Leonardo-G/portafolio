@@ -22,7 +22,7 @@ export const LayoutPage: FC<Props> = ({ children }) => {
                 <title>Leonardo Guanuco</title>              
             </Head>
             <main>
-                <div className={ styles.layout }>
+                <div style={{ width: "100%", overflow: "hidden" }}>
                     <div 
                         className={` ${ styles.layout__nav } ${ isOpenNav && styles['layout__nav--open']} `}
                     >

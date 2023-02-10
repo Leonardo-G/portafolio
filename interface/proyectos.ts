@@ -6,6 +6,7 @@ export interface IProyectos {
     heigth: string; // En pixeles
     repositorio?: string; // Repositorio de github
     url?: string; // URL del proyecto, si es que está alojado.
+    columns: number;
 }
 
 export type ITecnologia =    "HTML" |

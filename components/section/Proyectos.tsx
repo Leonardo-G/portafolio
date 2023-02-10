@@ -1,13 +1,17 @@
 import React, { useContext, useEffect } from 'react';
 
-import { TituloSection } from '../UI/TituloSection';
-import { proyectosDB } from '../../database/proyectos';
-import { Proyecto } from '../UI/Proyecto';
-
 import { useInView } from 'react-intersection-observer';
-import { UIContext } from '../../context/UI/UIContext';
 
-import style from "../../styles/section/Proyectos.module.css";
+import { UIContext } from '../../context/UI/UIContext';
+import { proyectosDB } from '../../database/proyectos';
+
+import { Box, Flex } from '../../styled/box/box';
+import { Section } from '../../styled/globals';
+import { Grid } from '../../styled/grid/grid';
+import { Title } from '../../styled/text/text';
+import { LineHead } from '../../styled/ui';
+import { Proyecto } from '../proyectos/Proyecto';
+
 
 export const Proyectos = () => {
     
@@ -26,29 +30,37 @@ export const Proyectos = () => {
     }, [inView])
 
     return (
-        <div ref={ ref } className={ style.proyectos } id="proyectos">
-            <div className={ style.proyectos__fila1 }>
-                {
-                    proyectosDB.filter(i => i.id <= 7).map( p => {
-                        if ( p.id > 7 ) return;
-
-                        return (
-                            <Proyecto key={ p.id + p.titulo + "75" } proyecto={ p } />
-                        )
-                    })
-                }
-                <a href='https://github.com/Leonardo-G' className={ style.proyectos__enlace }>Y más código en mi GitHub</a>
-            </div>
-            <div className={ style.proyectos__fila1 }>
-                <TituloSection title='PROYECTOS'/>
-                {
-                    proyectosDB.filter(i => i.id > 7).map( p => {
-                        return (
-                            <Proyecto key={ p.id } proyecto={ p } />
-                        )
-                    })
-                }
-            </div>
-        </div>
+        <>
+            <Section 
+                ref={ ref } 
+                id="proyectos"
+                background='#000'
+                ovHidden
+            >
+                <Box rotate='3deg'>
+                    <LineHead background='yellow'>
+                        <Flex columnGap={ 50 }>
+                            <Title className='f-auto' size={ 55 } color='#fff'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } color='#000'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } color='#fff'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } color='#000'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } color='#fff'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } color='#000'>PROYECTOS</Title>
+                        </Flex>
+                    </LineHead>
+                </Box>
+                <Box padding='20px 0'></Box>
+                <Grid className='container' rows='600px 300px 500px 400px' gap={ 50 }>
+                    {
+                        proyectosDB.map( p => (
+                            <Proyecto
+                                key={ p.id }
+                                proyecto={ p }
+                            />
+                        ) )
+                    }
+                </Grid>
+            </Section>
+        </>
     )
 }

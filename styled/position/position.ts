@@ -9,9 +9,11 @@ export const Position = styled.div`
         left?: string;
         zIndex?: number;
         width?: string;
+        transform?: string;
     }) => top && top };
     left: ${ ({ left }) => left && left };
     bottom: ${ ({ bottom }) => bottom && bottom };
     z-index: ${ ({ zIndex }) => zIndex ? zIndex : 1 };
     ${ ({ width }) => width && `width: ${ width }` }
+    ${ ({ transform }) => transform && `transform: ${ transform }` }
 `

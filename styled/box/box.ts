@@ -14,6 +14,10 @@ export const Box = styled.div`
         ovHidden?: boolean;
         zIndex?: string;
         transition?: boolean;
+        rotate?: string;
+        radius?: string;
+        none?: boolean;
+        hover?: {};
     }) => height ? height : "fit-content" };
     ${ ({ padding }) => padding && { "padding": padding } };
     ${ ({ border }) => border && { "border": border } };
@@ -25,7 +29,10 @@ export const Box = styled.div`
     ${ ({ ovHidden }) => ovHidden && { "overflow": "hidden" } };
     ${ ({ zIndex }) => zIndex && { "z-index": zIndex } };
     ${ ({ transition }) => transition && { "transition": ".3s all ease" } };
-    
+    ${ ({ rotate }) => rotate && { "transform": `rotate(${ rotate })` } };
+    ${ ({ radius }) => radius && `border-radius: ${ radius }` };
+    ${ ({ none }) => none && `visibility: hidden` };
+    ${ ({ hover }) => hover && `&:hover ${ hover }` };
 `
 
 //COMPONENTE para utilizar propiedades FLEX
