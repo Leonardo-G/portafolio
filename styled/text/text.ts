@@ -12,8 +12,10 @@ export const Title = styled.h2`
     font-size: ${ ({ size }: { 
         size?: number;    // Tamaño que va a tener la letra cuando este en tamaño de escritorio.
         color?: string;
+        center?: boolean;
     }) => size ? `${ size }px` : `24px` };
     color: ${ ({ color }) => color ? color : "#fff" };
+    ${ ({ center }) => center && "text-align: center" }
 `
 
 export const Text = styled.p`
@@ -22,10 +24,12 @@ export const Text = styled.p`
         color?: string;
         weight?: number;
         paddingBt?: boolean;
+        center?: boolean;
     }) => size ? `${ size }px` : "16px" };
     color: ${ ({ color }) => color ? color : "#000" };
     ${ ({ weight }) => weight && `font-weight: ${ weight }` };
     ${ ({ paddingBt }) => paddingBt && `padding-bottom: 15px` };
+    ${ ({ center }) => center && "text-align: center" };
 `
 
 export const TextLink = styled.a`

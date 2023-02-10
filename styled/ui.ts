@@ -54,3 +54,35 @@ export const Button = styled.button`
     padding: 20px;
     margin-top: 50px;
 `
+
+export const Input = styled.input`
+    padding: 20px 30px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #000;
+    font-weight: 600;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 40px;
+`
+
+export const TextArea = styled.textarea`
+    padding: 20px 30px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #000;
+    font-weight: 600;
+    width: 100%;
+    font-size: 16px;
+`
+
+export const ButtonForm = styled.button`
+    padding: 20px;
+    background: yellow;
+    border-radius: 16px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+`

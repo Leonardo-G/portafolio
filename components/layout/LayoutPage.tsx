@@ -26,7 +26,6 @@ export const LayoutPage: FC<Props> = ({ children }) => {
                     <div 
                         className={` ${ styles.layout__nav } ${ isOpenNav && styles['layout__nav--open']} `}
                     >
-                        <Nav />
                     </div>
                     
                     <div 

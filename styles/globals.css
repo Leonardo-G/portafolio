@@ -12,7 +12,7 @@ body{
   box-sizing: border-box;
 }
 
-p, h1, h2, a, input, textarea, li{
+p, h1, h2, a, input, textarea, li, button{
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.06em;
 }

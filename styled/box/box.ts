@@ -17,6 +17,7 @@ export const Box = styled.div`
         rotate?: string;
         radius?: string;
         none?: boolean;
+        center?: boolean;
         hover?: {};
     }) => height ? height : "fit-content" };
     ${ ({ padding }) => padding && { "padding": padding } };
@@ -33,6 +34,7 @@ export const Box = styled.div`
     ${ ({ radius }) => radius && `border-radius: ${ radius }` };
     ${ ({ none }) => none && `visibility: hidden` };
     ${ ({ hover }) => hover && `&:hover ${ hover }` };
+    ${ ({ center }) => center && "margin: 0 auto" };
 `
 
 //COMPONENTE para utilizar propiedades FLEX

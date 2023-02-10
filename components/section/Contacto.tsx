@@ -8,6 +8,10 @@ import { UIContext } from '../../context/UI/UIContext';
 import styles from "../../styles/section/Contacto.module.css";
 import { validForm, sendEmail } from '../../utils/sendEmail';
 import { Spinner } from '../UI/Spinner';
+import { Section } from '../../styled/globals';
+import { Text, Title } from '../../styled/text/text';
+import { Box } from '../../styled/box/box';
+import { ButtonForm, Input, TextArea } from '../../styled/ui';
 
 export const Contacto: FC = () => {
 
@@ -60,28 +64,32 @@ export const Contacto: FC = () => {
     }
 
     return (
-        <section ref={ ref } className={ styles.contacto } id="contacto">
+        <Section 
+            ref={ ref }  
+            id="contacto"
+        >
+            <Box background='yellow' padding='50px 0'>
+                <Title center color='#000' size={ 50 }>Contacto</Title>
+                <Text center weight={ 500 }>Correo: guanuco43@gmail.com</Text>
+            </Box>
             
-            <div className={ styles.contacto__campos }>
-                <TituloSection title='Contacto'/>
-            </div>
 
-            <div className={ styles.contacto__campos }>
-                <input 
+            <Box padding='100px 0' width='min(700px, 95%)' center>
+                <Input 
                     className={ styles['contacto__campos--input'] }
                     name="nombre" 
                     type="text" 
                     placeholder='Nombre...'
                     onChange={ handleChangeValues }    
                 />
-                <input 
+                <Input 
                     className={ styles['contacto__campos--input'] } 
                     type="text" 
                     placeholder='Correo...'
                     name="correo" 
                     onChange={ handleChangeValues } 
                 />
-                <textarea 
+                <TextArea 
                     className={ styles['contacto__campos--textarea'] } 
                     placeholder='Mensaje...'
                     name="mensaje"
@@ -95,18 +103,17 @@ export const Contacto: FC = () => {
                     isSend && 
                     <p className={ styles.contacto_succes }> Enviado!.👍🏼 </p>
                 }
-                <button 
+                <ButtonForm 
                     onClick={ handleSendEmail }
-                    className={ styles.contacto__button }
                 >
                     {
                         loader 
                         ?   <Spinner />
                         :   "Enviar"
                     }
-                </button>
+                </ButtonForm>
                 
-            </div>
-        </section>
+            </Box>
+        </Section>
     )
 }
