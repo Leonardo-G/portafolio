@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, UIEvent, useState } from 'react';
 import Head from 'next/head';
 
 import { Nav } from '../UI/Nav';
@@ -16,13 +16,19 @@ interface Props {
 export const LayoutPage: FC<Props> = ({ children }) => {
     
     const [isOpenNav, setIsOpenNav] = useState(false);
+    
+    const handleScroll = ( e: UIEvent<HTMLDivElement> ) => {
+        console.log( window.pageYOffset );
+    }
 
     return (
-        <>
+        <div>
             <Head>
                 <title>Leonardo Guanuco</title>              
             </Head>
-            <main>
+            <main
+                onScroll={ handleScroll }
+            >
                 <header>
                     <nav>
                         <Nav />
@@ -34,6 +40,6 @@ export const LayoutPage: FC<Props> = ({ children }) => {
                     </div>
                 </Box>
             </main>
-        </>
+        </div>
     )
 }

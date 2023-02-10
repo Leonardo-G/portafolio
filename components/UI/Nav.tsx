@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { UIContext } from '../../context/UI/UIContext';
 
 import styles from "../../styles/UI/Nax.module.css";
 import { Position } from '../../styled/position/position';
@@ -13,13 +11,30 @@ import { Text } from '../../styled/text/text';
 
 export const Nav = () => {
 
-    const { campo, onHover, outHover } = useContext(  UIContext );
-    const [isOn, setIsOn] = useState(false);
+    const [isUp, setIsUp] = useState(false);
 
     useEffect(() => {
-        setIsOn( true )
-    }, [])
+        let principal = window.pageYOffset
+        const handleScroll = () => {
+            if ( principal >= window.pageYOffset ) {
+                setIsUp( true );
+                principal = window.pageYOffset;
+            } else {
+                principal = window.pageYOffset;
 
+                if ( setIsUp ) {
+                    setIsUp( false );
+                }
+            }
+        };
+      
+        window.addEventListener('scroll', handleScroll);
+      
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [])
+    
     return (
         <Position
             top="0%"
@@ -27,6 +42,11 @@ export const Nav = () => {
             width='100%'
             fixed
             zIndex={ 99 }
+            style={{
+                transform: isUp ? "translateY(0%)" : "translateY(-100%)",
+                transition: ".5s all ease",
+                boxShadow: "0px 0px 20px rgb(0 0 0 / 25%)"
+            }}
         >
             <Box background='#fff' padding='20px'>
                 <Flex className='container' colCenter justifyContent='space-around'>
