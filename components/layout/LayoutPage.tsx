@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import styles from "../../styles/layout/LayoutPage.module.css";
+import { Box } from '../../styled/box/box';
 
 interface Props {
     children?: ReactNode
@@ -22,34 +23,16 @@ export const LayoutPage: FC<Props> = ({ children }) => {
                 <title>Leonardo Guanuco</title>              
             </Head>
             <main>
-                <div style={{ width: "100%", overflow: "hidden" }}>
-                    <div 
-                        className={` ${ styles.layout__nav } ${ isOpenNav && styles['layout__nav--open']} `}
-                    >
+                <header>
+                    <nav>
+                        <Nav />
+                    </nav>
+                </header>
+                <Box width='100%' ovHidden>
+                    <div>
+                        { children }
                     </div>
-                    
-                    <div 
-                        className={ styles.button__navbar }
-                        onClick={ () => isOpenNav ? setIsOpenNav( false ) : setIsOpenNav( true ) }    
-                    >
-                        {
-                            isOpenNav ?
-                                <FontAwesomeIcon 
-                                    icon={ faXmark }
-                                    style={{ color: "#fff" }}
-                                />
-                            :
-                                <FontAwesomeIcon 
-                                    icon={ faBars }
-                                />
-                        }
-                    </div>
-                    <div className={ styles.layout__main }>
-                        <div>
-                            { children }
-                        </div>
-                    </div>
-                </div>
+                </Box>
             </main>
         </>
     )

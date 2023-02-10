@@ -25,11 +25,17 @@ export const Text = styled.p`
         weight?: number;
         paddingBt?: boolean;
         center?: boolean;
+        family?: string;
+        width?: string;
+        lh?: string;
     }) => size ? `${ size }px` : "16px" };
     color: ${ ({ color }) => color ? color : "#000" };
     ${ ({ weight }) => weight && `font-weight: ${ weight }` };
     ${ ({ paddingBt }) => paddingBt && `padding-bottom: 15px` };
     ${ ({ center }) => center && "text-align: center" };
+    ${ ({ family }) => family && `font-family: ${ family }` };
+    ${ ({ width }) => width && `width: ${ width }` };
+    ${ ({ lh }) => lh && `line-height: ${ lh }` };
 `
 
 export const TextLink = styled.a`

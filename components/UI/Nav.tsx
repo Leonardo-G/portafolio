@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UIContext } from '../../context/UI/UIContext';
 
 import styles from "../../styles/UI/Nax.module.css";
+import { Position } from '../../styled/position/position';
+import { Box, Flex } from '../../styled/box/box';
+import { Text } from '../../styled/text/text';
 
 export const Nav = () => {
 
@@ -18,60 +21,38 @@ export const Nav = () => {
     }, [])
 
     return (
-        <div 
-            className={`${ styles.nav } ${ isOn && styles['nav--on'] }`} 
-            onMouseOver={ onHover }
-            onMouseOut={ outHover }
+        <Position
+            top="0%"
+            left='0%'
+            width='100%'
+            fixed
+            zIndex={ 99 }
         >
-            <a 
-                className={`${ styles.enlace } ${ campo === "inicio" && styles['background-hover'] }`} 
-                href="#inicio"
-            >
-                <p>I</p>
-                <p>n</p>
-                <p>i</p>
-                <p>c</p>
-                <p>i</p>
-                <p>o</p>
-            </a>
-            <a className={`${ styles.enlace } ${ campo === "nosotros" && styles['background-hover'] }`} href="#nosotros">
-                <p>S</p>
-                <p>o</p>
-                <p>b</p>
-                <p>r</p>
-                <p>e </p>
-                <p> m</p>
-                <p>i</p>
-            </a>
-            <a className={`${ styles.enlace } ${ campo === "proyectos" && styles['background-hover'] }`} href="#proyectos">
-                <p>P</p>
-                <p>r</p>
-                <p>o</p>
-                <p>y</p>
-                <p>e</p>
-                <p>c</p>
-                <p>t</p>
-                <p>o</p>
-                <p>s</p>
-            </a>
-            <a className={`${ styles.enlace } ${ campo === "contacto" && styles['background-hover'] }`} href="#contacto">
-                <p>C</p>
-                <p>o</p>
-                <p>n</p>
-                <p>t</p>
-                <p>a</p>
-                <p>c</p>
-                <p>t</p>
-                <p>o</p>
-            </a>
-            <div className={ styles.enlace__redes }>
-                <Link href="https://www.linkedin.com/in/leonardo-guanuco-frontend/" target="_blank" rel="noopener noreferrer"  className={ styles['icon--redes'] }>
-                        <FontAwesomeIcon icon={ faLinkedin }/>
-                </Link>
-                <Link href="https://github.com/Leonardo-G" target="_blank" rel="noopener noreferrer" className={ styles['icon--redes'] }>
-                    <FontAwesomeIcon icon={ faGithub }/>
-                </Link>
-            </div>
-        </div>
+            <Box background='#fff' padding='20px'>
+                <Flex className='container' colCenter justifyContent='space-around'>
+                    <Text width='100px' family='Shadows Into Light' lh='0.9' size={ 24 }>Leonardo Guanuco</Text>
+                    <Flex columnGap={ 30 }>
+                        <a style={{ color: "#000" }} href="">Inicio</a>
+                        <a style={{ color: "#000" }} href="">Sobre mí</a>
+                        <a style={{ color: "#000" }} href="">Proyectos</a>
+                        <a style={{ color: "#000" }} href="">Contacto</a>
+                    </Flex>
+                    <div>
+                        <Link href="https://www.linkedin.com/in/leonardo-guanuco-frontend/" target="_blank" rel="noopener noreferrer"  className={ styles['icon--redes'] }>
+                                <FontAwesomeIcon 
+                                    icon={ faLinkedin }
+                                    color="#000"
+                                />
+                        </Link>
+                        <Link href="https://github.com/Leonardo-G" target="_blank" rel="noopener noreferrer" className={ styles['icon--redes'] }>
+                            <FontAwesomeIcon 
+                                icon={ faGithub }
+                                color="#000"    
+                            />
+                        </Link>
+                    </div>
+                </Flex>
+            </Box>
+        </Position>
     )
 }

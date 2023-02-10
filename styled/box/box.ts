@@ -48,12 +48,14 @@ export const Flex = styled.div`
         gap?: number;
         ovHidden?: boolean;
         border?: string;
+        justifyContent?: "space-between" | "space-around";
     }) => center ? "center" : "inherit" };
     
     ${ ({ gap, columnGap }) => gap ? { "gap": `${ gap }px` } : columnGap && { "column-gap": `${ columnGap }px` } };
     ${ ({ wrap }) => wrap && { "flex-wrap": "wrap" } };
     ${ ({ colCenter }) => colCenter && { "align-items": "center" } };
     ${ ({ ovHidden }) => ovHidden && { "overflow": "hidden" } };
+    ${ ({ justifyContent }) => justifyContent && `justify-content: ${ justifyContent }` };
 
     //clases para colocar a los elementos hijos.
     .f-xs {
