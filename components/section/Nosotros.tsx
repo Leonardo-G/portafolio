@@ -35,17 +35,16 @@ export const Nosotros = () => {
                 background="#000"
             >
                 <Flex center columnGap={ 40 }>
-                    <Title className='f-auto' size={ 55 }>SOBRE MI</Title>
-                    <Title className='f-auto' size={ 55 }>SOBRE MI</Title>
-                    <Title className='f-auto' size={ 55 }>SOBRE MI</Title>
-                    <Title className='f-auto' size={ 55 }>SOBRE MI</Title>
-                    <Title className='f-auto' size={ 55 }>SOBRE MI</Title>
+                    <Title sizeXL={ 35 } className='f-auto' size={ 55 }>SOBRE MI</Title>
+                    <Title sizeXL={ 35 } className='f-auto' size={ 55 }>SOBRE MI</Title>
+                    <Title sizeXL={ 35 } className='f-auto' size={ 55 }>SOBRE MI</Title>
+                    <Title sizeXL={ 35 } className='f-auto' size={ 55 }>SOBRE MI</Title>
                 </Flex>
             </LineHead>
             <Section 
                 background='#ff16b9ed' 
                 ref={ ref } 
-                id="nosotros"
+                id="sobremi"
             >
                 <Box className='container'>
                     <Flex colCenter columnGap={ 40 }>

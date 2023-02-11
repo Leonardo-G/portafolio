@@ -12,7 +12,7 @@ import { Box } from '../../styled/box/box';
 
 export const Portada = () => {
 
-    const { changeCampoNav, isHover } = useContext(UIContext);
+    const { changeCampoNav } = useContext(UIContext);
     const [isOn, setIsOn] = useState(false);
 
     const { ref, inView } = useInView({
@@ -38,9 +38,15 @@ export const Portada = () => {
             background="#ffff00"
         >
             <Box height='700px' className='container relative'>
-                <Position top="40%">
-                    <TitleMain size={ 80 }>Hola, Soy Leonardo Guanuco</TitleMain>
-                    <Text size={ 35 }>Desarrollador JavaScript/TypeScript</Text>
+                <Position top="60%">
+                    <TitleMain 
+                        size={ 80 }
+                        sizeXL={ 50 }
+                    >Hola, Soy Leonardo Guanuco</TitleMain>
+                    <Text 
+                        size={ 35 }
+                        sizeXL={ 24 }    
+                    >Desarrollador JavaScript/TypeScript</Text>
                 </Position>
                 <BoxWhite 
                     height={ 156 }

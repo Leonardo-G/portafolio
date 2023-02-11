@@ -9,6 +9,7 @@ import { Box, Flex } from '../../styled/box/box'
 import { Position } from '../../styled/position/position'
 import { Text, TextLink } from '../../styled/text/text'
 import { ICertificate } from '../../interface/certificate'
+import { IconSize } from '../../styled/icon/icon'
 
 interface Props {
     certificate: ICertificate;
@@ -45,34 +46,37 @@ export const Certificate: FC<Props> = ({ certificate: { certificate, education, 
                         <Text
                             weight={ 700 } 
                             size={ 25 }
+                            sizeXL={ 18 }
                             className="f-2"
                         >{ certificate }</Text>
                         <Text
                             className="f-auto"
                         >{ education }</Text>
                         <TextLink 
+                            size={ 14 }
                             href={ linkCertificate }
                             target="_blank"
                             rel="nooponer noreferrer"
-                            size={ 14 }
                             className="f-auto"
                         >{ type }</TextLink>
                         <Text 
                             size={ 18 } 
+                            sizeXL={ 14 }
                             weight={ 600 }
                             className="f-auto"
                         >{ year }</Text>
                         <Box>
-                            <FontAwesomeIcon 
-                                icon={ faAdd } 
-                                size="4x" 
-                                onClick={ () => setisViewCertificate( !isViewCertificate ) }
-                                style={{ 
-                                    cursor: "pointer",
-                                    transform: isViewCertificate ? "rotate(45deg)" : "rotate(0)",
-                                    transition: ".5s all ease"
-                                }}
-                            />
+                            <IconSize size={ 60 } sizeXL={ 30 }>
+                                <FontAwesomeIcon 
+                                    icon={ faAdd } 
+                                    onClick={ () => setisViewCertificate( !isViewCertificate ) }
+                                    style={{ 
+                                        cursor: "pointer",
+                                        transform: isViewCertificate ? "rotate(45deg)" : "rotate(0)",
+                                        transition: ".5s all ease"
+                                    }}
+                                />
+                            </IconSize>
                         </Box>
                     </Flex>
                 </Box>
@@ -82,14 +86,17 @@ export const Certificate: FC<Props> = ({ certificate: { certificate, education, 
                     borderY='2px solid #000'
                     transition
                     height={ isViewCertificate ? "500px" : "0px" }
+                    overflowY
                 >
-                    <Flex>
+                    <Flex columnGap={ 40 }>
                         <Box className='f-auto'>
                             <Text paddingBt>Lo que se aprendió</Text>
                             <ul>
                                 {
                                     knowledge.map( (k, idx) => (
-                                        <li key={ idx }>{ k }</li>
+                                        <li key={ idx }>
+                                            <Text>{ k }</Text>
+                                        </li>
                                     ) )
                                 }
                             </ul>

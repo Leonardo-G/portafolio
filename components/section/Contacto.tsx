@@ -69,7 +69,7 @@ export const Contacto: FC = () => {
             id="contacto"
         >
             <Box background='yellow' padding='50px 0'>
-                <Title center color='#000' size={ 50 }>Contacto</Title>
+                <Title center color='#000' size={ 50 } sizeXL={ 35 }>Contacto</Title>
                 <Text center weight={ 500 }>Correo: guanuco43@gmail.com</Text>
             </Box>
             

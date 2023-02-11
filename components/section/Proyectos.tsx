@@ -40,12 +40,12 @@ export const Proyectos = () => {
                 <Box rotate='3deg'>
                     <LineHead background='yellow'>
                         <Flex columnGap={ 50 }>
-                            <Title className='f-auto' size={ 55 } color='#fff'>PROYECTOS</Title>
-                            <Title className='f-auto' size={ 55 } color='#000'>PROYECTOS</Title>
-                            <Title className='f-auto' size={ 55 } color='#fff'>PROYECTOS</Title>
-                            <Title className='f-auto' size={ 55 } color='#000'>PROYECTOS</Title>
-                            <Title className='f-auto' size={ 55 } color='#fff'>PROYECTOS</Title>
-                            <Title className='f-auto' size={ 55 } color='#000'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } sizeXL={ 35 } color='#fff'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } sizeXL={ 35 } color='#000'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } sizeXL={ 35 } color='#fff'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } sizeXL={ 35 } color='#000'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } sizeXL={ 35 } color='#fff'>PROYECTOS</Title>
+                            <Title className='f-auto' size={ 55 } sizeXL={ 35 } color='#000'>PROYECTOS</Title>
                         </Flex>
                     </LineHead>
                 </Box>

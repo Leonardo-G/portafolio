@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { screenSizes } from "../../utils/responsive";
 
 //Componente solamente para manejar las propiedades de estilo de una caja
 export const Box = styled.div`
@@ -19,6 +20,8 @@ export const Box = styled.div`
         none?: boolean;
         center?: boolean;
         hover?: {};
+        overflowY?: boolean;
+        dNone?: boolean;
     }) => height ? height : "fit-content" };
     ${ ({ padding }) => padding && { "padding": padding } };
     ${ ({ border }) => border && { "border": border } };
@@ -35,6 +38,12 @@ export const Box = styled.div`
     ${ ({ none }) => none && `visibility: hidden` };
     ${ ({ hover }) => hover && `&:hover ${ hover }` };
     ${ ({ center }) => center && "margin: 0 auto" };
+    ${ ({ overflowY }) => overflowY && "overflow-y: scroll" };
+
+    @media ( max-width: ${ screenSizes.XM }px ) {
+        
+        ${ ({ dNone }) => dNone && "display: none" };
+    }
 `
 
 //COMPONENTE para utilizar propiedades FLEX

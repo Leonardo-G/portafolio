@@ -52,10 +52,10 @@ export const Nav = () => {
                 <Flex className='container' colCenter justifyContent='space-around'>
                     <Text width='100px' family='Shadows Into Light' lh='0.9' size={ 24 }>Leonardo Guanuco</Text>
                     <Flex columnGap={ 30 }>
-                        <a style={{ color: "#000" }} href="">Inicio</a>
-                        <a style={{ color: "#000" }} href="">Sobre mí</a>
-                        <a style={{ color: "#000" }} href="">Proyectos</a>
-                        <a style={{ color: "#000" }} href="">Contacto</a>
+                        <a style={{ color: "#000" }} href="#inicio">Inicio</a>
+                        <a style={{ color: "#000" }} href="#sobremi">Sobre mí</a>
+                        <a style={{ color: "#000" }} href="#proyectos">Proyectos</a>
+                        <a style={{ color: "#000" }} href="#contacto">Contacto</a>
                     </Flex>
                     <div>
                         <Link href="https://www.linkedin.com/in/leonardo-guanuco-frontend/" target="_blank" rel="noopener noreferrer"  className={ styles['icon--redes'] }>
