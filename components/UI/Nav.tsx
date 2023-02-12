@@ -13,7 +13,7 @@ import { IconSize } from '../../styled/icon/icon';
 
 export const Nav = () => {
 
-    const [isUp, setIsUp] = useState(false);
+    const [isUp, setIsUp] = useState(true);
     const [activeNavBar, setActiveNavBar] = useState(false);
 
     useEffect(() => {
