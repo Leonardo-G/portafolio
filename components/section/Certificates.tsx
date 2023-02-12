@@ -14,6 +14,7 @@ export const Certificates = () => {
                 className='container' 
                 color='#000' 
                 size={ 40 }
+                sizeXL={ 25 }
             >CERTIFICACIONES</Title>
             <Box border="3px solid #000">
                 <Box className='container'>

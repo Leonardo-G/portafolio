@@ -47,6 +47,7 @@ export const Certificate: FC<Props> = ({ certificate: { certificate, education, 
                             weight={ 700 } 
                             size={ 25 }
                             sizeXL={ 18 }
+                            sizeXM={ 14 }
                             className="f-2"
                         >{ certificate }</Text>
                         <Text
@@ -59,6 +60,7 @@ export const Certificate: FC<Props> = ({ certificate: { certificate, education, 
                             target="_blank"
                             rel="nooponer noreferrer"
                             className="f-auto"
+                            dNoneXM
                         >{ type }</TextLink>
                         <Text 
                             size={ 18 } 

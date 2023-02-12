@@ -5,6 +5,7 @@ import { screenSizes } from "../../utils/responsive";
 export const Box = styled.div`
     height: ${ ({ height }: {
         height?: string;
+        heightXM?: string;
         border?: string;
         borderTopNone?: boolean;
         padding?: string;
@@ -48,6 +49,7 @@ export const Box = styled.div`
 
     @media ( max-width: ${ screenSizes.XM }px ) {
         
+        ${ ({ heightXM }) => heightXM && `height: ${ heightXM }` };
         ${ ({ dNone }) => dNone && "display: none" };
     }
 `

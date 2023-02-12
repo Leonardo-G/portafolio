@@ -67,6 +67,7 @@ export const Contacto: FC = () => {
         <Section 
             ref={ ref }  
             id="contacto"
+            paddingNone
         >
             <Box background='yellow' padding='50px 0'>
                 <Title center color='#000' size={ 50 } sizeXL={ 35 }>Contacto</Title>

@@ -93,7 +93,7 @@ export const Nav = () => {
             <NavResponsive 
                 active={ activeNavBar }
             >
-                <Position fixed top='5%' left='90%'>
+                <Position fixed top='5%' left='80%'>
                     <FontAwesomeIcon 
                         icon={ faXmark } 
                         size="3x"

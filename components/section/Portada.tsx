@@ -37,15 +37,21 @@ export const Portada = () => {
             id="inicio"
             background="#ffff00"
         >
-            <Box height='700px' className='container relative'>
+            <Box 
+                height='700px' 
+                heightXM='500px'
+                className='container relative'
+            >
                 <Position top="60%">
                     <TitleMain 
                         size={ 80 }
                         sizeXL={ 50 }
+                        sizeXM={ 35 }
                     >Hola, Soy Leonardo Guanuco</TitleMain>
                     <Text 
                         size={ 35 }
-                        sizeXL={ 24 }    
+                        sizeXL={ 24 }
+                        sizeXM={ 20 }    
                     >Desarrollador JavaScript/TypeScript</Text>
                 </Position>
                 <BoxWhite 
