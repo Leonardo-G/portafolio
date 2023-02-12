@@ -19,6 +19,7 @@ export const Title = styled.h2`
     font-size: ${ ({ size }: { 
         size?: number;    // Tamaño que va a tener la letra cuando este en tamaño de escritorio.
         sizeXL?: number;
+        sizeXM?: number;
         
         color?: string;
         center?: boolean;
@@ -28,6 +29,10 @@ export const Title = styled.h2`
     
     @media ( max-width: ${ `${ screenSizes.XL }px` } ){
         ${ ({ sizeXL }) => sizeXL && `font-size: ${ sizeXL }px` };
+    }
+    
+    @media ( max-width: ${ `${ screenSizes.XM }px` } ){
+        ${ ({ sizeXM }) => sizeXM && `font-size: ${ sizeXM }px` };
     }
 `
 
@@ -44,6 +49,7 @@ export const Text = styled.p`
         family?: string;
         width?: string;
         lh?: string;
+        dNone?: boolean;
     }) => size ? `${ size }px` : "16px" };
     color: ${ ({ color }) => color ? color : "#000" };
     ${ ({ weight }) => weight && `font-weight: ${ weight }` };
@@ -59,6 +65,7 @@ export const Text = styled.p`
 
     @media ( max-width: ${ `${ screenSizes.XM }px` } ){
         font-size: ${ ({ sizeXL, sizeXM, size }) => sizeXL ? `${ sizeXL }px` : sizeXM ? `{ sizeXM }px` : size ? `{ size }px` : "14px" };
+        ${ ({ dNone }) => dNone && "display: none" };
     }
 `
 

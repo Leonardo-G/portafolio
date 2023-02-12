@@ -50,7 +50,13 @@ export const Proyectos = () => {
                     </LineHead>
                 </Box>
                 <Box padding='20px 0'></Box>
-                <Grid className='container' rows='600px 300px 500px 400px' gap={ 50 }>
+                <Grid 
+                    className='container' 
+                    rows='600px 300px 500px 400px' 
+                    rowsXM='350px 250px 350px 250px'    
+                    gap={ 50 }
+                    gapXM={ 10 }
+                >
                     {
                         proyectosDB.map( p => (
                             <Proyecto

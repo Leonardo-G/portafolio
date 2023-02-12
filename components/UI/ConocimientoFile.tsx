@@ -23,6 +23,7 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
                 <IconSize 
                     size={ 100 }
                     sizeXL={ 60 }
+                    sizeXM={ 40 }
                 >
                     <FontAwesomeIcon 
                         icon={ file }
@@ -40,6 +41,7 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
             <IconImage 
                 size={ 100 }
                 sizeXL={ 60 }
+                sizeXM={ 40 }
                 style={{
                     transitionDelay: `${(number / 3) + "s"}`
                 }}    

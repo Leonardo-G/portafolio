@@ -47,7 +47,7 @@ export const Nosotros = () => {
                 id="sobremi"
             >
                 <Box className='container'>
-                    <Flex colCenter columnGap={ 40 }>
+                    <Flex colCenter columnGap={ 40 } columnReverseXS gap={ 50 }>
                         <Box className='container f-auto'>
                             <Text color='#000'>
                                 Mi nombre es Leonardo y soy desarrollador de JavaScript, donde me especializo en el desarrollo FrontEnd y/o BackEnd. Llevo dos años practicando y estudiando de manera autodidacta creando proyectos y de manera freelance. Me apasiona el desarrollo de aplicaciones, en la cual distintos usuarios 

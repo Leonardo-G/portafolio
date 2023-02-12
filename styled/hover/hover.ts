@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { screenSizes } from "../../utils/responsive";
 
 //Componente para agregar transiciones dentro de los componentes hijos.
 //Siempre y cuando el mouse pase por encima del componente HOVER.
@@ -18,5 +19,12 @@ export const Hover = styled.div`
         visibility: visible;
         opacity: 1;
         transition: .3s all ease;
+    }
+
+    @media( max-width: ${ screenSizes.XM }px ){
+        .visibility{
+            visibility: visible;
+            opacity: 1;
+        }
     }
 `

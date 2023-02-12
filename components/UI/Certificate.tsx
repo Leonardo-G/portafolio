@@ -4,11 +4,11 @@ import { faAdd } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { ImageContainer } from '../ImageContainer'
+import { ICertificate } from '../../interface/certificate'
 
 import { Box, Flex } from '../../styled/box/box'
 import { Position } from '../../styled/position/position'
 import { Text, TextLink } from '../../styled/text/text'
-import { ICertificate } from '../../interface/certificate'
 import { IconSize } from '../../styled/icon/icon'
 
 interface Props {
@@ -51,6 +51,7 @@ export const Certificate: FC<Props> = ({ certificate: { certificate, education, 
                         >{ certificate }</Text>
                         <Text
                             className="f-auto"
+                            dNone
                         >{ education }</Text>
                         <TextLink 
                             size={ 14 }
@@ -88,7 +89,7 @@ export const Certificate: FC<Props> = ({ certificate: { certificate, education, 
                     height={ isViewCertificate ? "500px" : "0px" }
                     overflowY
                 >
-                    <Flex columnGap={ 40 }>
+                    <Flex columnGap={ 40 } columnXS>
                         <Box className='f-auto'>
                             <Text paddingBt>Lo que se aprendió</Text>
                             <ul>

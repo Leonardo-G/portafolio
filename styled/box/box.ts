@@ -21,6 +21,7 @@ export const Box = styled.div`
         center?: boolean;
         hover?: {};
         overflowY?: boolean;
+        dNoneXL?: boolean;
         dNone?: boolean;
     }) => height ? height : "fit-content" };
     ${ ({ padding }) => padding && { "padding": padding } };
@@ -40,6 +41,11 @@ export const Box = styled.div`
     ${ ({ center }) => center && "margin: 0 auto" };
     ${ ({ overflowY }) => overflowY && "overflow-y: scroll" };
 
+    @media ( max-width: ${ screenSizes.XL }px ) {
+        
+        ${ ({ dNoneXL }) => dNoneXL && "display: none" };
+    }
+
     @media ( max-width: ${ screenSizes.XM }px ) {
         
         ${ ({ dNone }) => dNone && "display: none" };
@@ -53,13 +59,17 @@ export const Flex = styled.div`
         center?: boolean;
         colCenter?: boolean;
         wrap?: boolean;
+        column?: boolean;
         columnGap?: number;
         gap?: number;
         ovHidden?: boolean;
         border?: string;
         justifyContent?: "space-between" | "space-around";
+
+        columnXS?: boolean;
+        columnReverseXS?: boolean;
     }) => center ? "center" : "inherit" };
-    
+    ${ ({ column }) => column && "flex-direction: column" };
     ${ ({ gap, columnGap }) => gap ? { "gap": `${ gap }px` } : columnGap && { "column-gap": `${ columnGap }px` } };
     ${ ({ wrap }) => wrap && { "flex-wrap": "wrap" } };
     ${ ({ colCenter }) => colCenter && { "align-items": "center" } };
@@ -76,5 +86,10 @@ export const Flex = styled.div`
 
     .f-2{
         flex: 2;
+    }
+
+    @media ( max-width: ${ screenSizes.XS }px ) {
+        ${ ({ columnXS }) => columnXS && "flex-direction: column" };
+        ${ ({ columnReverseXS }) => columnReverseXS && "flex-direction: column-reverse" };
     }
 ` 

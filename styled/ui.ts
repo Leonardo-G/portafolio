@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { screenSizes } from "../utils/responsive";
 
 export const BoxWhite = styled.div`
     border-radius: 4px;
@@ -85,4 +86,34 @@ export const ButtonForm = styled.button`
     cursor: pointer;
     font-size: 16px;
     margin-top: 30px;
+`
+
+export const NavBar = styled.div`
+    display: none;
+    cursor: pointer;
+
+    @media ( max-width: ${ screenSizes.XL }px ){
+        display: inherit
+    }
+`
+
+export const NavResponsive = styled.div`
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #fff;
+    z-index: 999;
+    transform: ${ ({ active }: { active: boolean }) => active ? "translateX(0%)" : "translateX(100%)" };
+    transition: .5s all ease;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 40px;
+
+    @media ( max-width: 920px ){
+        display: flex;
+    }
 `
