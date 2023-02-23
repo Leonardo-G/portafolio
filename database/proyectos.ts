@@ -89,12 +89,42 @@ export const proyectosDB: IProyectos[] = [
     },
     {
         id: 9,
-        titulo: "Mercado Libre clon - Backend",
+        titulo: "Api Mercado Libre clon - Backend",
         conocimientos: ["Node.js", "Express.js", "Mongodb", "NPM", "GIT", "GitHub"],
         img: "/proyectos/API.png",
         heigth: "360px",
         repositorio: "https://github.com/Leonardo-G/api-clon-mercadolibre",
-        columns: 4,
+        columns: 6,
         structure: "back"
     },
+    {
+        id: 10,
+        titulo: "Api Dot Images",
+        conocimientos: ["Node.js", "Express.js", "Mongodb", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/API.png",
+        heigth: "360px",
+        repositorio: "https://github.com/Leonardo-G/dotimage-back",
+        columns: 6,
+        structure: "back"
+    },
+    {
+        id: 11,
+        titulo: "API Adminnistrador de proyectos",
+        conocimientos: ["Node.js", "Express.js", "Mongodb", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/API.png",
+        heigth: "360px",
+        repositorio: "https://github.com/Leonardo-G/react-administrador-proyectos",
+        columns: 6,
+        structure: "back"
+    },
+    {
+        id: 12,
+        titulo: "APIRest productos",
+        conocimientos: ["Node.js", "Express.js", "Mongodb", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/API.png",
+        heigth: "360px",
+        repositorio: "https://github.com/Leonardo-G/node-primer-RESTserver",
+        columns: 6,
+        structure: "back"
+    }
 ]

@@ -79,8 +79,8 @@ export const Proyectos = () => {
                 </Box>
                 <Grid 
                     className='container' 
-                    rows='300px 300px 300px 300px' 
-                    rowsXM='300px 300px 300px 300px'    
+                    rows='300px 300px' 
+                    rowsXM='300px 300px'
                     gap={ 50 }
                     gapXM={ 10 }
                 >

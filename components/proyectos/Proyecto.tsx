@@ -13,6 +13,7 @@ import { GridChildren } from '../../styled/grid/grid'
 import { Hover } from '../../styled/hover/hover'
 import { Position } from '../../styled/position/position'
 import { Title } from '../../styled/text/text'
+import { IconSize } from '../../styled/icon/icon'
 
 interface Props {
     proyecto: IProyectos;
@@ -34,7 +35,10 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url
                             padding='20px'
                         >
                             <Flex center colCenter>
-                                <Title color='#000'>{ titulo }</Title>
+                                <Title 
+                                    color='#000'
+                                    sizeXM={ 12 }    
+                                >{ titulo }</Title>
                             </Flex>
                         </Box>
                     :
@@ -53,20 +57,22 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url
                     >
                         <Flex columnGap={ 10 }>
                             <Link href={ repositorio ? repositorio : "" }>
-                                <FontAwesomeIcon 
-                                    icon={ faGithub }
-                                    color="#000"   
-                                    size='2xl'
-                                />
+                                <IconSize size={ 30 } sizeXM={ 20 }>
+                                    <FontAwesomeIcon 
+                                        icon={ faGithub }
+                                        color="#000"  
+                                    />
+                                </IconSize>
                             </Link>
                             {
                                 url &&
                                 <Link href={ url }>
-                                    <FontAwesomeIcon 
-                                        icon={ faGlobe }
-                                        color="#000"   
-                                        size='2xl' 
-                                    />
+                                    <IconSize size={ 30 } sizeXM={ 20 }>
+                                        <FontAwesomeIcon 
+                                            icon={ faGlobe }
+                                            color="#000"   
+                                        />
+                                    </IconSize>
                                 </Link>
                             }
                         </Flex>
