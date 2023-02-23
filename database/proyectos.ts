@@ -9,7 +9,8 @@ export const proyectosDB: IProyectos[] = [
         heigth: "550px",
         repositorio: "https://github.com/Leonardo-G/react-administrador-proyectos",
         url: "https://serene-bardeen-2bafba.netlify.app/proyectos",
-        columns: 6
+        columns: 6,
+        structure: "front"
     },
     {
         id: 11,
@@ -18,7 +19,8 @@ export const proyectosDB: IProyectos[] = [
         img: "/proyectos/dotimages.png",
         heigth: "360px",
         repositorio: "https://github.com/Leonardo-G/dotimages-front",
-        columns: 6
+        columns: 6,
+        structure: "front"
     },
     {
         id: 8,
@@ -28,7 +30,8 @@ export const proyectosDB: IProyectos[] = [
         heigth: "400px",
         repositorio: "https://github.com/Leonardo-G/Arquitectura-Proyecto",
         url: "https://leonardo-g.github.io/Arquitectura-Proyecto/",
-        columns: 4
+        columns: 4,
+        structure: "front"
     },
     {
         id: 3,
@@ -38,7 +41,8 @@ export const proyectosDB: IProyectos[] = [
         heigth: "490px",
         repositorio: "https://github.com/Leonardo-G/movie-app",
         url: "https://legendary-mooncake-bb592b.netlify.app/",
-        columns: 4
+        columns: 4,
+        structure: "front"
     },
     {
         id: 2,
@@ -48,7 +52,8 @@ export const proyectosDB: IProyectos[] = [
         heigth: "290px",
         repositorio: "https://github.com/Leonardo-G/React-ecommerce-tecnologia",
         url: "https://leonardo-g.github.io/React-ecommerce-tecnologia/",
-        columns: 4
+        columns: 4,
+        structure: "front"
     },
     {
         id: 7,
@@ -57,7 +62,8 @@ export const proyectosDB: IProyectos[] = [
         img: "/proyectos/feria.png",
         heigth: "490px",
         url: "https://lavanguardiaferia.com.ar/",
-        columns: 4
+        columns: 4,
+        structure: "front"
     },
     {
         id: 1,
@@ -67,7 +73,8 @@ export const proyectosDB: IProyectos[] = [
         heigth: "290px",
         repositorio: "https://github.com/Leonardo-G/clon-mercadolibre",
         url: "https://clon-mercadolibre.vercel.app/",
-        columns: 8
+        columns: 8,
+        structure: "front"
     },
     {
         id: 4,
@@ -77,7 +84,8 @@ export const proyectosDB: IProyectos[] = [
         heigth: "490px",
         repositorio: "https://github.com/Leonardo-G/react-presupuesto",
         url: "https://distracted-aryabhata-26ea5b.netlify.app/",
-        columns: 4
+        columns: 4,
+        structure: "front"
     },
     {
         id: 9,
@@ -86,6 +94,7 @@ export const proyectosDB: IProyectos[] = [
         img: "/proyectos/API.png",
         heigth: "360px",
         repositorio: "https://github.com/Leonardo-G/api-clon-mercadolibre",
-        columns: 4
+        columns: 4,
+        structure: "back"
     },
 ]

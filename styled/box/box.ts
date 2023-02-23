@@ -57,6 +57,7 @@ export const Box = styled.div`
 //COMPONENTE para utilizar propiedades FLEX
 export const Flex = styled.div`
     display: flex;
+    height: 100%;
     justify-content: ${ ({ center }: { 
         center?: boolean;
         colCenter?: boolean;

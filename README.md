@@ -1,1 +1,3 @@
-Portafolio - Leonardo Guanuco
+# Portafolio - Leonardo Guanuco
+
+Realizado con Next/TypeScript

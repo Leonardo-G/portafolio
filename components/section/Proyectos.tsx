@@ -49,7 +49,12 @@ export const Proyectos = () => {
                         </Flex>
                     </LineHead>
                 </Box>
-                <Box padding='20px 0'></Box>
+                <Box padding='20px 0'>
+                    <Title 
+                        className='container'
+                        size={ 40 }
+                    >Front End</Title>
+                </Box>
                 <Grid 
                     className='container' 
                     rows='600px 300px 500px 400px' 
@@ -58,10 +63,33 @@ export const Proyectos = () => {
                     gapXM={ 10 }
                 >
                     {
-                        proyectosDB.map( p => (
+                        proyectosDB.filter( p => p.structure === "front").map( p => (
                             <Proyecto
                                 key={ p.id }
                                 proyecto={ p }
+                            />
+                        ) )
+                    }
+                </Grid>
+                <Box padding='20px 0'>
+                    <Title 
+                        className='container'
+                        size={ 40 }
+                    >Back End</Title>
+                </Box>
+                <Grid 
+                    className='container' 
+                    rows='300px 300px 300px 300px' 
+                    rowsXM='300px 300px 300px 300px'    
+                    gap={ 50 }
+                    gapXM={ 10 }
+                >
+                    {
+                        proyectosDB.filter( p => p.structure === "back").map( p => (
+                            <Proyecto
+                                key={ p.id }
+                                proyecto={ p }
+                                title
                             />
                         ) )
                     }
