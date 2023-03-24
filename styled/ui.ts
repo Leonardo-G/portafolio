@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { screenSizes } from "../utils/responsive";
 
+export const Layout = styled.div`
+    .cursor{
+        cursor: url(./cursor.png) 35 30, auto;
+    }
+`
+
 export const BoxWhite = styled.div`
     border-radius: 4px;
     position: absolute;
