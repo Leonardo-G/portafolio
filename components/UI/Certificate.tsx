@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { Dispatch, FC } from 'react'
 
 import { faAdd } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,12 +13,25 @@ import { IconSize } from '../../styled/icon/icon'
 
 interface Props {
     certificate: ICertificate;
+    numberCertificate: number;
+    setNumberCertificate: Dispatch<React.SetStateAction<number>>;
 }
 
-export const Certificate: FC<Props> = ({ certificate: { certificate, education, linkCertificate, imgCertificate, knowledge, technologies, type, year } }) => {
-
-    
-    const [isViewCertificate, setisViewCertificate] = useState(false);
+export const Certificate: FC<Props> = ({ 
+    certificate: { 
+        id,
+        certificate, 
+        education, 
+        linkCertificate, 
+        imgCertificate, 
+        knowledge, 
+        technologies, 
+        type, 
+        year
+    },
+    numberCertificate,
+    setNumberCertificate
+}) => {
 
     return (
         <>
@@ -72,10 +85,10 @@ export const Certificate: FC<Props> = ({ certificate: { certificate, education, 
                             <IconSize size={ 60 } sizeXL={ 30 }>
                                 <FontAwesomeIcon 
                                     icon={ faAdd } 
-                                    onClick={ () => setisViewCertificate( !isViewCertificate ) }
+                                    onClick={ () => setNumberCertificate( numberCertificate === 0 ? id : numberCertificate !== id ? id : 0 ) }
                                     style={{ 
                                         cursor: "pointer",
-                                        transform: isViewCertificate ? "rotate(45deg)" : "rotate(0)",
+                                        transform: numberCertificate === id ? "rotate(45deg)" : "rotate(0)",
                                         transition: ".5s all ease"
                                     }}
                                 />
@@ -85,10 +98,10 @@ export const Certificate: FC<Props> = ({ certificate: { certificate, education, 
                 </Box>
                 <Box 
                     background='yellow' 
-                    padding={ isViewCertificate ? "50px" : "0px 50px" }
+                    padding={ numberCertificate === id ? "50px" : "0px 50px" }
                     borderY='2px solid #000'
                     transition
-                    height={ isViewCertificate ? "500px" : "0px" }
+                    height={ numberCertificate === id ? "500px" : "0px" }
                     overflowY
                 >
                     <Flex columnGap={ 40 } columnXS>

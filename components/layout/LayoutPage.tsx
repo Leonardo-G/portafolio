@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, UIEvent, useState } from 'react';
+import React, { FC, ReactNode, UIEvent } from 'react';
 import Head from 'next/head';
 
 import { Nav } from '../UI/Nav';
@@ -10,13 +10,7 @@ interface Props {
 }
 
 export const LayoutPage: FC<Props> = ({ children }) => {
-    
-    const [isOpenNav, setIsOpenNav] = useState(false);
-    const [position, setPosition] = useState({
-        x: 0,
-        y: 0
-    })
-    
+
     const handleScroll = ( e: UIEvent<HTMLDivElement> ) => {
         console.log( window.pageYOffset );
     }

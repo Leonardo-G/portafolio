@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import { certificatesDB } from '../../database/certificates';
+import { Certificate } from '../UI/Certificate';
+
 import { Box } from '../../styled/box/box'
 import { Section } from '../../styled/globals'
-import { certificatesDB } from '../../database/certificates';
 import { Title } from '../../styled/text/text';
-import { Certificate } from '../UI/Certificate';
 
 export const Certificates = () => {
 
+    const [numberCertificate, setNumberCertificate] = useState(0);
 
     return (
         <Section>
@@ -23,6 +26,8 @@ export const Certificates = () => {
                             <Certificate 
                                 key={ c.id }
                                 certificate={ c }
+                                numberCertificate={ numberCertificate } 
+                                setNumberCertificate={ setNumberCertificate }
                             />
                         ) )
                     }
