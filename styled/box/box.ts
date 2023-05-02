@@ -5,6 +5,7 @@ import { screenSizes } from "../../utils/responsive";
 export const Box = styled.div`
     height: ${ ({ height }: {
         height?: string;
+        scrollY?: boolean;
         heightXM?: string;
         border?: string;
         borderTopNone?: boolean;

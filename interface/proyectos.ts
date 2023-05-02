@@ -26,4 +26,5 @@ export type ITecnologia =    "HTML" |
                              "GIT" | 
                              "GitHub" |
                              "Mysql"  |
-                             "Sequelize"
+                             "Sequelize" |
+                             "Nest.js"
