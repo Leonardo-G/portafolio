@@ -14,13 +14,14 @@ import { Hover } from '../../styled/hover/hover'
 import { Position } from '../../styled/position/position'
 import { Title } from '../../styled/text/text'
 import { IconSize } from '../../styled/icon/icon'
+import { Tecnologia } from '../button/Tecnologia'
 
 interface Props {
     proyecto: IProyectos;
     title?: boolean;
 }
 
-export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url, titulo }, title }) => {
+export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url, titulo, conocimientos }, title }) => {
     return (
         <GridChildren column={ columns } className="relative">
             <Hover>
@@ -56,7 +57,11 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url
                         className='none visibility'
                     >
                         <Flex columnGap={ 10 }>
-                            <Link href={ repositorio ? repositorio : "" }>
+                            <Link 
+                                href={ repositorio ? repositorio : "" }
+                                target='_blank'
+                                rel="noopener noreferrer"    
+                            >
                                 <IconSize size={ 30 } sizeXM={ 20 }>
                                     <FontAwesomeIcon 
                                         icon={ faGithub }
@@ -66,7 +71,11 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url
                             </Link>
                             {
                                 url &&
-                                <Link href={ url }>
+                                <Link 
+                                    href={ url }
+                                    target='_blank'
+                                    rel="noopener noreferrer"
+                                >
                                     <IconSize size={ 30 } sizeXM={ 20 }>
                                         <FontAwesomeIcon 
                                             icon={ faGlobe }
@@ -77,6 +86,22 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url
                             }
                         </Flex>
                     </Box>
+                </Position>
+                <Position 
+                    bottom='2%' 
+                    left='2%'
+                    className='translate'
+                >
+                    <Flex wrap gap={ 5 }>
+                        {
+                            conocimientos.map( c => (
+                                <Tecnologia 
+                                    key={ c }
+                                    title={ c }
+                                />
+                            ))
+                        }
+                    </Flex>
                 </Position>
             </Hover>
         </GridChildren>

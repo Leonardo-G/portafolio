@@ -22,4 +22,5 @@ export const GridChildren = styled.div`
     grid-column: ${ ({ column }: {
         column: number;
     }) => column ? `span ${ column }` : "1" };
+    overflow: hidden;
 `

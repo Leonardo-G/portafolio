@@ -14,11 +14,27 @@ export const Hover = styled.div`
         transition: .3s all ease;
     }
 
+    .translate{
+        transform: translateY(150%);
+        transition: .3s all ease;
+    }
+
     //Clase a la cual mostrar el elemento a través de transicion
     &:hover .visibility{
         visibility: visible;
         opacity: 1;
         transition: .3s all ease;
+    }
+
+    &:hover .translate{
+        transform: translateY(0%);
+        transition: .3s all ease;
+    }
+
+    @media( max-width: ${ screenSizes.XL }px ){
+        .translate{
+            display: none;
+        }
     }
 
     @media( max-width: ${ screenSizes.XM }px ){

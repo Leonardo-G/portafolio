@@ -126,5 +126,15 @@ export const proyectosDB: IProyectos[] = [
         repositorio: "https://github.com/Leonardo-G/node-primer-RESTserver",
         columns: 6,
         structure: "back"
+    },
+    {
+        id: 13,
+        titulo: "APIRest productos",
+        conocimientos: ["React.js", "Next.js", "Typescript", "NPM", "GIT", "GitHub"],
+        img: "/proyectos/front-mentor.png",
+        heigth: "490px",
+        repositorio: "https://github.com/Leonardo-G/front-mentor",
+        columns: 4,
+        structure: "front"
     }
 ]

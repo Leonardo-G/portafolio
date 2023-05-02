@@ -73,6 +73,13 @@ export const conocimientosDB: IConocimientos[] = [
         color: "#212121"
     },
     {
+        id: 20,
+        type: "img",
+        file: "/icons/nestjs.svg",
+        title: "Nest.js",
+        color: "red"
+    },
+    {
         id: 11,
         type: "img",
         file: "/icons/mongodb.svg",

@@ -30,6 +30,7 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
                         style={{
                             transitionDelay: `${ (number / 3) + "s" }`
                         }}
+                        title={ title }
                     />
                 </IconSize>
             </Flex>
@@ -49,6 +50,7 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
                 <Image 
                     src={ file }
                     alt={ title }
+                    title={ title }
                     fill
                 />
             </IconImage>
