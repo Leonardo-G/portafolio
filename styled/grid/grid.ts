@@ -21,6 +21,9 @@ export const Grid = styled.div`
 export const GridChildren = styled.div`
     grid-column: ${ ({ column }: {
         column: number;
+        opacity?: string;
     }) => column ? `span ${ column }` : "1" };
     overflow: hidden;
+
+    ${ ({ opacity }) => opacity && `opacity: ${ opacity }` };
 `

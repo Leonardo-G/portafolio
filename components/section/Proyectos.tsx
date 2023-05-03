@@ -1,28 +1,28 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
+import { Option } from '../UI/Option';
+import { ProyectoContainer } from '../proyectos/ProyectoContainer';
+import { ITecnologia } from '../../interface/proyectos';
 import { UIContext } from '../../context/UI/UIContext';
+import { conocimientosDB } from '../../database/conocimientos';
 
 import { Box, Flex } from '../../styled/box/box';
 import { Section } from '../../styled/globals';
 import { Text, Title } from '../../styled/text/text';
-import { LineHead } from '../../styled/ui';
-import { conocimientosDB } from '../../database/conocimientos';
-import { Option } from '../UI/Option';
 import { Select } from '../../styled/select/select';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Position } from '../../styled/position/position';
-import { ProyectoContainer } from '../proyectos/ProyectoContainer';
-import { ITecnologia } from '../../interface/proyectos';
+import { LineHead } from '../../styled/ui';
 
 
 export const Proyectos = () => {
     
     const [options, setOptions] = useState([] as ITecnologia[])
     const [isSelect, setIsSelect] = useState(false);
-    const { changeCampoNav } = useContext(UIContext)
+    const { changeCampoNav } = useContext(UIContext);
 
     const { ref, inView } = useInView({
         threshold: 0.1
@@ -48,6 +48,18 @@ export const Proyectos = () => {
             tecnology
         ]);
     }
+
+    const handleRestartOption = () => {
+        setOptions([]);
+    }
+
+    const proyectoContainer = useMemo(() => {
+        return (
+            <ProyectoContainer 
+                technologies={ options }
+            />
+        )
+    }, [options])
 
     return (
         <>
@@ -95,7 +107,10 @@ export const Proyectos = () => {
                                     height='200px' 
                                     overflowY
                                 >
-                                    <Box padding='0 0 0 10px'>
+                                    <Box 
+                                        padding='0 0 0 10px'
+                                        onClick={ handleRestartOption }    
+                                    >
                                         <Text>Ver Todos</Text>
                                     </Box>
                                     {
@@ -114,7 +129,9 @@ export const Proyectos = () => {
                         }
                     </Select>
                 </Box>
-                <ProyectoContainer />
+                {
+                    proyectoContainer
+                }
             </Section>
         </>
     )

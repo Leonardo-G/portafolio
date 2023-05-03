@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Box } from '../../styled/box/box'
 import { Title } from '../../styled/text/text'
 import { Grid } from '../../styled/grid/grid'
 import { proyectosDB } from '../../database/proyectos'
 import { Proyecto } from './Proyecto'
+import { ITecnologia } from '../../interface/proyectos'
 
-export const ProyectoContainer = () => {
+interface Props {
+    technologies: ITecnologia[];
+}
+
+export const ProyectoContainer: FC<Props> = ({ technologies }) => {
+
     return (
         <>
             <Box padding='20px 0'>
@@ -21,13 +27,14 @@ export const ProyectoContainer = () => {
                 gap={ 50 }
                 gapXM={ 10 }
             >
-                {
+                { 
                     proyectosDB.filter( p => p.structure === "front").map( p => (
                         <Proyecto
                             key={ p.id }
                             proyecto={ p }
+                            technologies={ technologies }
                         />
-                    ) )
+                    ) ) 
                 }
             </Grid>
             <Box padding='20px 0'>
@@ -49,6 +56,7 @@ export const ProyectoContainer = () => {
                             key={ p.id }
                             proyecto={ p }
                             title
+                            technologies={ technologies }
                         />
                     ) )
                 }

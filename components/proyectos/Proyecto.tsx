@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
+import { Tecnologia } from '../button/Tecnologia'
 import { ImageContainer } from '../ImageContainer'
-import { IProyectos } from '../../interface/proyectos'
+import { IProyectos, ITecnologia } from '../../interface/proyectos'
 
 import { Box, Flex } from '../../styled/box/box'
 import { GridChildren } from '../../styled/grid/grid'
@@ -14,16 +15,22 @@ import { Hover } from '../../styled/hover/hover'
 import { Position } from '../../styled/position/position'
 import { Title } from '../../styled/text/text'
 import { IconSize } from '../../styled/icon/icon'
-import { Tecnologia } from '../button/Tecnologia'
+import { compareArrays } from '../../utils/compareArrays'
 
 interface Props {
     proyecto: IProyectos;
     title?: boolean;
+    technologies: ITecnologia[];
 }
 
-export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url, titulo, conocimientos }, title }) => {
+export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url, titulo, conocimientos }, title, technologies }) => {
+    console.log("Hola")
     return (
-        <GridChildren column={ columns } className="relative">
+        <GridChildren 
+            column={ columns } 
+            className="relative"
+            opacity={ technologies.length > 0 && !compareArrays( conocimientos, technologies ) ? "0.2" : undefined}
+        >
             <Hover>
                 {
                     title 
@@ -98,6 +105,7 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url
                                 <Tecnologia 
                                     key={ c }
                                     title={ c }
+                                    technologies={ technologies }
                                 />
                             ))
                         }

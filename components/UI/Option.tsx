@@ -4,7 +4,6 @@ import { Text } from '../../styled/text/text';
 import { Flex } from '../../styled/box/box';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { IConocimientos } from '../../interface/conocimientos';
 import { ITecnologia } from '../../interface/proyectos';
 
 interface Props{
