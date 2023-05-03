@@ -3,14 +3,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { UIContext } from '../../context/UI/UIContext';
-import { proyectosDB } from '../../database/proyectos';
 
 import { Box, Flex } from '../../styled/box/box';
 import { Section } from '../../styled/globals';
-import { Grid } from '../../styled/grid/grid';
 import { Text, Title } from '../../styled/text/text';
 import { LineHead } from '../../styled/ui';
-import { Proyecto } from '../proyectos/Proyecto';
 import { conocimientosDB } from '../../database/conocimientos';
 import { Option } from '../UI/Option';
 import { Select } from '../../styled/select/select';
