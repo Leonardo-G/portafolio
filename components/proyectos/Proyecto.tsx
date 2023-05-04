@@ -24,7 +24,7 @@ interface Props {
 }
 
 export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url, titulo, conocimientos }, title, technologies }) => {
-    console.log("Hola")
+
     return (
         <GridChildren 
             column={ columns } 

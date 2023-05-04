@@ -82,52 +82,60 @@ export const Proyectos = () => {
                     </LineHead>
                 </Box>
                 <Box className='container'>
-                    <Select>
-                        <Flex
-                            justifyContent='space-between'
-                            colCenter
-                            columnGap={ 20 }
-                            onClick={ () => setIsSelect( !isSelect ) }
-                        >
-                            <Text>Tecnologías</Text>
-                            <FontAwesomeIcon 
-                                icon={ faChevronUp }
-                                style={{ 
-                                    transform: isSelect ? "rotate(180deg)" : "rotate(0)",
-                                    transition: ".3s all ease"
-                                }}    
-                            />
-                        </Flex>
-                        {
-                            isSelect &&
-                            <Position top='120%' left='0' width='100%'>
-                                <Box 
-                                    background='#fff' 
-                                    padding='10px 0 10px 0' 
-                                    height='200px' 
-                                    overflowY
-                                >
+                    <Flex 
+                        colCenter 
+                        justifyContent='space-between'
+                        columnXS
+                        gap={ 20 }
+                    >
+                        <Text color='#fff' size={ 18 }>Buscar con las siguientes tecnologías:</Text>
+                        <Select>
+                            <Flex
+                                justifyContent='space-between'
+                                colCenter
+                                columnGap={ 20 }
+                                onClick={ () => setIsSelect( !isSelect ) }
+                            >
+                                <Text>Tecnologías</Text>
+                                <FontAwesomeIcon 
+                                    icon={ faChevronUp }
+                                    style={{ 
+                                        transform: isSelect ? "rotate(180deg)" : "rotate(0)",
+                                        transition: ".3s all ease"
+                                    }}    
+                                />
+                            </Flex>
+                            {
+                                isSelect &&
+                                <Position top='120%' left='0' width='100%'>
                                     <Box 
-                                        padding='0 0 0 10px'
-                                        onClick={ handleRestartOption }    
+                                        background='#fff' 
+                                        padding='10px 0 10px 0' 
+                                        height='200px' 
+                                        overflowY
                                     >
-                                        <Text>Ver Todos</Text>
+                                        <Box 
+                                            padding='0 0 0 10px'
+                                            onClick={ handleRestartOption }    
+                                        >
+                                            <Text>Ver Todos</Text>
+                                        </Box>
+                                        {
+                                            conocimientosDB.map( c => (
+                                                <Option 
+                                                    key={ c.id }
+                                                    option={ c.title }
+                                                    color={ c.color }
+                                                    select={ options.some( o => o === c.title ) }
+                                                    handleChangeOption={ handleChangeOption }
+                                                />
+                                            ))
+                                        }
                                     </Box>
-                                    {
-                                        conocimientosDB.map( c => (
-                                            <Option 
-                                                key={ c.id }
-                                                option={ c.title }
-                                                color={ c.color }
-                                                select={ options.some( o => o === c.title ) }
-                                                handleChangeOption={ handleChangeOption }
-                                            />
-                                        ))
-                                    }
-                                </Box>
-                            </Position>
-                        }
-                    </Select>
+                                </Position>
+                            }
+                        </Select>
+                    </Flex>
                 </Box>
                 {
                     proyectoContainer

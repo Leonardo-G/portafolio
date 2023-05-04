@@ -65,7 +65,7 @@ export const Nav = () => {
                             </Flex>
                         </Box>
                         <Box dNoneXL>
-                            <Link href="https://www.linkedin.com/in/leonardo-guanuco-frontend/" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://www.linkedin.com/in/leonardo-guanuco-javascript-typescript/" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon 
                                     icon={ faLinkedin }
                                     color="#000"
