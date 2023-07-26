@@ -21,10 +21,15 @@ export type ITecnologia =    "HTML" |
                              "Firebase" |
                              "Node.js" | 
                              "Express.js" | 
+                             "PostgreSQL" | 
                              "Mongodb" | 
                              "NPM" | 
                              "GIT" | 
                              "GitHub" |
                              "Mysql"  |
                              "Sequelize" |
-                             "Nest.js"
+                             "Nest.js"        |
+                             'Python'         |
+                             'Django'         |
+                             'Jest'           |
+                             'Angular.js'

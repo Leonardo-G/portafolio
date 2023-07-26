@@ -1,9 +1,11 @@
+import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { ITecnologia } from "./proyectos";
 
 export interface IConocimientos{
     id: number
     type: "icon" | "img";
-    file: any;
+    file: string | IconDefinition;
     title: ITecnologia;
-    color: string
+    color: string;
+    stack: 'front' | 'back' | 'basic' | 'other'
 }
