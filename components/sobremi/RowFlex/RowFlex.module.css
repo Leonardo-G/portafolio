@@ -1,0 +1,8 @@
+.rowFlex{
+    display: flex;
+    column-gap: 30px;
+}
+
+.rowFlex__left{
+    flex: 0.3;
+}

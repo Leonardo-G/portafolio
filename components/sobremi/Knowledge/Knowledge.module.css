@@ -1,0 +1,9 @@
+.kwowledge{
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.35);
+}
+
+.kwowledge__icon{
+    padding: 25px 45px 0 45px;
+}

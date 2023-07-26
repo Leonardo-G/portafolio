@@ -1,4 +1,16 @@
-import { faAngular, faBootstrap, faCss3Alt, faGitAlt, faGithub, faHtml5, faJs, faNodeJs, faNpm, faPython, faReact, faSass } from "@fortawesome/free-brands-svg-icons";
+import { 
+    faAngular, 
+    faBootstrap, 
+    faCss3Alt, 
+    faGitAlt, 
+    faGithub, 
+    faHtml5, 
+    faJs, 
+    faNodeJs, 
+    faPython, 
+    faReact, 
+    faSass 
+} from "@fortawesome/free-brands-svg-icons";
 import { IConocimientos } from "../interface/conocimientos";
 
 export const conocimientosDB: IConocimientos[] = [

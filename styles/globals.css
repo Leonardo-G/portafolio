@@ -1,3 +1,9 @@
+:root {
+  --white:           #fff;
+  --secondary-color: #FF16B9;
+  --black:             #000;
+}
+
 *, *::after, *::before{
   margin: 0;
   padding: 0;
@@ -23,6 +29,12 @@ a{
   text-decoration: none;
 }
 
+/* HEADINGS */
+h3 {
+  font-family: "Poppins", sans-serif;
+
+}
+
 .container{
   margin: 0 auto;
   width: min(1200px, 90%);
@@ -32,6 +44,48 @@ a{
   position: relative;
 }
 
+/* Flex */
 .d-flex{
   display: flex;
+}
+
+/* Flex alineacion*/
+.f-1{
+  flex: 1;
+}
+
+.f-03{
+  flex: 0.3;
+}
+
+/* GAP */
+.c-gap-6{
+  column-gap: 30px;
+}
+
+/* COLOR */
+
+/* TAMAÑO FUENTE*/
+.f-size-20{
+  font-size: 20px;
+}
+
+/* FONT FAMILY */
+.roboto-mono{
+  font-family: "Roboto Mono", sans-serif;
+  letter-spacing: 0px;
+}
+
+/* TEXTO ALINEACION */
+.text-center{
+  text-align: center;
+}
+
+/* PADDING */
+.pt-4{
+  padding-top: 20px;
+}
+
+.pb-5{
+  padding-bottom: 25px;
 }
