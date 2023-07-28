@@ -2,8 +2,48 @@
     border-radius: 10px;
     background: #FFF;
     box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.35);
+    height: 180px;
 }
 
 .kwowledge__icon{
     padding: 25px 45px 0 45px;
+}
+
+.div1{
+    grid-row-start: 1;
+}
+
+.div2{
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+.div3{
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.div4{
+    grid-column-start: 4;
+    grid-row-start: 3;
+}
+
+.div5{
+    grid-column-start: 1;
+    grid-row-start: 8;
+}
+
+.div6{
+    grid-column-start: 2;
+    grid-row-start: 10;
+}
+
+.div7{
+    grid-column-start: 3;
+    grid-row-start: 8;
+}
+
+.div8{
+    grid-column-start: 4;
+    grid-row-start: 10;
 }

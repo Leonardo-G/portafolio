@@ -49,21 +49,15 @@ h3 {
   display: flex;
 }
 
-/* Flex alineacion*/
-.f-1{
-  flex: 1;
-}
-
-.f-03{
-  flex: 0.3;
-}
-
 /* GAP */
 .c-gap-6{
   column-gap: 30px;
 }
 
 /* COLOR */
+.color-w{
+  color: var(--white);
+}
 
 /* TAMAÑO FUENTE*/
 .f-size-20{
@@ -88,4 +82,9 @@ h3 {
 
 .pb-5{
   padding-bottom: 25px;
+}
+
+/* MARGIN */
+.mt-full{
+  margin-top: 70px;
 }

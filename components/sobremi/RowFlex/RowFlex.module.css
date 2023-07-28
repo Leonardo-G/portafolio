@@ -1,8 +1,16 @@
 .rowFlex{
     display: flex;
+    align-items: center;
     column-gap: 30px;
 }
 
 .rowFlex__left{
-    flex: 0.3;
+    flex: 0.35;
+}
+
+.rowFlex__rigth{
+    flex: 1;
+    display: grid;
+    column-gap: 30px;
+    grid-template-rows: repeat(14, 30px);
 }
