@@ -113,7 +113,7 @@ export const conocimientosDB: IConocimientos[] = [
     {
         id: 11,
         type: "img",
-        file: "/icons/mongodb.svg",
+        file: "/icons/mongodb.png",
         title: "Mongodb",
         color: "#4CAF50",
         stack: 'back'
@@ -121,7 +121,7 @@ export const conocimientosDB: IConocimientos[] = [
     {
         id: 17,
         type: "img",
-        file: '/icons/postgreSQL.svg',
+        file: '/icons/postgreSQL.png',
         title: "PostgreSQL",
         color: "#5882FA",
         stack: 'back'
@@ -145,7 +145,7 @@ export const conocimientosDB: IConocimientos[] = [
     {
         id: 20,
         type: "img",
-        file: '/icons/django.sql',
+        file: '/icons/django.png',
         title: "Django",
         color: "#5882FA",
         stack: 'basic'
@@ -174,5 +174,12 @@ export const conocimientosDB: IConocimientos[] = [
         color: "#000000",
         stack: 'other'
     },
-    
+    {
+        id: 15,
+        type: "img",
+        file: "/icons/jest.png",
+        title: "Jest",
+        color: "#000000",
+        stack: 'basic'
+    },
 ]

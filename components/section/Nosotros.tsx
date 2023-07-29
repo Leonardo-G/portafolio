@@ -12,6 +12,9 @@ import { conocimientosDB } from '../../database/conocimientos';
 import { ConocimientoFile } from '../UI/ConocimientoFile';
 import { ButtonDownload } from '../button/ButtonDownload';
 import { RowFlex } from '../sobremi/RowFlex/RowFlex';
+import { RowFlexReverse } from '../sobremi/RowFlexReverse/RowFlexReverse';
+import { KnowledgeColumn } from '../sobremi/KnowledgeColumn/KnowledgeColumn';
+import { TextHeading } from '../text/TextHeading';
 
 export const Nosotros = () => {
 
@@ -49,6 +52,26 @@ export const Nosotros = () => {
             >
                 <Box className='container'>
                     <RowFlex />
+                </Box>
+                <Box className='container mt-full'>
+                    <RowFlexReverse />
+                </Box>
+                <Box className='container mt-full'>
+                    <div className='d-flex'>
+                        <KnowledgeColumn stack='basic'>
+                            <TextHeading 
+                                title='Conocimientos básicos'
+                                text='21313sadasdasd'
+                            />
+                        </KnowledgeColumn>
+                        <KnowledgeColumn stack='other'>
+                            <TextHeading 
+                                title='Conocimientos básicos'
+                                text='21313sadasdasd'
+                            />
+                        </KnowledgeColumn>
+
+                    </div>
                 </Box>
             </Section>
         </>

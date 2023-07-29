@@ -1,5 +1,6 @@
 .rowFlex{
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     column-gap: 35px;
 }

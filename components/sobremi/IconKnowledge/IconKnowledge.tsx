@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { IconDefinition, faHtml5 } from '@fortawesome/free-brands-svg-icons'
+import { IconDefinition } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import styles from "./IconKnowledge.module.css";
@@ -18,8 +18,10 @@ export const IconKnowledge: FC<Props> = ({ file, type, title }) => {
       <div className={ styles.iconKnowledge }>
         <Image 
           src={ file as string }
-          fill
+          width={50}
+          height={50}
           alt={ title }
+          className={ styles.iconKnowledge__img }
         />
       </div>
     )
