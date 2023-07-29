@@ -25,3 +25,18 @@
     transform: translate(-50%, -50%);
     object-fit: contain;
 }
+
+@media (max-width: 720px) {
+    .iconKnowledge {
+        height: 60px;
+        width: 60px;
+    }
+
+    .iconKnowledge__icon{
+        width: 30px;
+    }
+
+    .iconKnowledge__img{
+        width: 30px;
+    }
+}

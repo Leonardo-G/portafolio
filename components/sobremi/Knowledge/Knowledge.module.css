@@ -7,6 +7,8 @@
 
 .kwowledge__icon{
     padding: 25px 45px 0 45px;
+    display: flex;
+    justify-content: center;
 }
 
 .div1{
@@ -46,4 +48,40 @@
 .div8{
     grid-column-start: 4;
     grid-row-start: 10;
+}
+
+@media (max-width: 920px) {
+    .div4{
+        grid-column-start: 1;
+        grid-row-start: 15;
+    }
+
+    .div8{
+        grid-column-start: 2;
+        grid-row-start: 17;
+    }
+}
+
+@media (max-width: 720px) {
+    .kwowledge{
+        height: 150px;
+    }
+
+    .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8{
+        grid-column-start: initial;
+        grid-row-start: initial;
+    }
+}
+
+@media (max-width: 480px) {
+    .kwowledge{
+        height: 130px;
+    }
+
+    .kwowledge__icon{
+        padding: 20px 20px 0 20px;
+    }
+    .kwowledge p{
+        font-size: 14px;
+    }
 }

@@ -13,3 +13,20 @@
     flex-wrap: wrap;
     gap: 30px;
 }
+
+@media (max-width: 980px) {
+    .flexColumn{
+        margin-top: 50px;
+    }
+
+    .flexColumn:first-of-type{
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .flexColumn__icons {
+        gap: 10px;
+    }
+}

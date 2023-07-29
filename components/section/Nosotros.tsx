@@ -53,11 +53,11 @@ export const Nosotros = () => {
                 <Box className='container'>
                     <RowFlex />
                 </Box>
-                <Box className='container mt-full'>
+                <Box className='container mt-full mt-full-xl'>
                     <RowFlexReverse />
                 </Box>
-                <Box className='container mt-full'>
-                    <div className='d-flex'>
+                <Box className='container mt-full mt-full-xl'>
+                    <div className='d-flex f-col-xl'>
                         <KnowledgeColumn stack='basic'>
                             <TextHeading 
                                 title='Conocimientos básicos'

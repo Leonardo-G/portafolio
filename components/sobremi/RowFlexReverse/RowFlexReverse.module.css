@@ -15,3 +15,35 @@
     column-gap: 30px;
     grid-template-rows: repeat(14, 30px);
 }
+
+@media (max-width: 1080px) {
+    .rowFlex{
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    .rowFlex__rigth {
+        grid-template-rows: repeat(18, 30px);
+    }
+}
+
+@media (max-width: 920px) {
+    .rowFlex__rigth {
+        grid-template-rows: repeat(21, 30px);
+    }
+}
+
+@media (max-width: 720px) {
+    .rowFlex__rigth{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rowFlex__rigth{
+        gap: 10px;
+    }
+}
