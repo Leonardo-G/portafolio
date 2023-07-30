@@ -61,13 +61,13 @@ export const Nosotros = () => {
                         <KnowledgeColumn stack='basic'>
                             <TextHeading 
                                 title='Conocimientos básicos'
-                                text='21313sadasdasd'
+                                text='Herramientas con manejo básico'
                             />
                         </KnowledgeColumn>
                         <KnowledgeColumn stack='other'>
                             <TextHeading 
-                                title='Conocimientos básicos'
-                                text='21313sadasdasd'
+                                title='Otros'
+                                text='Otras herramientas como el control de versiones'
                             />
                         </KnowledgeColumn>
 

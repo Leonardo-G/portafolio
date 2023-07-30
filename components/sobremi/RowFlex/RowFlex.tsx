@@ -10,8 +10,13 @@ export const RowFlex = () => {
         <div className={ style.rowFlex }>
             <div className={ style.rowFlex__left }>
                 <TextHeading 
-                    title='BackEnd'
-                    text='Mi nombre es Leonardo y soy desarrollador de JavaScript, donde me especializo en el desarrollo FrontEnd y/o BackEnd. '
+                    title='FrontEnd'
+                    text='
+                        Traduzco diseños en código funcional y estético. 
+                        desarrollo sitios web responsivos y dinámicos utilizando las tecnologías requeridas.
+                        Optimizo la velocidad de carga y la usabilidad para brindar una experiencia fluida a los usuarios.
+                        
+                    '
                 />
             </div>
             <div className={ style.rowFlex__rigth }>

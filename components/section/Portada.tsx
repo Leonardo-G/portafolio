@@ -52,7 +52,7 @@ export const Portada = () => {
                         size={ 35 }
                         sizeXL={ 24 }
                         sizeXM={ 20 }    
-                    >Desarrollador JavaScript/TypeScript</Text>
+                    >Desarrollador JavaScript / TypeScript</Text>
                 </Position>
                 <BoxWhite 
                     height={ 156 }

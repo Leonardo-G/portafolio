@@ -10,10 +10,10 @@ export const RowFlexReverse = () => {
         <div className={ style.rowFlex }>
             <div className={ style.rowFlex__left }>
                 <TextHeading 
-                    title='FrontEnd'
-                    text='Mi nombre es Leonardo y soy desarrollador 
-                    de JavaScript, donde me especializo en el 
-                    desarrollo FrontEnd y/o BackEnd.'
+                    title='BackEnd'
+                    text=' Desarrollo de bases de datos eficientes y APIs 
+                    potentes para asegurar la funcionalidad y rendimiento del lado del servidor.
+                    PostgreSQL y MySQL, integrandolo con Sequelize.'
                 />
             </div>
             <div className={ style.rowFlex__rigth }>
