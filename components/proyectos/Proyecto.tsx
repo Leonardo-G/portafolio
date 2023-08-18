@@ -36,7 +36,7 @@ export const Proyecto: FC<Props> = ({ proyecto: { img, columns, repositorio, url
                     title 
                     ?
                         <Box 
-                            height='100%' 
+                            height='100%'
                             width='100%' 
                             background='#ff16b9ed' 
                             radius='10px'

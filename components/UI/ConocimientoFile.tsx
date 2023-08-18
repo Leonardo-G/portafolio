@@ -8,6 +8,7 @@ import { IConocimientos } from '../../interface/conocimientos'
 import styles from "../../styles/UI/ConocimientoFile.module.css";
 import { Flex } from '../../styled/box/box';
 import { IconImage, IconSize } from '../../styled/icon/icon';
+import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
 interface Props{
     conocimiento: IConocimientos;
@@ -26,7 +27,7 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
                     sizeXM={ 40 }
                 >
                     <FontAwesomeIcon 
-                        icon={ file }
+                        icon={ file as IconDefinition}
                         style={{
                             transitionDelay: `${ (number / 3) + "s" }`
                         }}

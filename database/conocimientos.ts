@@ -143,7 +143,7 @@ export const conocimientosDB: IConocimientos[] = [
         stack: 'basic'
     },
     {
-        id: 20,
+        id: 21,
         type: "img",
         file: '/icons/django.png',
         title: "Django",
@@ -151,7 +151,7 @@ export const conocimientosDB: IConocimientos[] = [
         stack: 'basic'
     },
     {
-        id: 20,
+        id: 22,
         type: "icon",
         file: faAngular,
         title: "Angular.js",
