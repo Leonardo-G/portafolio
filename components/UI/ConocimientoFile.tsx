@@ -2,13 +2,13 @@ import React, { FC } from 'react'
 import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
 import { IConocimientos } from '../../interface/conocimientos'
 
-import styles from "../../styles/UI/ConocimientoFile.module.css";
-import { Flex } from '../../styled/box/box';
 import { IconImage, IconSize } from '../../styled/icon/icon';
-import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { Flex } from '../../styled/box/box';
+import styles from "../../styles/UI/ConocimientoFile.module.css";
 
 interface Props{
     conocimiento: IConocimientos;
@@ -49,7 +49,7 @@ export const ConocimientoFile: FC<Props> = ({ conocimiento: { file, title, type,
                 }}    
             >
                 <Image 
-                    src={ file }
+                    src={ file as string }
                     alt={ title }
                     title={ title }
                     fill
