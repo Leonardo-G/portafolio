@@ -1,3 +1,5 @@
+"use client"
+
 import React, { FC, useState } from 'react'
 import { OptionStyle } from '../../styled/select/select';
 import { Text } from '../../styled/text/text';

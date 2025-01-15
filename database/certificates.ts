@@ -83,7 +83,7 @@ export const certificatesDB: ICertificate[] = [
             "Conocer Server Side Rendering con React con Nextjs",
             "Deployment de Aplicaciones en React en Netlify, Heroku, Vercel y mucho más",
             "Integrar Mongo Express y Node con React",
-            "Aprender los Hooks useReducer y useContext"
+            "Aprender los Hooks useReducer y Context api"
         ],
         technologies: ["HTML5", "CSS3", "JavaScript", "React.js", "Next.js", "Tailwind CSS", "Styled Components", "Node.js", "Express.js", "MongoDB"]
     },

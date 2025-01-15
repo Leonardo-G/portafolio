@@ -1,3 +1,5 @@
+"use client"
+
 import React, { FC, ReactNode, useState } from 'react'
 import { UIContext } from './UIContext'
 

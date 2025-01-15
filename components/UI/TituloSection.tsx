@@ -1,3 +1,5 @@
+"use client"
+
 import React, { FC, useContext } from 'react';
 import { UIContext } from '../../context/UI/UIContext';
 

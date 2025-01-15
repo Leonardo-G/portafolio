@@ -1,3 +1,5 @@
+"use client"
+
 import React, { ChangeEvent, FC, useContext, useEffect, useState } from 'react'
 
 import { useInView } from 'react-intersection-observer';

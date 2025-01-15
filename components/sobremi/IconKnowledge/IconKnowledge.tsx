@@ -1,3 +1,5 @@
+"use client"
+
 import React, { FC } from 'react'
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
