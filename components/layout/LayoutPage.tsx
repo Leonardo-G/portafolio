@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { Nav } from '../UI/Nav';
 import { Box } from '../../styled/box/box';
 import { Layout } from '../../styled/ui';
+import Navbar from '../navbar/Navbar';
 
 interface Props {
     children?: ReactNode
@@ -34,14 +35,12 @@ export const LayoutPage: FC<Props> = ({ children }) => {
             >
                 <header>
                     <nav>
-                        <Nav />
+                        <Navbar />
                     </nav>
                 </header>
-                <Box width='100%' ovHidden>
                     <div>
                         { children }
                     </div>
-                </Box>
             </main>
         </Layout>
     )

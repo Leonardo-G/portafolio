@@ -1,5 +1,6 @@
 import { UIProvider } from "@/context/UI/UIProvider";
-import StyledComponentsRegistry from "@/lib/registry";
+import './globals.css'
+import Navbar from "@/components/navbar/Navbar";
 
 export default function RootLayout({
   children,
@@ -10,7 +11,8 @@ export default function RootLayout({
     <html lang="es">
       <UIProvider>
         <body>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          <Navbar />
+            {children}
         </body>
       </UIProvider>
     </html>
