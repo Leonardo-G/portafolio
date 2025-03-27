@@ -24,10 +24,10 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${openSans.variable} ${roboto.variable} font-roboto`}
+      className={`${openSans.variable} ${roboto.variable}`}
     >
       <UIProvider>
-        <body>
+        <body className="font-roboto">
           <ThemeProvider
             themes={["light", "dark"]}
             defaultTheme="light"
