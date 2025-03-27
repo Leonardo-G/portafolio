@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-open-sans)'],
-        roboto: ['var(--font-roboto)'],
+        "open-sans": ["var(--font-open-sans)", "sans-serif"],
+        roboto: ["var(--font-roboto)", "sans-serif"],
       },
     },
   },

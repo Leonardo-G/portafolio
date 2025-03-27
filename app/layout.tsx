@@ -1,8 +1,8 @@
 import { UIProvider } from "@/context/UI/UIProvider";
-import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import { ThemeProvider } from "next-themes";
 import { Open_Sans, Roboto } from "next/font/google";
+import "./globals.css";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -27,7 +27,7 @@ export default function RootLayout({
       className={`${openSans.variable} ${roboto.variable}`}
     >
       <UIProvider>
-        <body className="font-roboto">
+        <body>
           <ThemeProvider
             themes={["light", "dark"]}
             defaultTheme="light"
