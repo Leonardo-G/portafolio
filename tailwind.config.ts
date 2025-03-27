@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-open-sans)'],
+        roboto: ['var(--font-roboto)'],
+      },
     },
   },
   plugins: [],

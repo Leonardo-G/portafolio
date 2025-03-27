@@ -25,19 +25,20 @@ const Navbar = () => {
               <Link href={item.href}>
                 <p>{item.name}</p>
               </Link>
-                <AnimatePresence mode="wait">
-              {pathname === item.href && (
+              <AnimatePresence mode="wait">
+                {pathname === item.href && (
                   <motion.div
                     className="absolute -bottom left-[50%] rounded-full h-[5px] w-[5px] bg-black"
                     transition={{ type: "spring", duration: 0.6 }}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ 
+                    exit={{
                       opacity: 0,
-                      y: 10,}}
+                      y: 10,
+                    }}
                   ></motion.div>
                 )}
-                </AnimatePresence>
+              </AnimatePresence>
             </div>
           ))}
         </div>
