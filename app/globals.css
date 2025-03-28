@@ -2,9 +2,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer base {
-  body {
-    font-family: var(--font-open-sans);
-    font-weight: 400;
-  }
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
 }

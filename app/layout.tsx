@@ -26,6 +26,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${openSans.variable} ${roboto.variable}`}
     >
+      <head>
+        <title>Leonardo Guanuco</title>
+      </head>
       <UIProvider>
         <body>
           <ThemeProvider
