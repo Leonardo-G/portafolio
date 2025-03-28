@@ -1,91 +1,92 @@
-.contacto{
-    display: flex;
-    align-items: center;
-    column-gap: 20px;
+.contacto {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
 }
 
-.contacto__titulo{
-    width: 50%;
+.contacto__titulo {
+  width: 50%;
 }
 
-.contacto__campos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
+.contacto__campos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
 
-.contacto__campos--input{
-    border: none;
-    border-bottom: 1px solid #000000;
-    min-width: 350px;
-    margin: 0 auto;
-    padding: 15px;
-    margin-bottom: 30px;
-    outline: none;
-    font-size: 21px;
+.contacto__campos--input {
+  border: none;
+  border-bottom: 1px solid #000000;
+  min-width: 350px;
+  margin: 0 auto;
+  padding: 15px;
+  margin-bottom: 30px;
+  outline: none;
+  font-size: 21px;
 }
 
-.contacto__campos--textarea{
-    border: none;
-    border-bottom: 1px solid #000000;
-    min-width: 350px;
-    margin: 0 auto;
-    padding: 15px;
-    min-height: 150px;
-    outline: none;
-    font-size: 21px;
+.contacto__campos--textarea {
+  border: none;
+  border-bottom: 1px solid #000000;
+  min-width: 350px;
+  margin: 0 auto;
+  padding: 15px;
+  min-height: 150px;
+  outline: none;
+  font-size: 21px;
 }
 
 .contacto__button {
-    margin-top: 50px;
-    width: 250px;
-    text-align: center;
-    border-radius: 6px;
-    background-color: #ecd958;
-    padding: 20px 50px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 20px;
-    border: none;
+  margin-top: 50px;
+  width: 250px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: #ecd958;
+  padding: 20px 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 20px;
+  border: none;
 }
 
-.contacto__error{
-    margin-top: 25px;
-    color: red;
-    align-self: flex-start;
-    font-size: 15px;
+.contacto__error {
+  margin-top: 25px;
+  color: red;
+  align-self: flex-start;
+  font-size: 15px;
 }
 
 .contacto_succes {
-    margin-top: 25px;
-    color: green;
-    align-self: flex-start;
-    font-size: 15px;
+  margin-top: 25px;
+  color: green;
+  align-self: flex-start;
+  font-size: 15px;
 }
 
 @media (max-width: 720px) {
-    .contacto__campos{
-        width: 100%;
-    }
-    .contacto__campos--input, .contacto__campos--textarea{
-        min-width: 100%;
-        font-size: 16px;
-    }
+  .contacto__campos {
+    width: 100%;
+  }
+  .contacto__campos--input,
+  .contacto__campos--textarea {
+    min-width: 100%;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 520px) {
-    .contacto{
-        flex-direction: column;
-    }
-    .contacto__titulo{
-        width: 100%;
-        margin: 0 auto;
-    }
+  .contacto {
+    flex-direction: column;
+  }
+  .contacto__titulo {
+    width: 100%;
+    margin: 0 auto;
+  }
 
-    .contacto__button{
-        padding: 10px 20px;
-        font-size: 14px;
-    }
+  .contacto__button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }

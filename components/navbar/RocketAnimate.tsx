@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { motion } from "motion/react";
-import { Rocket } from "lucide-react";
+import { useState } from 'react';
+import { motion } from 'motion/react';
+import { Rocket } from 'lucide-react';
 
 export default function RocketAnimate() {
   const [isLaunching, setIsLaunching] = useState(false);
@@ -17,7 +17,7 @@ export default function RocketAnimate() {
   };
   return (
     <div
-      className="p-2 rounded-full hover:bg-muted transition-colors cursor-pointer relative"
+      className='hover:bg-muted relative cursor-pointer rounded-full p-2 transition-colors'
       onClick={handleRocketClick}
     >
       <motion.div
@@ -32,16 +32,16 @@ export default function RocketAnimate() {
         }
         transition={{
           duration: 2,
-          ease: "easeInOut",
+          ease: 'easeInOut',
           times: [0, 0.5, 1],
         }}
-        className="relative"
+        className='relative'
       >
-        <Rocket className="h-5 w-5 text-primary" />
+        <Rocket className='text-primary h-5 w-5' />
 
         {isLaunching && (
           <motion.div
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-4 z-[-1]"
+            className='absolute bottom-0 left-1/2 z-[-1] h-4 w-3 -translate-x-1/2 transform'
             initial={{ opacity: 0, y: 0 }}
             animate={{
               opacity: [0, 1, 0.8, 0],
@@ -51,21 +51,21 @@ export default function RocketAnimate() {
             transition={{
               repeat: 3,
               duration: 0.6,
-              ease: "easeOut",
+              ease: 'easeOut',
             }}
           >
-            <div className="w-full h-full bg-gradient-to-t from-orange-500 via-yellow-400 to-transparent rounded-full" />
+            <div className='h-full w-full rounded-full bg-gradient-to-t from-orange-500 via-yellow-400 to-transparent' />
           </motion.div>
         )}
       </motion.div>
 
       {/* Humo */}
       {isLaunching && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-1]">
+        <div className='absolute top-1/2 left-1/2 z-[-1] -translate-x-1/2 -translate-y-1/2 transform'>
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute rounded-full bg-gray-200/70"
+              className='absolute rounded-full bg-gray-200/70'
               initial={{
                 width: 3,
                 height: 3,
@@ -83,7 +83,7 @@ export default function RocketAnimate() {
               transition={{
                 delay: i * 0.1,
                 duration: 1.5,
-                ease: "easeOut",
+                ease: 'easeOut',
               }}
             />
           ))}

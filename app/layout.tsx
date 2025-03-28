@@ -1,18 +1,18 @@
-import { UIProvider } from "@/context/UI/UIProvider";
-import Navbar from "@/components/navbar/Navbar";
-import { ThemeProvider } from "next-themes";
-import { Open_Sans, Roboto } from "next/font/google";
-import "./globals.css";
+import { UIProvider } from '@/context/UI/UIProvider';
+import Navbar from '@/components/navbar/Navbar';
+import { ThemeProvider } from 'next-themes';
+import { Open_Sans, Roboto } from 'next/font/google';
+import './globals.css';
 
 const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
+  subsets: ['latin'],
+  variable: '--font-open-sans',
 });
 
 const roboto = Roboto({
-  subsets: ["latin"],
-  variable: "--font-roboto",
-  weight: ["400", "700"],
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  weight: ['400', '700'],
 });
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="es"
+      lang='es'
       suppressHydrationWarning
       className={`${openSans.variable} ${roboto.variable}`}
     >
@@ -32,10 +32,10 @@ export default function RootLayout({
       <UIProvider>
         <body>
           <ThemeProvider
-            themes={["light", "dark"]}
-            defaultTheme="light"
+            themes={['light', 'dark']}
+            defaultTheme='light'
             enableSystem
-            attribute={"class"}
+            attribute={'class'}
           >
             <Navbar />
             {children}

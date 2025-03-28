@@ -1,70 +1,70 @@
-.nav{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 60px;
-    position: fixed;
-    transform: translateX(-100%);
-    transition: 1.2s all ease;
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 60px;
+  position: fixed;
+  transform: translateX(-100%);
+  transition: 1.2s all ease;
 }
 
-.nav--on{
-    transform: translateX(0%);
-    transition: 1.2s all ease;
+.nav--on {
+  transform: translateX(0%);
+  transition: 1.2s all ease;
 }
 
-.nav .enlace{
-    text-decoration: none;
-    color: #fff;
-    text-align: center;
-    padding: 1.5rem 1.4rem;
-    border-bottom: 3px solid #fff;
-    font-size: 15px;
+.nav .enlace {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1.4rem;
+  border-bottom: 3px solid #fff;
+  font-size: 15px;
 }
 
-.nav .enlace p{
-    font-family: 'Playfair Display', serif;
+.nav .enlace p {
+  font-family: 'Playfair Display', serif;
 }
 
-.nav .enlace:hover{
-    color: #010101;
-    background-color: #FFDC00;
+.nav .enlace:hover {
+  color: #010101;
+  background-color: #ffdc00;
 }
 
-.enlace__redes{
-    margin: 10px auto;
+.enlace__redes {
+  margin: 10px auto;
 }
 
-.icon--redes{
-    font-size: 25px;
-    color: #fff;
+.icon--redes {
+  font-size: 25px;
+  color: #fff;
 }
 
-.icon--redes:last-of-type{
-    margin-left: 6px;
+.icon--redes:last-of-type {
+  margin-left: 6px;
 }
 
-.icon--redes:hover{
-    color: #FFDC00;
+.icon--redes:hover {
+  color: #ffdc00;
 }
 
-.background-hover{
-    color: #010101 !important;
-    background-color: #FFDC00;
+.background-hover {
+  color: #010101 !important;
+  background-color: #ffdc00;
 }
 
 @media (max-width: 920px) {
-    .nav{
-        height: 100%;
-        width: 100%;
-        position: fixed;
-    }
+  .nav {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+  }
 
-    .nav .enlace {
-        display: flex;
-        text-transform: uppercase;
-        column-gap: 3px;
-        justify-content: center;
-    }
+  .nav .enlace {
+    display: flex;
+    text-transform: uppercase;
+    column-gap: 3px;
+    justify-content: center;
+  }
 }
