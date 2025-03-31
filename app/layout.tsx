@@ -12,7 +12,7 @@ const openSans = Open_Sans({
 const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
-  weight: ['400', '700'],
+  weight: ['300', '400', '700'],
 });
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
         <title>Leonardo Guanuco</title>
       </head>
       <UIProvider>
-        <body>
+        <body className='font-roboto'>
           <ThemeProvider
             themes={['light', 'dark']}
             defaultTheme='light'
