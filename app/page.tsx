@@ -1,9 +1,11 @@
 import HeroSection from '@/components/section/HeroSection';
+import MySkills from '@/components/section/Skills';
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <MySkills />
     </>
   );
 }
