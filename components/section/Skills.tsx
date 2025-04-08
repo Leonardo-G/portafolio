@@ -4,9 +4,11 @@ import { SiTypescript, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { IconType } from 'react-icons';
+import { motion } from 'motion/react';
+
 type Skill = {
   name: string;
-  icon: IconType; // <--- Esto le dice a TS que es un componente de ícono válido
+  icon: IconType;
 };
 export const skills: Skill[] = [
   {
@@ -51,7 +53,7 @@ export default function MySkills() {
       </h2>
       <div className='mt-22 mb-22 grid min-h-[200px] w-full grid-cols-5'>
         <div className='relative col-span-4 grid grid-cols-4 gap-x-20 gap-y-20 pl-[56px]'>
-          <div className='absolute left-[12%] h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
+          <div className='absolute left-[12%] z-0 h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
           <div className='absolute top-[50%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-[12px]'>
             {Array.from({ length: 18 }, (_, i) => i + 1).map((value) => (
               <div className='flex gap-[12px]' key={value}>
@@ -64,25 +66,22 @@ export default function MySkills() {
           {skills.map((skill) => {
             const Icon = skill.icon;
             return (
-              <div
+              <motion.div
                 key={skill.name}
-                className='border-grey-secondary flex h-[200px] w-[200px] flex-col items-center justify-end rounded-2xl border pb-4 transition-shadow hover:shadow-md'
+                drag
+                className='border-grey-secondary z-10 flex h-[200px] w-[200px] flex-col items-center justify-end rounded-2xl border pb-4 transition-shadow hover:shadow-md'
+                transition={{ duration: 0.6 }}
+                whileDrag={{ scale: 1.1, boxShadow: '0px 10px 16px #01' }}
               >
                 <Icon className='mb-6 h-[75px] w-[75px]' />
                 <p className='font-roboto text-sm font-light tracking-[3px]'>
                   {skill.name}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
-
-      {/* <motion.div
-        className='bg-black h-[100px] w-[100px]'
-        drag
-        whileDrag={{ rotate: 12 }}
-      /> */}
     </div>
   );
 }
