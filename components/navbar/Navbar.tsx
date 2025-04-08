@@ -15,7 +15,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className='mx-auto max-w-6xl'>
+    <div className='mx-auto max-w-[1280px]'>
       <nav className='flex w-full items-center justify-between py-4'>
         <div>
           <p className='font-open-sans text-xl font-semibold'>LeoG.</p>

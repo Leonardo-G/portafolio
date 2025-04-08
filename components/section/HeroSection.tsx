@@ -5,7 +5,7 @@ import { IoLogoLinkedin } from 'react-icons/io5';
 
 export default function HeroSection() {
   return (
-    <div className='relative mx-auto flex min-h-[800px] w-full max-w-6xl items-center justify-between'>
+    <div className='relative mx-auto flex min-h-[800px] w-full max-w-[1280px] items-center justify-between'>
       <motion.div
         className='z-10 h-fit'
         initial={{ opacity: 0, x: -50 }}
