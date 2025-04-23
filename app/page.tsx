@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <MySkills />
+      <MySkills key={'skills'} />
     </>
   );
 }

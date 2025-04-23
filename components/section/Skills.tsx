@@ -1,6 +1,17 @@
 'use client';
 import { FaCss3Alt, FaHtml5, FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNestjs,
+  SiTypeorm,
+  SiMysql,
+  SiPostgresql,
+  SiAmazoncognito,
+  SiJest,
+  SiCypress,
+} from 'react-icons/si';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { IconType } from 'react-icons';
@@ -59,6 +70,41 @@ export const skills: Skill[] = [
     icon: FaNodeJs,
     code: 'back',
   },
+  {
+    name: 'Nest.js',
+    icon: SiNestjs,
+    code: 'back',
+  },
+  {
+    name: 'TypeORM',
+    icon: SiTypeorm,
+    code: 'back',
+  },
+  {
+    name: 'Mysql',
+    icon: SiMysql,
+    code: 'back',
+  },
+  {
+    name: 'Postgresql',
+    icon: SiPostgresql,
+    code: 'back',
+  },
+  {
+    name: 'Cognito AWS',
+    icon: SiAmazoncognito,
+    code: 'back',
+  },
+  {
+    name: 'Jest',
+    icon: SiJest,
+    code: 'extra',
+  },
+  {
+    name: 'Cypress',
+    icon: SiCypress,
+    code: 'extra',
+  },
 ];
 
 const allSkillsTopic = [
@@ -106,7 +152,6 @@ export default function MySkills() {
             {skills
               .filter((skill) => skill.code === skillsTopic)
               .map((skill, idx) => {
-                console.log(skill);
                 const Icon = skill.icon;
                 return (
                   <motion.div
@@ -151,18 +196,24 @@ export default function MySkills() {
               </AnimatePresence>
             </div>
             <div className='flex gap-10'>
-              <div
-                className='bg-orange-primary h-4 w-4 cursor-pointer rounded-full'
-                onClick={() => handleChangeTopic('front')}
-              ></div>
-              <div
-                className='bg-orange-primary h-4 w-4 cursor-pointer rounded-full'
-                onClick={() => handleChangeTopic('back')}
-              ></div>
-              <div
-                className='bg-orange-primary h-4 w-4 cursor-pointer rounded-full'
-                onClick={() => handleChangeTopic('extra')}
-              ></div>
+              {allSkillsTopic.map((skillTopic) => (
+                <div
+                  className='bg-orange-primary relative h-4 w-4 cursor-pointer rounded-full'
+                  onClick={() => handleChangeTopic(skillTopic.code)}
+                  key={skillTopic.code}
+                >
+                  {skillTopic.code === skillsTopic && (
+                    <motion.div
+                      className='absolute top-0 left-0 z-5 h-4 w-4 cursor-pointer rounded-full bg-black'
+                      key={skillTopic.code}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      initial={{ opacity: 0, y: 10 }}
+                      exit={{ opacity: 0, y: -10 }}
+                    ></motion.div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
