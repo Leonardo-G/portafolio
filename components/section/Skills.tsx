@@ -4,7 +4,8 @@ import { SiTypescript, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { IconType } from 'react-icons';
-import { motion } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
+import { useState } from 'react';
 
 type Skill = {
   name: string;
@@ -45,24 +46,47 @@ export const skills: Skill[] = [
   },
 ];
 
+const allSkillsTopic = [
+  {
+    name: 'front',
+    description: 'Front-end y lenguajes',
+  },
+  {
+    name: 'back',
+    description: 'Backend ',
+  },
+  {
+    name: 'extra',
+    description: 'Herramientas y Test',
+  },
+];
+
 export default function MySkills() {
+  const [skillsTopic, setSkillsTopic] = useState('front');
+  const skillDescription = allSkillsTopic.filter(
+    (skill) => skill.name === skillsTopic,
+  );
+
+  const handleChangeTopic = (topic: string) => {
+    setSkillsTopic(topic);
+  };
   return (
     <div className='mx-auto w-full max-w-[1280px]'>
       <h2 className='text-grey-primary font-roboto tracking-title pl-5 pl-[30px] text-xl font-light uppercase'>
         My skills
       </h2>
-      <div className='mt-22 mb-22 grid min-h-[200px] w-full grid-cols-5'>
-        <div className='relative col-span-4 grid grid-cols-4 gap-x-20 gap-y-20 pl-[56px]'>
+      <div className='relative mt-22 mb-22 grid min-h-[200px] w-full grid-cols-5 pl-[56px]'>
+        <div className='absolute top-[50%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-[12px]'>
+          {Array.from({ length: 18 }, (_, i) => i + 1).map((value) => (
+            <div className='flex gap-[12px]' key={value}>
+              <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
+              <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
+              <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
+            </div>
+          ))}
+        </div>
+        <div className='col-span-4 grid grid-cols-4 gap-y-20'>
           <div className='absolute left-[12%] z-0 h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
-          <div className='absolute top-[50%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-[12px]'>
-            {Array.from({ length: 18 }, (_, i) => i + 1).map((value) => (
-              <div className='flex gap-[12px]' key={value}>
-                <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
-                <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
-                <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
-              </div>
-            ))}
-          </div>
           {skills.map((skill) => {
             const Icon = skill.icon;
             return (
@@ -80,6 +104,41 @@ export default function MySkills() {
               </motion.div>
             );
           })}
+        </div>
+        <div className='flex h-full w-full items-end justify-end'>
+          <div>
+            <div className='flex w-[150px] gap-2'>
+              <div className='bg-black-transparent mb-10 ml-2 h-70 w-[1px]'></div>
+              <AnimatePresence>
+                <div>
+                  <motion.p
+                    key={skillDescription[0].description}
+                    className='text-xs'
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {skillDescription[0].description}
+                  </motion.p>
+                </div>
+              </AnimatePresence>
+            </div>
+            <div className='flex gap-10'>
+              <div
+                className='bg-orange-primary h-4 w-4 cursor-pointer rounded-full'
+                onClick={() => handleChangeTopic('front')}
+              ></div>
+              <div
+                className='bg-orange-primary h-4 w-4 cursor-pointer rounded-full'
+                onClick={() => handleChangeTopic('back')}
+              ></div>
+              <div
+                className='bg-orange-primary h-4 w-4 cursor-pointer rounded-full'
+                onClick={() => handleChangeTopic('extra')}
+              ></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
