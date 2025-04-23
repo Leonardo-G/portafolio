@@ -1,5 +1,5 @@
 'use client';
-import { FaCss3Alt, FaHtml5, FaReact } from 'react-icons/fa';
+import { FaCss3Alt, FaHtml5, FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { TbBrandReactNative } from 'react-icons/tb';
@@ -10,53 +10,68 @@ import { useState } from 'react';
 type Skill = {
   name: string;
   icon: IconType;
+  code: 'front' | 'back' | 'extra';
 };
+
 export const skills: Skill[] = [
   {
     name: 'HTML5',
     icon: FaHtml5,
+    code: 'front',
   },
   {
     name: 'CSS3',
     icon: FaCss3Alt,
+    code: 'front',
   },
   {
     name: 'Typescript',
     icon: SiTypescript,
+    code: 'front',
   },
   {
     name: 'Javascript',
     icon: IoLogoJavascript,
+    code: 'front',
   },
   {
     name: 'Next.js',
     icon: SiNextdotjs,
+    code: 'front',
   },
   {
     name: 'React.js',
     icon: FaReact,
+    code: 'front',
   },
   {
     name: 'Tailwind',
     icon: SiTailwindcss,
+    code: 'front',
   },
   {
     name: 'React Native',
     icon: TbBrandReactNative,
+    code: 'front',
+  },
+  {
+    name: 'Node.js',
+    icon: FaNodeJs,
+    code: 'back',
   },
 ];
 
 const allSkillsTopic = [
   {
-    name: 'front',
+    code: 'front',
     description: 'Front-end y lenguajes',
   },
   {
-    name: 'back',
+    code: 'back',
     description: 'Backend ',
   },
   {
-    name: 'extra',
+    code: 'extra',
     description: 'Herramientas y Test',
   },
 ];
@@ -64,7 +79,7 @@ const allSkillsTopic = [
 export default function MySkills() {
   const [skillsTopic, setSkillsTopic] = useState('front');
   const skillDescription = allSkillsTopic.filter(
-    (skill) => skill.name === skillsTopic,
+    (skill) => skill.code === skillsTopic,
   );
 
   const handleChangeTopic = (topic: string) => {
@@ -85,25 +100,36 @@ export default function MySkills() {
             </div>
           ))}
         </div>
-        <div className='col-span-4 grid grid-cols-4 gap-y-20'>
+        <div className='col-span-4 grid h-[500px] grid-cols-4 gap-y-20'>
           <div className='absolute left-[12%] z-0 h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
-          {skills.map((skill) => {
-            const Icon = skill.icon;
-            return (
-              <motion.div
-                key={skill.name}
-                drag
-                className='border-grey-secondary z-10 flex h-[200px] w-[200px] flex-col items-center justify-end rounded-2xl border pb-4 transition-shadow hover:shadow-md'
-                transition={{ duration: 0.6 }}
-                whileDrag={{ scale: 1.1, boxShadow: '0px 10px 16px #01' }}
-              >
-                <Icon className='mb-6 h-[75px] w-[75px]' />
-                <p className='font-roboto text-sm font-light tracking-[3px]'>
-                  {skill.name}
-                </p>
-              </motion.div>
-            );
-          })}
+          <AnimatePresence mode='wait'>
+            {skills
+              .filter((skill) => skill.code === skillsTopic)
+              .map((skill, idx) => {
+                console.log(skill);
+                const Icon = skill.icon;
+                return (
+                  <motion.div
+                    key={skill.name}
+                    drag
+                    className='border-grey-secondary z-10 flex h-[200px] w-[200px] flex-col items-center justify-end rounded-2xl border pb-4 transition-shadow hover:shadow-md'
+                    transition={{ duration: 0.3, delay: 0.1 * idx }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileDrag={{ scale: 1.1, boxShadow: '0px 10px 16px #01' }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{
+                      opacity: 0,
+                      y: -10,
+                    }}
+                  >
+                    <Icon className='mb-6 h-[75px] w-[75px]' />
+                    <p className='font-roboto text-sm font-light tracking-[3px]'>
+                      {skill.name}
+                    </p>
+                  </motion.div>
+                );
+              })}
+          </AnimatePresence>
         </div>
         <div className='flex h-full w-full items-end justify-end'>
           <div>
