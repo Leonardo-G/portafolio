@@ -1,5 +1,12 @@
 'use client';
-import { FaCss3Alt, FaHtml5, FaReact, FaNodeJs } from 'react-icons/fa';
+import { useEffect, useRef, useState } from 'react';
+import {
+  FaCss3Alt,
+  FaHtml5,
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+} from 'react-icons/fa';
 import {
   SiTypescript,
   SiNextdotjs,
@@ -16,7 +23,6 @@ import { IoLogoJavascript } from 'react-icons/io5';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 import { AnimatePresence, motion } from 'motion/react';
-import { useState } from 'react';
 
 type Skill = {
   name: string;
@@ -105,6 +111,11 @@ export const skills: Skill[] = [
     icon: SiCypress,
     code: 'extra',
   },
+  {
+    name: 'Docker',
+    icon: FaDocker,
+    code: 'extra',
+  },
 ];
 
 const allSkillsTopic = [
@@ -127,10 +138,38 @@ export default function MySkills() {
   const skillDescription = allSkillsTopic.filter(
     (skill) => skill.code === skillsTopic,
   );
+  const timeRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleChangeTopic = (topic: string) => {
     setSkillsTopic(topic);
   };
+
+  const handleChangeNextTopic = () => {
+    setSkillsTopic((prev) => {
+      const indexCurrentState = allSkillsTopic.findIndex(
+        (skill) => skill.code === prev,
+      );
+      const nextIndex = (indexCurrentState + 1) % allSkillsTopic.length;
+      return allSkillsTopic[nextIndex].code;
+    });
+  };
+
+  const resetTimer = () => {
+    if (timeRef.current) clearTimeout(timeRef.current);
+    timeRef.current = setTimeout(() => {
+      handleChangeNextTopic();
+    }, 8000);
+  };
+
+  useEffect(() => {
+    resetTimer();
+    return () => {
+      if (timeRef.current) {
+        clearTimeout(timeRef.current);
+      }
+    };
+  });
+
   return (
     <div className='mx-auto w-full max-w-[1280px]'>
       <h2 className='text-grey-primary font-roboto tracking-title pl-5 pl-[30px] text-xl font-light uppercase'>
