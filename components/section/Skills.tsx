@@ -23,6 +23,7 @@ import { IoLogoJavascript } from 'react-icons/io5';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 import { AnimatePresence, motion } from 'motion/react';
+import Title from '../UI/Title';
 
 type Skill = {
   name: string;
@@ -172,9 +173,7 @@ export default function MySkills() {
 
   return (
     <div className='mx-auto w-full max-w-[1280px]'>
-      <h2 className='text-grey-primary font-roboto tracking-title pl-5 pl-[30px] text-xl font-light uppercase'>
-        My skills
-      </h2>
+      <Title title='My skills' />
       <div className='relative mt-22 mb-22 grid min-h-[200px] w-full grid-cols-5 pl-[56px]'>
         <div className='absolute top-[50%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-[12px]'>
           {Array.from({ length: 18 }, (_, i) => i + 1).map((value) => (
