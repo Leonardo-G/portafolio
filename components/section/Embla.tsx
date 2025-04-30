@@ -18,7 +18,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className='font-open-sans flex gap-x-3'>
           {slides.map((value) => (
             <div className='bg-grey-badge rounded-[30px] px-4 py-1' key={value}>
-              <p className='text-xs'>{value}</p>
+              <div className='text-xs select-none'>{value}</div>
             </div>
           ))}
         </div>
