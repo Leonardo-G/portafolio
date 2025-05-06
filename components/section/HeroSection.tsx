@@ -96,7 +96,7 @@ export default function HeroSection() {
               duration: 0.8,
             },
           }}
-          className='absolute left-[50%] h-[512px] w-[512px] -translate-x-[63%] rounded-full bg-[#F59738]'
+          className='bg-orange-primary absolute left-[50%] h-[512px] w-[512px] -translate-x-[63%] rounded-full'
         ></motion.div>
       </AnimatePresence>
       <motion.div

@@ -24,7 +24,7 @@ export default function Certificate({ certificate }: IProps) {
       <div
         className={`flex cursor-pointer items-center justify-between border-l-6 p-8 transition-all duration-300 ${
           expandedCert === certificate.id
-            ? 'border-[#F59738BD]'
+            ? 'border-orange-secondary'
             : 'border-transparent group-hover:border-orange-200'
         }`}
         onClick={() => toggleCertificate(certificate.id)}
@@ -35,15 +35,15 @@ export default function Certificate({ certificate }: IProps) {
           </h3>
           <div className='mt-3 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-gray-500'>
             <span className='flex items-center'>
-              <span className='mr-2 h-1.5 w-1.5 rounded-full bg-orange-400'></span>
+              <span className='bg-orange-secondary mr-2 h-1.5 w-1.5 rounded-full'></span>
               {certificate.education}
             </span>
             <span className='flex items-center'>
-              <span className='mr-2 h-1.5 w-1.5 rounded-full bg-orange-400'></span>
+              <span className='bg-orange-secondary mr-2 h-1.5 w-1.5 rounded-full'></span>
               {certificate.type}
             </span>
             <span className='flex items-center'>
-              <span className='mr-2 h-1.5 w-1.5 rounded-full bg-orange-400'></span>
+              <span className='bg-orange-secondary mr-2 h-1.5 w-1.5 rounded-full'></span>
               {certificate.year}
             </span>
           </div>
@@ -77,7 +77,7 @@ export default function Certificate({ certificate }: IProps) {
             <div className='grid gap-12 border-t border-gray-100 p-8 pt-0 md:grid-cols-2'>
               <div className='mt-3'>
                 <h4 className='mb-6 flex items-center text-lg font-medium text-gray-700'>
-                  <span className='mr-3 h-0.5 w-8 bg-[#F59738BD]'></span>
+                  <span className='bg-orange-secondary mr-3 h-0.5 w-8'></span>
                   Lo que se aprendió
                 </h4>
                 <ul className='space-y-3 text-gray-600'>
@@ -92,7 +92,7 @@ export default function Certificate({ certificate }: IProps) {
                       }}
                       className='flex items-start'
                     >
-                      <span className='mt-2 mr-3 inline-block h-2 w-2 rounded-full bg-[#F59738BD]'></span>
+                      <span className='bg-orange-secondary mt-2 mr-3 inline-block h-2 w-2 rounded-full'></span>
                       <span>{item}</span>
                     </motion.li>
                   ))}
@@ -119,7 +119,7 @@ export default function Certificate({ certificate }: IProps) {
                   transition={{ duration: 0.4, delay: 0.2 }}
                 >
                   <h4 className='mb-4 flex items-center text-lg font-medium text-gray-700'>
-                    <span className='mr-3 h-0.5 w-8 bg-orange-400'></span>
+                    <span className='bg-orange-secondary mr-3 h-0.5 w-8'></span>
                     Tecnologías vistas
                   </h4>
                   <div className='flex flex-wrap gap-2'>
