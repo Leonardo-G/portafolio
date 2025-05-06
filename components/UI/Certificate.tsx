@@ -1,134 +1,149 @@
-import React, { Dispatch, FC } from 'react';
+'use client';
+import { ICertificate } from '@/interface/certificate';
+import { AnimatePresence, motion } from 'motion/react';
+import { useState } from 'react';
+import { GoPlus } from 'react-icons/go';
+import { HiXMark } from 'react-icons/hi2';
 
-import { faAdd } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { ImageContainer } from '../ImageContainer';
-import { ICertificate } from '../../interface/certificate';
-
-import { Box, Flex } from '../../styled/box/box';
-import { Position } from '../../styled/position/position';
-import { Text, TextLink } from '../../styled/text/text';
-import { IconSize } from '../../styled/icon/icon';
-
-interface Props {
+interface IProps {
   certificate: ICertificate;
-  numberCertificate: number;
-  setNumberCertificate: Dispatch<React.SetStateAction<number>>;
 }
+export default function Certificate({ certificate }: IProps) {
+  const [expandedCert, setExpandedCert] = useState<number | null>(1);
 
-export const Certificate: FC<Props> = ({
-  certificate: {
-    id,
-    certificate,
-    education,
-    linkCertificate,
-    imgCertificate,
-    knowledge,
-    technologies,
-    type,
-    year,
-  },
-  numberCertificate,
-  setNumberCertificate,
-}) => {
+  const toggleCertificate = (id: number) => {
+    setExpandedCert(expandedCert === id ? null : id);
+  };
   return (
-    <>
-      <Box ovHidden transition>
-        <Box
-          padding='20px'
-          borderY='2px solid #000'
-          borderTopNone
-          className='relative'
-          zIndex='2'
-          background='#fff'
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      className='group relative mt-10 overflow-hidden rounded-md bg-white shadow-sm transition-all duration-300 hover:shadow-md'
+    >
+      <div
+        className={`flex cursor-pointer items-center justify-between border-l-6 p-8 transition-all duration-300 ${
+          expandedCert === certificate.id
+            ? 'border-[#F59738BD]'
+            : 'border-transparent group-hover:border-orange-200'
+        }`}
+        onClick={() => toggleCertificate(certificate.id)}
+      >
+        <div className='flex-1'>
+          <h3 className='text-2xl font-light tracking-wide text-gray-800'>
+            {certificate.certificate}
+          </h3>
+          <div className='mt-3 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-gray-500'>
+            <span className='flex items-center'>
+              <span className='mr-2 h-1.5 w-1.5 rounded-full bg-orange-400'></span>
+              {certificate.education}
+            </span>
+            <span className='flex items-center'>
+              <span className='mr-2 h-1.5 w-1.5 rounded-full bg-orange-400'></span>
+              {certificate.type}
+            </span>
+            <span className='flex items-center'>
+              <span className='mr-2 h-1.5 w-1.5 rounded-full bg-orange-400'></span>
+              {certificate.year}
+            </span>
+          </div>
+        </div>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className={`rounded-full p-2 text-gray-800 ${
+            expandedCert === certificate.id
+              ? 'bg-orange-50'
+              : 'bg-gray-50 group-hover:bg-orange-50'
+          } transition-colors duration-300`}
         >
-          <Position bottom='0' left='0' width='100%'>
-            <Box width='100%' height='2px' background='#000'></Box>
-          </Position>
-          <Flex colCenter>
-            <Text
-              weight={700}
-              size={25}
-              sizeXL={18}
-              sizeXM={14}
-              className='f-2'
-            >
-              {certificate}
-            </Text>
-            <Text className='f-auto' dNone>
-              {education}
-            </Text>
-            <TextLink
-              size={14}
-              href={linkCertificate}
-              target='_blank'
-              rel='nooponer noreferrer'
-              className='f-auto'
-              dNoneXM
-            >
-              {type}
-            </TextLink>
-            <Text size={18} sizeXL={14} weight={600} className='f-auto'>
-              {year}
-            </Text>
-            <Box>
-              <IconSize size={60} sizeXL={30}>
-                <FontAwesomeIcon
-                  icon={faAdd}
-                  onClick={() =>
-                    setNumberCertificate(
-                      numberCertificate === 0
-                        ? id
-                        : numberCertificate !== id
-                          ? id
-                          : 0,
-                    )
-                  }
-                  style={{
-                    cursor: 'pointer',
-                    transform:
-                      numberCertificate === id ? 'rotate(45deg)' : 'rotate(0)',
-                    transition: '.5s all ease',
-                  }}
-                />
-              </IconSize>
-            </Box>
-          </Flex>
-        </Box>
-        <Box
-          background='yellow'
-          padding={numberCertificate === id ? '50px' : '0px 50px'}
-          borderY='2px solid #000'
-          transition
-          height={numberCertificate === id ? '500px' : '0px'}
-          overflowY
-        >
-          <Flex columnGap={40} columnXS>
-            <Box className='f-auto'>
-              <Text paddingBt>Lo que se aprendió</Text>
-              <ul>
-                {knowledge.map((k, idx) => (
-                  <li key={idx}>
-                    <Text>{k}</Text>
-                  </li>
-                ))}
-              </ul>
-            </Box>
-            <Box className='f-auto'>
-              <Box padding='20px 0'>
-                <ImageContainer height={200} src={imgCertificate} />
-              </Box>
-              <Text paddingBt>Tecnologías vista:</Text>
-              <Text weight={600}>
-                {technologies.map((t, idx) =>
-                  technologies.length - 1 === idx ? `${t}` : `${t}, `,
-                )}
-              </Text>
-            </Box>
-          </Flex>
-        </Box>
-      </Box>
-    </>
+          {expandedCert === certificate.id ? (
+            <HiXMark className='h-6 w-6' />
+          ) : (
+            <GoPlus className='h-6 w-6' />
+          )}
+        </motion.button>
+      </div>
+
+      <AnimatePresence>
+        {expandedCert === certificate.id && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className='overflow-hidden'
+          >
+            <div className='grid gap-12 border-t border-gray-100 p-8 pt-0 md:grid-cols-2'>
+              <div className='mt-3'>
+                <h4 className='mb-6 flex items-center text-lg font-medium text-gray-700'>
+                  <span className='mr-3 h-0.5 w-8 bg-[#F59738BD]'></span>
+                  Lo que se aprendió
+                </h4>
+                <ul className='space-y-3 text-gray-600'>
+                  {certificate.knowledge.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: 0.1 + index * 0.05,
+                      }}
+                      className='flex items-start'
+                    >
+                      <span className='mt-2 mr-3 inline-block h-2 w-2 rounded-full bg-[#F59738BD]'></span>
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className='mb-8'
+                >
+                  <div className='group relative overflow-hidden rounded-sm'>
+                    <img
+                      src={certificate.imgCertificate}
+                      alt={`Certificado ${certificate.education} ${certificate.certificate}`}
+                      className='w-full border border-gray-100 object-cover shadow-sm transition-all duration-300 group-hover:shadow-md'
+                    />
+                  </div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                >
+                  <h4 className='mb-4 flex items-center text-lg font-medium text-gray-700'>
+                    <span className='mr-3 h-0.5 w-8 bg-orange-400'></span>
+                    Tecnologías vistas
+                  </h4>
+                  <div className='flex flex-wrap gap-2'>
+                    {certificate.technologies.map((tech, index) => (
+                      <motion.span
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: 0.2 + index * 0.03,
+                        }}
+                        className='rounded-sm border border-gray-100 bg-gray-50 px-3 py-1 text-sm text-gray-700 transition-colors duration-300 hover:border-orange-100 hover:bg-orange-50'
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
-};
+}
