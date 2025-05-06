@@ -37,18 +37,22 @@ export default function Experience() {
         {jobExperiencie.map((experiencie) => (
           <div
             key={experiencie.jobName}
-            className='text-grey-primary font-open-sans border-grey-badge relative flex w-full items-center justify-between rounded-md border-t-1 py-6 pr-10 pl-15 tracking-[0.3px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]'
+            className='text-grey-primary border-grey-badge relative flex w-full items-center justify-between rounded-md py-6 pr-10 pl-15 shadow-sm'
           >
             <div className='absolute top-0 left-0 h-full w-[6px] rounded-l-md bg-[#F59738BD]'></div>
-            <div>
-              <p className='text-xl'>{experiencie.jobName}</p>
-              <p className='mt-2 text-sm'>
+            <div className='w-[40%]'>
+              <p className='text-xl tracking-wide text-gray-500'>
+                {experiencie.jobName}
+              </p>
+              <p className='mt-2 text-sm text-gray-500'>
                 {experiencie.since} - {experiencie.to}
               </p>
             </div>
-            <div>
-              <p className='text-xl'>Bigger Tech</p>
-              <p className='mt-2 text-sm'>Remoto</p>
+            <div className='w-[40%]'>
+              <p className='text-xl tracking-wide text-gray-500'>
+                {experiencie.company}
+              </p>
+              <p className='mt-2 text-sm text-gray-500'>{experiencie.mode}</p>
             </div>
             <div className='w-[20%]'>
               <EmblaCarousel slides={experiencie.technology} />
