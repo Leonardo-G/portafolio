@@ -12,88 +12,88 @@ import {
 } from 'lucide-react';
 import Title from '../UI/Title';
 
+const jobs = [
+  {
+    id: 'biggertech',
+    title: 'Software Developer',
+    company: 'Bigger Tech',
+    location: 'Remoto',
+    period: 'Septiembre 2023 - Abril 2025',
+    technologies: [
+      'React.js',
+      'Next.js',
+      'TypeScript',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'GraphQL',
+      'AWS',
+    ],
+    description: [
+      'Desarrollo de aplicaciones web utilizando React.js y Next.js',
+      'Implementación de APIs RESTful y GraphQL',
+      'Colaboración en equipos ágiles utilizando metodologías Scrum',
+      'Optimización de rendimiento y experiencia de usuario',
+      'Integración con servicios de terceros y APIs externas',
+      'Mantenimiento y mejora de aplicaciones existentes',
+    ],
+  },
+  {
+    id: 'devocamp',
+    title: 'Desarrollador Backend',
+    company: 'Devocamp',
+    location: 'Remoto - Pasantía',
+    period: 'Marzo 2023 - Agosto 2023',
+    technologies: [
+      'TypeScript',
+      'Next.js',
+      'Node.js',
+      'Express',
+      'PostgreSQL',
+      'Prisma',
+      'Docker',
+      'Jest',
+    ],
+    description: [
+      'Desarrollo de APIs RESTful utilizando Node.js y Express',
+      'Implementación de bases de datos relacionales con PostgreSQL y Prisma',
+      'Creación de pruebas unitarias y de integración con Jest',
+      'Configuración de entornos de desarrollo con Docker',
+      'Participación en revisiones de código y sesiones de pair programming',
+    ],
+  },
+  {
+    id: 'freelance',
+    title: 'Desarrollador Frontend',
+    company: 'Freelance',
+    location: 'Remoto',
+    period: 'Octubre 2022 - Febrero 2023',
+    technologies: [
+      'React.js',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Tailwind CSS',
+      'SASS',
+      'Figma',
+      'Git',
+    ],
+    description: [
+      'Desarrollo de interfaces de usuario responsivas y atractivas',
+      'Implementación de diseños desde Figma a código funcional',
+      'Optimización de rendimiento y accesibilidad web',
+      'Colaboración directa con clientes para entender sus necesidades',
+      'Creación de componentes reutilizables y mantenibles',
+    ],
+  },
+];
+
 export default function Experiencia() {
   const [expandedJob, setExpandedJob] = useState<string | null>(null);
 
   const toggleJob = (id: string) => {
     setExpandedJob(expandedJob === id ? null : id);
   };
-
-  const jobs = [
-    {
-      id: 'biggertech',
-      title: 'Software Developer',
-      company: 'Bigger Tech',
-      location: 'Remoto',
-      period: 'Septiembre 2023 - Abril 2025',
-      technologies: [
-        'React.js',
-        'Next.js',
-        'TypeScript',
-        'Node.js',
-        'Express',
-        'MongoDB',
-        'GraphQL',
-        'AWS',
-      ],
-      description: [
-        'Desarrollo de aplicaciones web utilizando React.js y Next.js',
-        'Implementación de APIs RESTful y GraphQL',
-        'Colaboración en equipos ágiles utilizando metodologías Scrum',
-        'Optimización de rendimiento y experiencia de usuario',
-        'Integración con servicios de terceros y APIs externas',
-        'Mantenimiento y mejora de aplicaciones existentes',
-      ],
-    },
-    {
-      id: 'devocamp',
-      title: 'Desarrollador Backend',
-      company: 'Devocamp',
-      location: 'Remoto - Pasantía',
-      period: 'Marzo 2023 - Agosto 2023',
-      technologies: [
-        'TypeScript',
-        'Next.js',
-        'Node.js',
-        'Express',
-        'PostgreSQL',
-        'Prisma',
-        'Docker',
-        'Jest',
-      ],
-      description: [
-        'Desarrollo de APIs RESTful utilizando Node.js y Express',
-        'Implementación de bases de datos relacionales con PostgreSQL y Prisma',
-        'Creación de pruebas unitarias y de integración con Jest',
-        'Configuración de entornos de desarrollo con Docker',
-        'Participación en revisiones de código y sesiones de pair programming',
-      ],
-    },
-    {
-      id: 'freelance',
-      title: 'Desarrollador Frontend',
-      company: 'Freelance',
-      location: 'Remoto',
-      period: 'Octubre 2022 - Febrero 2023',
-      technologies: [
-        'React.js',
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'Tailwind CSS',
-        'SASS',
-        'Figma',
-        'Git',
-      ],
-      description: [
-        'Desarrollo de interfaces de usuario responsivas y atractivas',
-        'Implementación de diseños desde Figma a código funcional',
-        'Optimización de rendimiento y accesibilidad web',
-        'Colaboración directa con clientes para entender sus necesidades',
-        'Creación de componentes reutilizables y mantenibles',
-      ],
-    },
-  ];
 
   return (
     <section className='mx-auto w-full max-w-[1280px]'>

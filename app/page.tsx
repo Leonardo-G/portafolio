@@ -1,3 +1,4 @@
+import CategorySelector from '@/components/section/CategorySelector';
 import Certificates from '@/components/section/Certificates';
 import Experience from '@/components/section/Experience';
 import HeroSection from '@/components/section/HeroSection';
@@ -8,6 +9,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <MySkills key={'skills'} />
+      <CategorySelector />
       <Experience />
       <Certificates />
     </>
