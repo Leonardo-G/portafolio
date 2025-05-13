@@ -7,8 +7,10 @@ export interface IProyectos {
   repositorio?: string; // Repositorio de github
   url?: string; // URL del proyecto, si es que está alojado.
   columns: number;
-  structure: 'front' | 'back';
+  structure: IProjectType;
 }
+
+export type IProjectType = 'frontend' | 'backend' | 'all';
 
 export type ITecnologia =
   | 'HTML'

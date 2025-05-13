@@ -18,7 +18,7 @@ export const proyectosDB: IProyectos[] = [
     repositorio: 'https://github.com/Leonardo-G/react-administrador-proyectos',
     url: 'https://serene-bardeen-2bafba.netlify.app/proyectos',
     columns: 6,
-    structure: 'front',
+    structure: 'frontend',
   },
   {
     id: 11,
@@ -36,7 +36,7 @@ export const proyectosDB: IProyectos[] = [
     heigth: '360px',
     repositorio: 'https://github.com/Leonardo-G/dotimages-front',
     columns: 6,
-    structure: 'front',
+    structure: 'frontend',
   },
   {
     id: 8,
@@ -56,7 +56,7 @@ export const proyectosDB: IProyectos[] = [
     repositorio: 'https://github.com/Leonardo-G/Arquitectura-Proyecto',
     url: 'https://leonardo-g.github.io/Arquitectura-Proyecto/',
     columns: 4,
-    structure: 'front',
+    structure: 'frontend',
   },
   {
     id: 3,
@@ -75,7 +75,7 @@ export const proyectosDB: IProyectos[] = [
     repositorio: 'https://github.com/Leonardo-G/movie-app',
     url: 'https://legendary-mooncake-bb592b.netlify.app/',
     columns: 4,
-    structure: 'front',
+    structure: 'frontend',
   },
   {
     id: 2,
@@ -95,7 +95,7 @@ export const proyectosDB: IProyectos[] = [
     repositorio: 'https://github.com/Leonardo-G/React-ecommerce-tecnologia',
     url: 'https://leonardo-g.github.io/React-ecommerce-tecnologia/',
     columns: 4,
-    structure: 'front',
+    structure: 'frontend',
   },
   {
     id: 7,
@@ -105,7 +105,7 @@ export const proyectosDB: IProyectos[] = [
     heigth: '490px',
     url: 'https://lavanguardiaferia.com.ar/',
     columns: 4,
-    structure: 'front',
+    structure: 'frontend',
   },
   {
     id: 1,
@@ -125,7 +125,7 @@ export const proyectosDB: IProyectos[] = [
     repositorio: 'https://github.com/Leonardo-G/clon-mercadolibre',
     url: 'https://clon-mercadolibre.vercel.app/',
     columns: 8,
-    structure: 'front',
+    structure: 'frontend',
   },
   {
     id: 4,
@@ -144,7 +144,7 @@ export const proyectosDB: IProyectos[] = [
     repositorio: 'https://github.com/Leonardo-G/react-presupuesto',
     url: 'https://distracted-aryabhata-26ea5b.netlify.app/',
     columns: 4,
-    structure: 'front',
+    structure: 'frontend',
   },
   {
     id: 9,
@@ -154,7 +154,7 @@ export const proyectosDB: IProyectos[] = [
     heigth: '360px',
     repositorio: 'https://github.com/Leonardo-G/api-clon-mercadolibre',
     columns: 6,
-    structure: 'back',
+    structure: 'backend',
   },
   {
     id: 10,
@@ -164,7 +164,7 @@ export const proyectosDB: IProyectos[] = [
     heigth: '360px',
     repositorio: 'https://github.com/Leonardo-G/dotimage-back',
     columns: 6,
-    structure: 'back',
+    structure: 'backend',
   },
   {
     id: 11,
@@ -174,7 +174,7 @@ export const proyectosDB: IProyectos[] = [
     heigth: '360px',
     repositorio: 'https://github.com/Leonardo-G/react-administrador-proyectos',
     columns: 6,
-    structure: 'back',
+    structure: 'backend',
   },
   {
     id: 12,
@@ -184,7 +184,7 @@ export const proyectosDB: IProyectos[] = [
     heigth: '360px',
     repositorio: 'https://github.com/Leonardo-G/node-primer-RESTserver',
     columns: 6,
-    structure: 'back',
+    structure: 'backend',
   },
   {
     id: 13,
@@ -201,6 +201,6 @@ export const proyectosDB: IProyectos[] = [
     heigth: '490px',
     repositorio: 'https://github.com/Leonardo-G/front-mentor',
     columns: 4,
-    structure: 'front',
+    structure: 'frontend',
   },
 ];
