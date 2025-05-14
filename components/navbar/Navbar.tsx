@@ -8,7 +8,7 @@ import RocketAnimate from './RocketAnimate';
 const navItems = [
   { name: 'inicio', href: '/' },
   { name: 'proyectos', href: '/proyectos' },
-  { name: 'contacto', href: '/contacto' },
+  { name: 'contacto', href: '#contacto', page: '/' },
 ];
 
 const Navbar = () => {
@@ -23,7 +23,13 @@ const Navbar = () => {
         <div className='flex'>
           {navItems.map((item) => (
             <div className='relative' key={item.name}>
-              <Link href={item.href}>
+              <Link
+                href={
+                  pathname !== '/' && item.href.startsWith('#')
+                    ? (item.page ?? '/') + item.href
+                    : item.href
+                }
+              >
                 <p className='font-roboto px-5 py-2 text-sm capitalize'>
                   {item.name}
                 </p>

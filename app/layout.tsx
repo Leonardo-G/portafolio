@@ -24,7 +24,7 @@ export default function RootLayout({
     <html
       lang='es'
       suppressHydrationWarning
-      className={`${openSans.variable} ${roboto.variable}`}
+      className={`${openSans.variable} ${roboto.variable} scroll-smooth`}
     >
       <head>
         <title>Leonardo Guanuco</title>
