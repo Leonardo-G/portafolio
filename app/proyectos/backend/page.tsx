@@ -6,7 +6,7 @@ import { IProjectType } from '@/interface/proyectos';
 
 const PATHNAME_SPLIT = '/proyectos/';
 
-export default function ProjectPage() {
+export default function ProjectBackendPage() {
   const pathname = usePathname();
   const structureProject = pathname.split(PATHNAME_SPLIT);
 
