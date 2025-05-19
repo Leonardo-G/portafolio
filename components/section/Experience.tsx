@@ -32,13 +32,14 @@ const jobs = [
       'CSS',
       'Jest',
       'Cypress',
+      'Redux.js',
     ],
     description: [
       'Desarrollo de aplicaciones web desde 0, utilizando React.js y Next.js',
       'Desarrollo de aplicaciones Android desde 0, con React Native',
       'Desarrollo e implementación de APIs RESTful',
       'Colaboración en equipos ágiles utilizando metodologías Scrum, con sprints de dos semanas para cumplir con los objetivos',
-      'Integración con servicios de terceros y APIs externas',
+      'Integración con servicios de terceros y APIs externas, como Open AI, Stripe',
       'Mantenimiento y mejora de aplicaciones existentes',
     ],
   },
@@ -110,7 +111,6 @@ export default function Experiencia() {
 
       <div className='relative'>
         <div className='absolute top-0 bottom-0 left-0 w-px transform bg-gray-200 md:left-1/2 md:translate-x-[-0.5px] dark:bg-gray-700'></div>
-
         <div className='relative space-y-12'>
           {jobs.map((job, index) => (
             <motion.div
@@ -157,7 +157,6 @@ export default function Experiencia() {
                       )}
                     </motion.button>
                   </div>
-
                   <div className='mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400'>
                     <span className='flex items-center'>
                       <Briefcase className='text-orange-secondary mr-1 h-4 w-4 dark:text-orange-500' />
@@ -172,7 +171,6 @@ export default function Experiencia() {
                       {job.period}
                     </span>
                   </div>
-
                   <div className='flex flex-wrap gap-2'>
                     {job.technologies.slice(0, 3).map((tech, i) => (
                       <span
@@ -189,7 +187,6 @@ export default function Experiencia() {
                       </span>
                     )}
                   </div>
-
                   <AnimatePresence>
                     {expandedJob === job.id && (
                       <motion.div
