@@ -56,7 +56,6 @@ export default function ProjectsGroup({ projectType }: IProps) {
                     <motion.button
                       whileHover={{
                         scale: 1.05,
-                        backgroundColor: 'rgba(251, 146, 60, 0.1)',
                       }}
                       whileTap={{ scale: 0.95 }}
                       className='flex cursor-pointer items-center gap-2 rounded-full bg-gray-100 px-6 py-3 text-sm font-medium text-gray-800 transition-colors duration-300 hover:text-orange-500 dark:bg-gray-800 dark:text-gray-200 dark:hover:text-orange-400'
