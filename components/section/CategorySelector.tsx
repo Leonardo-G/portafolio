@@ -37,7 +37,7 @@ export default function CategorySelector() {
                       Frontend
                     </h3>
                     <div className='text-sm tracking-wider text-gray-500 uppercase dark:text-gray-400'>
-                      REACT / NEXT.JS / UI/UX
+                      REACT / NEXT.JS
                     </div>
                   </div>
 
@@ -62,14 +62,12 @@ export default function CategorySelector() {
                 </div>
               </div>
 
-              {/* Hover effect */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: hoveredCategory === 'frontend' ? 1 : 0 }}
                 className='pointer-events-none absolute inset-0 bg-gradient-to-br from-orange-400/5 to-orange-400/20 dark:from-orange-500/10 dark:to-orange-500/30'
               ></motion.div>
 
-              {/* Code symbols */}
               <div className='pointer-events-none absolute -right-4 -bottom-4 text-9xl font-bold text-orange-400/10 dark:text-orange-500/10'>
                 {'</>'}
               </div>
@@ -77,7 +75,6 @@ export default function CategorySelector() {
           </Link>
         </div>
 
-        {/* Backend Card */}
         <div
           className='relative'
           onMouseEnter={() => setHoveredCategory('backend')}
@@ -85,11 +82,6 @@ export default function CategorySelector() {
         >
           <Link href='/proyectos/backend' className='block'>
             <div className='group relative overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-900 dark:shadow-gray-950/30'>
-              <div className='pointer-events-none absolute inset-0 opacity-5 dark:opacity-10'>
-                <div className="bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PHBhdGggZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2NGgtMXYtNHptMi0yaDF2MWgtMXYtMXptLTIgMmgxdjFoLTF2LTF6bS0yLTJoMXYxaC0xdi0xem0yLTJoMXYxaC0xdi0xem0tMiAyaDF2MWgtMXYtMXptLTItMmgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6bS0yIDRoMXYxaC0xdi0xem0yIDBo'+ 'MXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptMiAwaDJ2MWgtMnYtMXptLTIgMmgxdjFoLTF2LTF6bTQtMmgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6bS0yIDJoMXYxaC0xdi0xem0yIDBo'+ 'MXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptMiAwaDJ2MWgtMnYtMXptLTIgMmgxdjFoLTF2LTF6Ii8+PC9nPjwvZz48L3N2Zz4=')] dark:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PHBhdGggZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2NGgtMXYtNHptMi0yaDF2MWgtMXYtMXptLTIgMmgxdjFoLTF2LTF6bS0yLTJoMXYxaC0xdi0xem0yLTJoMXYxaC0xdi0xem0tMiAyaDF2MWgtMXYtMXptLTItMmgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6bS0yIDRoMXYxaC0xdi0xem0yIDBo'+ 'MXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptMiAwaDJ2MWgtMnYtMXptLTIgMmgxdjFoLTF2LTF6bTQtMmgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6bS0yIDJoMXYxaC0xdi0xem0yIDBo'+ 'MXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptMiAwaDJ2MWgtMnYtMXptLTIgMmgxdjFoLTF2LTF6Ii8+PC9nPjwvZz48L3N2Zz4=')] absolute inset-0"></div>
-              </div>
-
-              {/* Content */}
               <div className='relative z-10 p-10 md:p-12'>
                 <div className='flex h-full flex-col'>
                   <div className='mb-6'>

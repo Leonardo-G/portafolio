@@ -17,7 +17,6 @@ export default function ProjectsGroup({ projectType }: IProps) {
   return (
     <section className='relative mx-auto w-full max-w-6xl overflow-hidden px-4 py-24'>
       <Title title='Proyectos' />
-
       <AnimatePresence mode='wait'>
         (
         <motion.div
