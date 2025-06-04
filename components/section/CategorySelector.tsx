@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Title from '../UI/Title';
+import ProyectCard from './ProyectCard';
 
 export default function CategorySelector() {
   const [hoveredCategory, setHoveredCategory] = useState<
@@ -14,6 +15,7 @@ export default function CategorySelector() {
   return (
     <section className='mx-auto my-30 w-full max-w-[1280px]'>
       <Title title='Proyectos' />
+      <ProyectCard />
 
       <div className='relative mt-10 grid gap-8 md:grid-cols-2 md:gap-12'>
         <div className='absolute top-0 bottom-0 left-1/2 hidden w-px bg-gradient-to-b from-orange-400/0 via-orange-400/50 to-orange-400/0 md:block'></div>
