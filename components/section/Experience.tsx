@@ -18,7 +18,7 @@ const jobs = [
     title: 'Software Developer',
     company: 'Bigger Tech',
     location: 'Remoto',
-    period: 'Septiembre 2023 - Abril 2025',
+    period: 'Septiembre 2023 - Junio 2025',
     technologies: [
       'React.js',
       'React Native',
@@ -48,7 +48,7 @@ const jobs = [
     title: 'Desarrollador Backend',
     company: 'Devocamp',
     location: 'Remoto - Pasantía',
-    period: 'Marzo 2023 - Agosto 2023',
+    period: 'Enero 2023 - Agosto 2023',
     technologies: [
       'TypeScript',
       'Next.js',

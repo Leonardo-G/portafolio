@@ -1,4 +1,3 @@
-import { UIProvider } from '@/context/UI/UIProvider';
 import Navbar from '@/components/navbar/Navbar';
 import { ThemeProvider } from 'next-themes';
 import { Open_Sans, Roboto } from 'next/font/google';
@@ -29,19 +28,17 @@ export default function RootLayout({
       <head>
         <title>Leonardo Guanuco</title>
       </head>
-      <UIProvider>
-        <body className='font-roboto'>
-          <ThemeProvider
-            themes={['light', 'dark']}
-            defaultTheme='light'
-            enableSystem
-            attribute={'class'}
-          >
-            <Navbar />
-            {children}
-          </ThemeProvider>
-        </body>
-      </UIProvider>
+      <body className='font-roboto'>
+        <ThemeProvider
+          themes={['light', 'dark']}
+          defaultTheme='light'
+          enableSystem
+          attribute={'class'}
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
