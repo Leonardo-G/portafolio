@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 import Title from '../UI/Title';
 import ProyectCard from './ProyectCard';
 import useNotificationStore from '@/stores/notification.store';
+
+const PROJECT_BACKEND = 'PROJECT_BACKEND';
+const PROJECT_FRONTEND = 'PROJECT_FRONTEND';
 
 export default function CategorySelector() {
   const [hoveredCategory, setHoveredCategory] = useState<
@@ -32,7 +34,10 @@ export default function CategorySelector() {
           <div
             className='block'
             onClick={() =>
-              handleShowNotification('Pronto podrás ver los proyectos.')
+              handleShowNotification(
+                'Pronto podrás ver los proyectos frontend.',
+                PROJECT_FRONTEND,
+              )
             }
           >
             <div className='group relative overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-900 dark:shadow-gray-950/30'>
@@ -92,7 +97,15 @@ export default function CategorySelector() {
           onMouseEnter={() => setHoveredCategory('backend')}
           onMouseLeave={() => setHoveredCategory(null)}
         >
-          <Link href='/proyectos/backend' className='block'>
+          <div
+            className='block'
+            onClick={() =>
+              handleShowNotification(
+                'Pronto podrás ver los proyectos backend.',
+                PROJECT_BACKEND,
+              )
+            }
+          >
             <div className='group relative overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-900 dark:shadow-gray-950/30'>
               <div className='relative z-10 p-10 md:p-12'>
                 <div className='flex h-full flex-col'>
@@ -138,7 +151,7 @@ export default function CategorySelector() {
                 {'{...}'}
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       </div>
     </section>

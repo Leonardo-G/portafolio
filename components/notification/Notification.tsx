@@ -1,11 +1,15 @@
 'use client';
 
-import useNotificationStore from '@/stores/notification.store';
+import useNotificationStore, {
+  TypeIdNotification,
+} from '@/stores/notification.store';
 import { X } from 'lucide-react';
+
+import { motion } from 'motion/react';
 
 interface INotification {
   message: string;
-  id: string;
+  id: TypeIdNotification;
 }
 
 export default function Notification({ message, id }: INotification) {
@@ -14,7 +18,13 @@ export default function Notification({ message, id }: INotification) {
   );
 
   return (
-    <div className='border-orange-secondary relative max-w-md min-w-80 justify-around rounded-lg border-l-4 bg-white p-4 pr-12 shadow-xl'>
+    <motion.div
+      className='border-orange-secondary relative max-w-md min-w-80 justify-around rounded-lg border-l-4 bg-white p-4 pr-12 shadow-xl'
+      initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 300, opacity: 0 }}
+      transition={{ type: 'spring', stiffness: 500, damping: 40 }}
+    >
       <p className='truncate text-gray-600'>{message}</p>
       <div
         className='absolute top-[10px] right-[15px] cursor-pointer'
@@ -22,6 +32,6 @@ export default function Notification({ message, id }: INotification) {
       >
         <X width={15} className='text-gray-400 hover:text-gray-700' />
       </div>
-    </div>
+    </motion.div>
   );
 }
