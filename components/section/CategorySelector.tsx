@@ -6,11 +6,16 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Title from '../UI/Title';
 import ProyectCard from './ProyectCard';
+import useNotificationStore from '@/stores/notification.store';
 
 export default function CategorySelector() {
   const [hoveredCategory, setHoveredCategory] = useState<
     'frontend' | 'backend' | null
   >(null);
+
+  const handleShowNotification = useNotificationStore(
+    (state) => state.handleShowNotification,
+  );
 
   return (
     <section className='mx-auto my-30 w-full max-w-[1280px]'>
@@ -24,7 +29,12 @@ export default function CategorySelector() {
           onMouseEnter={() => setHoveredCategory('frontend')}
           onMouseLeave={() => setHoveredCategory(null)}
         >
-          <Link href='/proyectos/frontend' className='block' prefetch>
+          <div
+            className='block'
+            onClick={() =>
+              handleShowNotification('Pronto podrás ver los proyectos.')
+            }
+          >
             <div className='group relative overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-900 dark:shadow-gray-950/30'>
               <div className='pointer-events-none absolute inset-0 opacity-5 dark:opacity-10'>
                 <div className="bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PHBhdGggZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2NGgtMXYtNHptMi0yaDF2MWgtMXYtMXptLTIgMmgxdjFoLTF2LTF6bS0yLTJoMXYxaC0xdi0xem0yLTJoMXYxaC0xdi0xem0tMiAyaDF2MWgtMXYtMXptLTItMmgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6bS0yIDRoMXYxaC0xdi0xem0yIDBo'+ 'MXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptMiAwaDJ2MWgtMnYtMXptLTIgMmgxdjFoLTF2LTF6bTQtMmgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6bS0yIDJoMXYxaC0xdi0xem0yIDBo'+ 'MXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptMiAwaDJ2MWgtMnYtMXptLTIgMmgxdjFoLTF2LTF6Ii8+PC9nPjwvZz48L3N2Zz4=')] dark:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PHBhdGggZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2NGgtMXYtNHptMi0yaDF2MWgtMXYtMXptLTIgMmgxdjFoLTF2LTF6bS0yLTJoMXYxaC0xdi0xem0yLTJoMXYxaC0xdi0xem0tMiAyaDF2MWgtMXYtMXptLTItMmgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6bS0yIDRoMXYxaC0xdi0xem0yIDBo'+ 'MXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptMiAwaDJ2MWgtMnYtMXptLTIgMmgxdjFoLTF2LTF6bTQtMmgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6bS0yIDJoMXYxaC0xdi0xem0yIDBo'+ 'MXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptMiAwaDJ2MWgtMnYtMXptLTIgMmgxdjFoLTF2LTF6Ii8+PC9nPjwvZz48L3N2Zz4=')] absolute inset-0"></div>
@@ -74,7 +84,7 @@ export default function CategorySelector() {
                 {'</>'}
               </div>
             </div>
-          </Link>
+          </div>
         </div>
 
         <div

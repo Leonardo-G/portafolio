@@ -1,3 +1,4 @@
+import NotificationGroup from '@/components/notification/NotificationGroup';
 import CategorySelector from '@/components/section/CategorySelector';
 import Certificates from '@/components/section/Certificates';
 import Contacto from '@/components/section/Contacto';
@@ -8,6 +9,7 @@ import MySkills from '@/components/section/Skills';
 export default function HomePage() {
   return (
     <>
+      <NotificationGroup />
       <HeroSection />
       <MySkills key={'skills'} />
       <CategorySelector />
