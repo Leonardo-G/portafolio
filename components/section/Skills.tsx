@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import {
   FaCss3Alt,
   FaHtml5,
@@ -121,6 +121,10 @@ export const skills: Skill[] = [
 
 const allSkillsTopic = [
   {
+    code: 'all',
+    description: 'Todas las skills',
+  },
+  {
     code: 'front',
     description: 'Front-end y lenguajes',
   },
@@ -139,42 +143,20 @@ export default function MySkills() {
   const skillDescription = allSkillsTopic.filter(
     (skill) => skill.code === skillsTopic,
   );
-  const timeRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleChangeTopic = (topic: string) => {
     setSkillsTopic(topic);
   };
 
-  const handleChangeNextTopic = () => {
-    setSkillsTopic((prev) => {
-      const indexCurrentState = allSkillsTopic.findIndex(
-        (skill) => skill.code === prev,
-      );
-      const nextIndex = (indexCurrentState + 1) % allSkillsTopic.length;
-      return allSkillsTopic[nextIndex].code;
-    });
-  };
-
-  const resetTimer = () => {
-    if (timeRef.current) clearTimeout(timeRef.current);
-    timeRef.current = setTimeout(() => {
-      handleChangeNextTopic();
-    }, 8000);
-  };
-
-  useEffect(() => {
-    resetTimer();
-    return () => {
-      if (timeRef.current) {
-        clearTimeout(timeRef.current);
-      }
-    };
-  });
-
   return (
     <div className='mx-auto w-full max-w-[1280px]'>
       <Title title='My skills' />
-      <div className='relative mt-22 mb-22 grid min-h-[200px] w-full grid-cols-5 pl-[56px]'>
+      <div className='border-orange-primary mt-15 ml-15 border-l-3 pl-3'>
+        <p className='text-sm leading-relaxed text-gray-600'>
+          {skillDescription[0].description}
+        </p>
+      </div>
+      <div className='relative mt-7 mb-22 grid min-h-[200px] w-full grid-cols-5 pl-[56px]'>
         <div className='absolute top-[50%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-[12px]'>
           {Array.from({ length: 18 }, (_, i) => i + 1).map((value) => (
             <div className='flex gap-[12px]' key={value}>
@@ -214,46 +196,28 @@ export default function MySkills() {
               })}
           </AnimatePresence>
         </div>
-        <div className='flex h-full w-full items-end justify-end'>
-          <div>
-            <div className='flex w-[150px] gap-2'>
-              <div className='bg-black-transparent mb-10 ml-2 h-70 w-[1px]'></div>
-              <AnimatePresence>
-                <div>
-                  <motion.p
-                    key={skillDescription[0].description}
-                    className='text-xs'
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {skillDescription[0].description}
-                  </motion.p>
-                </div>
-              </AnimatePresence>
+        <div className='relative flex h-full w-full flex-col items-end justify-end gap-6'>
+          {allSkillsTopic.map((skillTopic) => (
+            <div
+              key={skillTopic.code}
+              onClick={() => handleChangeTopic(skillTopic.code)}
+              className={`group relative w-[250px] cursor-pointer rounded-sm border-l-4 bg-white px-4 py-2 text-gray-500 hover:text-gray-700 ${
+                skillsTopic === skillTopic.code
+                  ? 'border-orange-secondary font-medium text-gray-700 shadow-lg'
+                  : 'border-transparent'
+              }`}
+            >
+              {skillsTopic === skillTopic.code && (
+                <motion.div
+                  layoutId='circle-highlight'
+                  className='bg-orange-secondary absolute top-1/2 right-px z-10 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full'
+                  transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                />
+              )}
+
+              <p className='relative z-20 text-sm'>{skillTopic.description}</p>
             </div>
-            <div className='flex gap-10'>
-              {allSkillsTopic.map((skillTopic) => (
-                <div
-                  className='bg-orange-primary relative h-4 w-4 cursor-pointer rounded-full'
-                  onClick={() => handleChangeTopic(skillTopic.code)}
-                  key={skillTopic.code}
-                >
-                  {skillTopic.code === skillsTopic && (
-                    <motion.div
-                      className='absolute top-0 left-0 z-5 h-4 w-4 cursor-pointer rounded-full bg-black'
-                      key={skillTopic.code}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                      initial={{ opacity: 0, y: 10 }}
-                      exit={{ opacity: 0, y: -10 }}
-                    ></motion.div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
