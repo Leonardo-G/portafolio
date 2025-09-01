@@ -24,6 +24,7 @@ import { TbBrandReactNative } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 import { AnimatePresence, motion } from 'motion/react';
 import Title from '../UI/Title';
+import SkillDescription from '../skills/SkillDescription';
 
 type Skill = {
   name: string;
@@ -138,11 +139,18 @@ const allSkillsTopic = [
   },
 ];
 
+const SHOW_SKILLS_IN_SECTION = 8;
+
 export default function MySkills() {
-  const [skillsTopic, setSkillsTopic] = useState('front');
+  const [skillsTopic, setSkillsTopic] = useState('all');
   const skillDescription = allSkillsTopic.filter(
     (skill) => skill.code === skillsTopic,
   );
+
+  const filteredSkills =
+    skillsTopic === 'all'
+      ? skills.slice(0, SHOW_SKILLS_IN_SECTION)
+      : skills.filter((skill) => skill.code === skillsTopic);
 
   const handleChangeTopic = (topic: string) => {
     setSkillsTopic(topic);
@@ -169,31 +177,17 @@ export default function MySkills() {
         <div className='col-span-4 grid h-[500px] grid-cols-4 gap-y-20'>
           <div className='absolute left-[12%] z-0 h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
           <AnimatePresence mode='wait'>
-            {skills
-              .filter((skill) => skill.code === skillsTopic)
-              .map((skill, idx) => {
-                const Icon = skill.icon;
-                return (
-                  <motion.div
-                    key={skill.name}
-                    drag
-                    className='border-grey-secondary z-10 flex h-[200px] w-[200px] flex-col items-center justify-end rounded-2xl border pb-4 transition-shadow hover:shadow-md'
-                    transition={{ duration: 0.3, delay: 0.1 * idx }}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileDrag={{ scale: 1.1, boxShadow: '0px 10px 16px #01' }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{
-                      opacity: 0,
-                      y: -10,
-                    }}
-                  >
-                    <Icon className='mb-6 h-[75px] w-[75px]' />
-                    <p className='font-roboto text-sm font-light tracking-[3px]'>
-                      {skill.name}
-                    </p>
-                  </motion.div>
-                );
-              })}
+            {filteredSkills.map((skill, idx) => {
+              const Icon = skill.icon;
+              return (
+                <SkillDescription
+                  key={`${skill.name}-${skillsTopic}`}
+                  skill={skill}
+                  Icon={Icon}
+                  idx={idx}
+                />
+              );
+            })}
           </AnimatePresence>
         </div>
         <div className='relative flex h-full w-full flex-col items-end justify-end gap-6'>
