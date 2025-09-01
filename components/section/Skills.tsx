@@ -25,6 +25,7 @@ import { IconType } from 'react-icons';
 import { AnimatePresence, motion } from 'motion/react';
 import Title from '../UI/Title';
 import SkillDescription from '../skills/SkillDescription';
+import DotGrid from '../UI/DotGrid';
 
 type Skill = {
   name: string;
@@ -149,13 +150,13 @@ export default function MySkills() {
 
   const filteredSkills =
     skillsTopic === 'all'
-      ? skills.slice(0, SHOW_SKILLS_IN_SECTION)
+      ? skills
       : skills.filter((skill) => skill.code === skillsTopic);
 
   const handleChangeTopic = (topic: string) => {
     setSkillsTopic(topic);
   };
-
+  console.log('filteredSkills', filteredSkills);
   return (
     <div className='mx-auto w-full max-w-[1280px]'>
       <Title title='My skills' />
@@ -166,28 +167,24 @@ export default function MySkills() {
       </div>
       <div className='relative mt-7 mb-22 grid min-h-[200px] w-full grid-cols-5 pl-[56px]'>
         <div className='absolute top-[50%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-[12px]'>
-          {Array.from({ length: 18 }, (_, i) => i + 1).map((value) => (
-            <div className='flex gap-[12px]' key={value}>
-              <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
-              <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
-              <div className='h-[5px] w-[5px] bg-[#D08131]'></div>
-            </div>
-          ))}
+          <DotGrid />
         </div>
+        <div className='absolute left-[12%] z-0 h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
         <div className='col-span-4 grid h-[500px] grid-cols-4 gap-y-20'>
-          <div className='absolute left-[12%] z-0 h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
-          <AnimatePresence mode='wait'>
-            {filteredSkills.map((skill, idx) => {
-              const Icon = skill.icon;
-              return (
-                <SkillDescription
-                  key={`${skill.name}-${skillsTopic}`}
-                  skill={skill}
-                  Icon={Icon}
-                  idx={idx}
-                />
-              );
-            })}
+          <AnimatePresence mode='popLayout'>
+            {filteredSkills
+              .slice(0, SHOW_SKILLS_IN_SECTION)
+              .map((skill, idx) => {
+                const Icon = skill.icon;
+                return (
+                  <SkillDescription
+                    key={`${skill.name}-${skillsTopic}`}
+                    skill={skill}
+                    Icon={Icon}
+                    idx={idx}
+                  />
+                );
+              })}
           </AnimatePresence>
         </div>
         <div className='relative flex h-full w-full flex-col items-end justify-end gap-6'>

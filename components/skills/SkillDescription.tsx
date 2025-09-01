@@ -20,10 +20,6 @@ export default function SkillDescription({ skill, Icon, idx }: IProps) {
       initial={{ opacity: 0, y: 10 }}
       whileDrag={{ scale: 1.1, boxShadow: '0px 10px 16px #01' }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{
-        opacity: 0,
-        y: -10,
-      }}
     >
       <Icon className='mb-6 h-[75px] w-[75px]' />
       <p className='font-roboto text-sm font-light tracking-[3px]'>
