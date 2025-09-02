@@ -149,21 +149,33 @@ export default function MySkills() {
   const skillDescription = allSkillsTopic.filter(
     (skill) => skill.code === skillsTopic,
   );
-
   const filteredSkills =
     skillsTopic === 'all'
       ? skills
       : skills.filter((skill) => skill.code === skillsTopic);
 
+  const totalPages = Math.ceil(filteredSkills.length / SHOW_SKILLS_IN_SECTION);
   const handleChangeTopic = (topic: string) => {
     setPage(1);
     setSkillsTopic(topic);
   };
 
   const handleNextSkills = () => {
-    setPage((prev) => prev + 1);
+    if (page >= totalPages) {
+      setPage(1);
+    } else {
+      setPage((prev) => prev + 1);
+    }
   };
-  console.log(page);
+
+  const handlePrevSkills = () => {
+    if (page === 1) {
+      setPage(Math.ceil(totalPages));
+      return;
+    }
+    setPage((prev) => prev - 1);
+  };
+
   return (
     <div className='mx-auto w-full max-w-[1280px]'>
       <Title title='My skills' />
@@ -228,10 +240,20 @@ export default function MySkills() {
                   scale: 1.1,
                 }}
                 className='hover:text-orange-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-gray-400 shadow-lg transition-colors duration-300'
-                onClick={handleNextSkills}
+                onClick={handlePrevSkills}
               >
                 <FaChevronLeft className='m-auto' />
               </motion.div>
+              <div className='flex items-center gap-3'>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                  (pageNumber) => (
+                    <div
+                      className={`h-3 w-3 rounded-full transition-all duration-300 ${page === pageNumber ? 'bg-orange-secondary' : 'bg-gray-400'}`}
+                      key={pageNumber}
+                    ></div>
+                  ),
+                )}
+              </div>
               <motion.div
                 whileHover={{
                   scale: 1.1,
