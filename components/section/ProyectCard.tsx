@@ -23,10 +23,10 @@ type FeaturedProject = {
 const featuredProjects: FeaturedProject[] = [
   {
     id: 1,
-    slug: 'moviehub',
-    title: 'MovieHub',
+    slug: 'mercado-libre-clone',
+    title: 'Mercado Libre Clone',
     description:
-      'Plataforma completa para descubrir películas con recomendaciones personalizadas y reseñas de usuarios.',
+      'Plataforma de e-commerce similar a Mercado Libre, con búsqueda avanzada y carrito de compras.',
     type: 'frontend',
     tags: ['React', 'Next.js', 'Tailwind CSS', 'API'],
     image: '/placeholder.svg?height=400&width=600',
@@ -63,6 +63,7 @@ const featuredProjects: FeaturedProject[] = [
     year: '2023',
   },
 ];
+
 export default function ProyectCard() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
@@ -156,7 +157,7 @@ export default function ProyectCard() {
                     </div>
 
                     <Link
-                      href={`/proyectos/${project.type}/${project.slug}`}
+                      href={`/proyectos/${project.slug}`}
                       className='flex items-center gap-1 text-sm text-gray-500 transition-colors duration-300 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-400'
                     >
                       <span className='inline-block transition-transform duration-500 group-hover:translate-x-1'>

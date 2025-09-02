@@ -4,9 +4,8 @@ interface IProps {
 
 export default function Badge({ text }: IProps) {
   return (
-    <div className='flex'>
-      <div className='w-2 rounded-full'></div>
-      <p>{text}</p>
+    <div className='inline-block rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-600'>
+      <p className='tracking-wide capitalize'>{text}</p>
     </div>
   );
 }
