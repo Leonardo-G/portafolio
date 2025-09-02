@@ -21,6 +21,7 @@ import {
 } from 'react-icons/si';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { TbBrandReactNative } from 'react-icons/tb';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 import { AnimatePresence, motion } from 'motion/react';
 import Title from '../UI/Title';
@@ -144,6 +145,7 @@ const SHOW_SKILLS_IN_SECTION = 8;
 
 export default function MySkills() {
   const [skillsTopic, setSkillsTopic] = useState('all');
+  const [page, setPage] = useState(1);
   const skillDescription = allSkillsTopic.filter(
     (skill) => skill.code === skillsTopic,
   );
@@ -154,9 +156,14 @@ export default function MySkills() {
       : skills.filter((skill) => skill.code === skillsTopic);
 
   const handleChangeTopic = (topic: string) => {
+    setPage(1);
     setSkillsTopic(topic);
   };
-  console.log('filteredSkills', filteredSkills);
+
+  const handleNextSkills = () => {
+    setPage((prev) => prev + 1);
+  };
+  console.log(page);
   return (
     <div className='mx-auto w-full max-w-[1280px]'>
       <Title title='My skills' />
@@ -165,15 +172,18 @@ export default function MySkills() {
           {skillDescription[0].description}
         </p>
       </div>
-      <div className='relative mt-7 mb-22 grid min-h-[200px] w-full grid-cols-5 pl-[56px]'>
-        <div className='absolute top-[50%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-[12px]'>
+      <div className='relative mt-7 mb-22 grid min-h-[200px] w-full grid-cols-5 grid-rows-2 grid-rows-[auto_100px] pl-[56px]'>
+        <div className='absolute top-[40%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-[12px]'>
           <DotGrid />
         </div>
         <div className='absolute left-[12%] z-0 h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
         <div className='col-span-4 grid h-[500px] grid-cols-4 gap-y-20'>
           <AnimatePresence mode='popLayout'>
             {filteredSkills
-              .slice(0, SHOW_SKILLS_IN_SECTION)
+              .slice(
+                (page - 1) * SHOW_SKILLS_IN_SECTION,
+                SHOW_SKILLS_IN_SECTION * page,
+              )
               .map((skill, idx) => {
                 const Icon = skill.icon;
                 return (
@@ -209,6 +219,30 @@ export default function MySkills() {
               <p className='relative z-20 text-sm'>{skillTopic.description}</p>
             </div>
           ))}
+        </div>
+        <div className='col-span-4 row-start-2 row-end-3 flex items-center justify-center gap-x-5'>
+          {filteredSkills.length > SHOW_SKILLS_IN_SECTION && (
+            <>
+              <motion.div
+                whileHover={{
+                  scale: 1.1,
+                }}
+                className='hover:text-orange-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-gray-400 shadow-lg transition-colors duration-300'
+                onClick={handleNextSkills}
+              >
+                <FaChevronLeft className='m-auto' />
+              </motion.div>
+              <motion.div
+                whileHover={{
+                  scale: 1.1,
+                }}
+                className='hover:text-orange-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-gray-400 shadow-lg transition-colors duration-300'
+                onClick={handleNextSkills}
+              >
+                <FaChevronRight className='m-auto' />
+              </motion.div>
+            </>
+          )}
         </div>
       </div>
     </div>
