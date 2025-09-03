@@ -11,7 +11,7 @@ interface IProps {
 export default function TopInfo({ type, category }: IProps) {
   return (
     <div className='flex items-center justify-center gap-3'>
-      <Badge text={type} />
+      <Badge text={type} variant='orange' className='rounded-full' />
       <div className='h-1 w-1 rounded-full bg-gray-500'></div>
       <div className='flex items-center gap-2 text-gray-500'>
         <FaCode />

@@ -1,11 +1,11 @@
 interface IProps {
-  as: 'h1' | 'h2' | 'h3' | 'p' | 'span';
+  as?: 'h1' | 'h2' | 'h3' | 'p' | 'span';
   children: React.ReactNode;
   className?: string;
 }
 
 export default function Text({ as, children, className }: IProps) {
-  const Tag = as;
+  const Tag = as ?? 'p';
 
   const stylesByTag = () => {
     switch (as) {
@@ -16,7 +16,7 @@ export default function Text({ as, children, className }: IProps) {
       case 'h3':
         return 'text-2xl font-medium';
       case 'p':
-        return 'text-base';
+        return 'text-base leading-relaxed text-gray-600';
       case 'span':
         return 'text-sm';
       default:
