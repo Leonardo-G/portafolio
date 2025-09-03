@@ -15,5 +15,7 @@ export const projects: IProject[] = [
       'Plataforma de e-commerce similar a Mercado Libre, con búsqueda avanzada y carrito de compras.',
     type: 'frontend',
     category: 'Aplicación Web',
+    mainSkills: ['React.js', 'Next.js', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/Leonardo-G/clon-mercadolibre',
   },
 ];

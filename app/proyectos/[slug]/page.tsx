@@ -5,6 +5,7 @@ import { IProject } from '@/interface/projects';
 import { notFound } from 'next/navigation';
 import TopInfo from './components/TopInfo';
 import Badge from '@/components/UI/Badge';
+import ProjectButtons from './components/ProjectButtons';
 
 interface IProps {
   params: IParams;
@@ -39,10 +40,11 @@ export default function PageDetail({ params }: IProps) {
         {project.description}
       </Text>
       <div className='mt-6 flex justify-center gap-3'>
-        <Badge text='React.js' variant='gray' />
-        <Badge text='Next.js' variant='gray' />
-        <Badge text='Tailwind CSS' variant='gray' />
+        {project.mainSkills.map((skill) => (
+          <Badge key={skill} text={skill} variant='gray' />
+        ))}
       </div>
+      <ProjectButtons githubUrl={project.githubUrl} />
       <div className='mt-10'>
         <ImageGrid
           title={project.title}

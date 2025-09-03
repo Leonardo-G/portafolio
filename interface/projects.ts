@@ -13,4 +13,6 @@ export interface IProject {
   description: string;
   type: IProjectType;
   category: IProjectCategory;
+  mainSkills: string[];
+  githubUrl: string;
 }
