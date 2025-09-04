@@ -3,13 +3,25 @@
 import { cn } from '@/utils/cn';
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { RxCross2 } from 'react-icons/rx';
+
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+
 interface IProps {
   title: string;
   images: string[];
 }
 
 export default function Gallery({ title, images }: IProps) {
+  const [zoomOpen, setZoomOpen] = useState(false);
+  const [currentIndexImage, setCurrentIndexImage] = useState(0);
+
+  const handleZoomToggle = () => {
+    setZoomOpen(!zoomOpen);
+  };
+
   const classPositionGrid = [
     'col-span-2 row-span-2',
     'row-span-1',
@@ -18,8 +30,76 @@ export default function Gallery({ title, images }: IProps) {
     'row-span-2',
   ];
 
+  const handleNextImage = () => {
+    setCurrentIndexImage(
+      currentIndexImage === images.length - 1 ? 0 : currentIndexImage + 1,
+    );
+  };
+
+  const handlePrevImage = () => {
+    setCurrentIndexImage(
+      images.length === 0 ? images.length - 1 : currentIndexImage - 1,
+    );
+  };
+
+  useEffect(() => {
+    if (zoomOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [zoomOpen]);
+
   return (
     <div className='grid h-[60vh] grid-cols-3 grid-rows-4 gap-4'>
+      {zoomOpen && (
+        <div
+          className='bg-opacity-75 scroll-none fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-black/80'
+          onClick={handleZoomToggle}
+        >
+          <div
+            className='group fixed top-[2%] right-[2%] z-50 inline-block cursor-pointer rounded-full bg-black/50 p-4 transition duration-300 hover:bg-black/70'
+            onClick={handleZoomToggle}
+          >
+            <RxCross2 className='text-white transition-all duration-300 group-hover:scale-120' />
+          </div>
+          <div
+            className='group top-inset fixed right-[2%] z-50 inline-block cursor-pointer rounded-full bg-black/50 p-4 transition duration-300 hover:bg-black/70'
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNextImage();
+            }}
+          >
+            <FaChevronRight className='text-white transition-all duration-300 group-hover:scale-120' />
+          </div>
+          <div
+            className='group top-inset fixed left-[2%] z-50 inline-block cursor-pointer rounded-full bg-black/50 p-4 transition duration-300 hover:bg-black/70'
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrevImage();
+            }}
+          >
+            <FaChevronLeft className='text-white transition-all duration-300 group-hover:scale-120' />
+          </div>
+          <motion.div
+            key={currentIndexImage}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+            className='relative h-full max-h-full w-full max-w-4xl'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={images[currentIndexImage] || '/placeholder.svg'}
+              alt={`${title} - Vista ${currentIndexImage + 1}`}
+              fill
+              className='rounded-lg object-contain'
+              priority
+            />
+          </motion.div>
+        </div>
+      )}
       {images.map((image, index) => (
         <motion.div
           key={index}
@@ -30,12 +110,13 @@ export default function Gallery({ title, images }: IProps) {
             'group relative cursor-pointer overflow-hidden rounded-lg',
             classPositionGrid[index],
           )}
+          onClick={handleZoomToggle}
         >
           <Image
             src={image || '/placeholder.svg'}
             alt={`${title} - Vista ${index + 1}`}
             fill
-            className='object-cover transition-all duration-300 ease-out group-hover:scale-105 group-hover:brightness-75'
+            className='object-cover transition-all duration-300 ease-out select-none group-hover:scale-105 group-hover:brightness-75'
           />
 
           <div className='absolute top-1/2 left-1/2 z-10 flex -translate-1/2 items-center justify-center rounded-full bg-black/50 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
