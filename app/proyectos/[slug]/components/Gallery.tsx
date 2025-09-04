@@ -54,7 +54,7 @@ export default function Gallery({ title, images }: IProps) {
     <div className='grid h-[60vh] grid-cols-3 grid-rows-4 gap-4'>
       {zoomOpen && (
         <div
-          className='bg-opacity-75 scroll-none fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-black/80'
+          className='scroll-none fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-black/90'
           onClick={handleZoomToggle}
         >
           <div
@@ -124,6 +124,23 @@ export default function Gallery({ title, images }: IProps) {
           </div>
         </motion.div>
       ))}
+      {zoomOpen && (
+        <div className='fixed bottom-10 left-0 z-50 mt-2 flex h-4 w-4 w-full items-center justify-center gap-5 text-center text-sm text-gray-300'>
+          {Array.from({ length: images.length }, (_, idx) => idx + 1).map(
+            (num) => (
+              <div
+                className={cn(
+                  'transtion-all rounded-full duration-300',
+                  currentIndexImage === num - 1
+                    ? 'h-4 w-4 bg-white/80'
+                    : 'h-2 w-2 bg-white/50',
+                )}
+                key={num}
+              ></div>
+            ),
+          )}
+        </div>
+      )}
     </div>
   );
 }
