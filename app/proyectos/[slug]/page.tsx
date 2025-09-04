@@ -1,5 +1,5 @@
 import { projects } from '@/database/projects';
-import ImageGrid from './components/ImageGrid';
+import Gallery from './components/Gallery';
 import Text from '@/components/text/Text';
 import { IProject } from '@/interface/projects';
 import { notFound } from 'next/navigation';
@@ -46,7 +46,7 @@ export default function PageDetail({ params }: IProps) {
       </div>
       <ProjectButtons githubUrl={project.githubUrl} />
       <div className='mt-10'>
-        <ImageGrid
+        <Gallery
           title={project.title}
           images={[
             '/proyectos/clon-mercadolibre.png',
