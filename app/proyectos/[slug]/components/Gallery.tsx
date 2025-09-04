@@ -42,6 +42,11 @@ export default function Gallery({ title, images }: IProps) {
     );
   };
 
+  const handleChangeImage = (index: number) => {
+    if (index === currentIndexImage) return;
+    setCurrentIndexImage(index);
+  };
+
   useEffect(() => {
     if (zoomOpen) {
       document.body.style.overflow = 'hidden';
@@ -58,13 +63,13 @@ export default function Gallery({ title, images }: IProps) {
           onClick={handleZoomToggle}
         >
           <div
-            className='group fixed top-[2%] right-[2%] z-50 inline-block cursor-pointer rounded-full bg-black/50 p-4 transition duration-300 hover:bg-black/70'
+            className='group fixed top-[5%] right-[2%] z-50 inline-block cursor-pointer rounded-full bg-white/20 p-4 transition duration-300 hover:bg-white/30'
             onClick={handleZoomToggle}
           >
             <RxCross2 className='text-white transition-all duration-300 group-hover:scale-120' />
           </div>
           <div
-            className='group top-inset fixed right-[2%] z-50 inline-block cursor-pointer rounded-full bg-black/50 p-4 transition duration-300 hover:bg-black/70'
+            className='group top-inset fixed right-[2%] z-50 inline-block cursor-pointer rounded-full bg-white/20 p-4 transition duration-300 hover:bg-white/30'
             onClick={(e) => {
               e.stopPropagation();
               handleNextImage();
@@ -73,7 +78,7 @@ export default function Gallery({ title, images }: IProps) {
             <FaChevronRight className='text-white transition-all duration-300 group-hover:scale-120' />
           </div>
           <div
-            className='group top-inset fixed left-[2%] z-50 inline-block cursor-pointer rounded-full bg-black/50 p-4 transition duration-300 hover:bg-black/70'
+            className='group top-inset fixed left-[2%] z-50 inline-block cursor-pointer rounded-full bg-white/20 p-4 transition duration-300 hover:bg-white/30'
             onClick={(e) => {
               e.stopPropagation();
               handlePrevImage();
@@ -94,7 +99,7 @@ export default function Gallery({ title, images }: IProps) {
               src={images[currentIndexImage] || '/placeholder.svg'}
               alt={`${title} - Vista ${currentIndexImage + 1}`}
               fill
-              className='rounded-lg object-contain'
+              className='rounded-lg object-contain select-none'
               priority
             />
           </motion.div>
@@ -129,11 +134,12 @@ export default function Gallery({ title, images }: IProps) {
           {Array.from({ length: images.length }, (_, idx) => idx + 1).map(
             (num) => (
               <div
+                onClick={() => handleChangeImage(num - 1)}
                 className={cn(
                   'transtion-all rounded-full duration-300',
                   currentIndexImage === num - 1
                     ? 'h-4 w-4 bg-white/80'
-                    : 'h-2 w-2 bg-white/50',
+                    : 'h-2 w-2 cursor-pointer bg-white/50 hover:scale-150',
                 )}
                 key={num}
               ></div>
