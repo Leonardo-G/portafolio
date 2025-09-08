@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import TopInfo from './components/TopInfo';
 import Badge from '@/components/UI/Badge';
 import ProjectButtons from './components/ProjectButtons';
+import Description from './components/Description';
 
 interface IProps {
   params: IParams;
@@ -48,6 +49,7 @@ export default function PageDetail({ params }: IProps) {
       <div className='mt-10'>
         <Gallery title={project.title} images={project.images} />
       </div>
+      <Description features={project.features} techStack={project.techStack} />
     </div>
   );
 }

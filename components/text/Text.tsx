@@ -12,7 +12,7 @@ export default function Text({ as, children, className }: IProps) {
       case 'h1':
         return 'text-4xl font-bold text-center';
       case 'h2':
-        return 'text-3xl font-semibold';
+        return 'text-[22px] font-medium';
       case 'h3':
         return 'text-2xl font-medium';
       case 'p':
