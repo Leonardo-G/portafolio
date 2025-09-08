@@ -46,16 +46,7 @@ export default function PageDetail({ params }: IProps) {
       </div>
       <ProjectButtons githubUrl={project.githubUrl} />
       <div className='mt-10'>
-        <Gallery
-          title={project.title}
-          images={[
-            '/proyectos/clon-mercadolibre.png',
-            '/proyectos/clon-mercadolibre.png',
-            '/proyectos/clon-mercadolibre.png',
-            '/proyectos/clon-mercadolibre.png',
-            '/proyectos/clon-mercadolibre.png',
-          ]}
-        />
+        <Gallery title={project.title} images={project.images} />
       </div>
     </div>
   );

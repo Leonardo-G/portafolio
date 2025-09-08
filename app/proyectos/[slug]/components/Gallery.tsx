@@ -56,7 +56,7 @@ export default function Gallery({ title, images }: IProps) {
   }, [zoomOpen]);
 
   return (
-    <div className='grid h-[60vh] grid-cols-3 grid-rows-4 gap-4'>
+    <div className='grid h-[60vh] max-h-[600px] grid-cols-3 grid-rows-4 gap-4'>
       {zoomOpen && (
         <div
           className='scroll-none fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-black/90'
@@ -92,14 +92,14 @@ export default function Gallery({ title, images }: IProps) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className='relative h-full max-h-full w-full max-w-4xl'
+            className='relative h-[70%] w-[70%]'
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={images[currentIndexImage] || '/placeholder.svg'}
               alt={`${title} - Vista ${currentIndexImage + 1}`}
               fill
-              className='rounded-lg object-contain select-none'
+              className='rounded-lg object-contain object-center select-none'
               priority
             />
           </motion.div>
@@ -112,16 +112,19 @@ export default function Gallery({ title, images }: IProps) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className={cn(
-            'group relative cursor-pointer overflow-hidden rounded-lg',
+            'group relative cursor-pointer overflow-hidden rounded-lg shadow-xl',
             classPositionGrid[index],
           )}
-          onClick={handleZoomToggle}
+          onClick={() => {
+            handleZoomToggle();
+            setCurrentIndexImage(index);
+          }}
         >
           <Image
             src={image || '/placeholder.svg'}
             alt={`${title} - Vista ${index + 1}`}
             fill
-            className='object-cover transition-all duration-300 ease-out select-none group-hover:scale-105 group-hover:brightness-75'
+            className='object-cover transition-all duration-300 ease-out select-none group-hover:scale-105 group-hover:brightness-90'
           />
 
           <div className='absolute top-1/2 left-1/2 z-10 flex -translate-1/2 items-center justify-center rounded-full bg-black/50 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>

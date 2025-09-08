@@ -5,11 +5,13 @@ export const projects: IProject[] = [
     title: 'Mercado Libre Clone',
     slug: 'mercado-libre-clone',
     images: [
-      '/proyectos/clon-mercadolibre.png',
-      '/proyectos/clon-mercadolibre-2.png',
-      '/proyectos/clon-mercadolibre-3.png',
-      '/proyectos/clon-mercadolibre-4.png',
-      '/proyectos/clon-mercadolibre-5.png',
+      '/proyectos/mercado-libre-clon/1.png',
+      '/proyectos/mercado-libre-clon/2.png',
+      '/proyectos/mercado-libre-clon/3.png',
+      '/proyectos/mercado-libre-clon/4.png',
+      '/proyectos/mercado-libre-clon/5.png',
+      '/proyectos/mercado-libre-clon/6.png',
+      '/proyectos/mercado-libre-clon/7.png',
     ],
     description:
       'Plataforma de e-commerce similar a Mercado Libre, con búsqueda avanzada y carrito de compras.',
