@@ -2,6 +2,7 @@ import Navbar from '@/components/navbar/Navbar';
 import { ThemeProvider } from 'next-themes';
 import { Open_Sans, Roboto } from 'next/font/google';
 import './globals.css';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
         <title>Leonardo Guanuco</title>
       </head>
       <body className='font-roboto'>
+        <GoogleAnalytics gaId={process.env.ANALYTICS_ID!} />
         <ThemeProvider
           themes={['light', 'dark']}
           defaultTheme='light'
