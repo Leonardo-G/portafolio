@@ -5,7 +5,7 @@ import { IoLogoLinkedin } from 'react-icons/io5';
 
 export default function HeroSection() {
   return (
-    <div className='relative mx-auto flex min-h-[800px] w-full max-w-[1280px] items-center justify-between'>
+    <div className='relative mx-auto flex min-h-[700px] w-full max-w-[1280px] items-center justify-between sm:min-h-[800px]'>
       <motion.div
         className='z-10 h-fit'
         initial={{ opacity: 0, x: -50 }}
@@ -19,7 +19,7 @@ export default function HeroSection() {
         }}
       >
         <motion.p
-          className='text-grey-primary font-roboto tracking-title pl-5 font-light uppercase'
+          className='text-grey-primary font-roboto tracking-title sm:text-normal pl-5 text-sm font-light uppercase'
           initial={{ opacity: 0, y: 20 }}
           animate={{
             opacity: 1,
@@ -33,7 +33,7 @@ export default function HeroSection() {
           Software developer
         </motion.p>
         <motion.h1
-          className='leading-title text-grey-primary mt-10 text-9xl'
+          className='sm:leading-title text-grey-primary mt-4 text-6xl font-medium sm:mt-10 sm:text-8xl md:text-9xl'
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -96,7 +96,7 @@ export default function HeroSection() {
               duration: 0.8,
             },
           }}
-          className='bg-orange-primary absolute left-[50%] h-[512px] w-[512px] -translate-x-[63%] rounded-full'
+          className='bg-orange-primary absolute left-[50%] h-70 w-70 -translate-x-[63%] rounded-full sm:h-90 sm:w-90 md:h-120 md:w-120 lg:h-[512px] lg:w-[512px]'
         ></motion.div>
       </AnimatePresence>
       <motion.div
@@ -113,7 +113,7 @@ export default function HeroSection() {
         }}
       >
         <motion.div
-          className='bg-black-transparent h-[251px] w-px'
+          className='bg-black-transparent h-60 w-px sm:h-[251px]'
           initial={{ scaleY: 0 }}
           animate={{
             scaleY: 1,

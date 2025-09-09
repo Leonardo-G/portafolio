@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='mx-auto max-w-[1280px]'>
+      <div className='mx-auto w-[95%] max-w-[1280px]'>
         <motion.button
           onClick={handleToogleMenu}
           className={`bg-orange-primary fixed top-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl lg:hidden`}

@@ -8,7 +8,7 @@ import MySkills from '@/components/section/Skills';
 
 export default function HomePage() {
   return (
-    <>
+    <main className='mx-auto w-[95%]'>
       <NotificationGroup />
       <HeroSection />
       <MySkills key={'skills'} />
@@ -16,6 +16,6 @@ export default function HomePage() {
       <Experience />
       <Certificates />
       <Contacto />
-    </>
+    </main>
   );
 }
