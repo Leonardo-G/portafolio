@@ -41,5 +41,7 @@ export const projects: IProject[] = [
         ],
       },
     ],
+    longDescription:
+      'Plataforma simulando Mercado Libre, desarrollada con Next.js (React/TS). Implementa rendering híbrido (Server-Side Rendering, Static Site Generation) y consume una API backend separada (Nest/Node) para lectura de productos. Incluye carruseles y fetch con Axios.',
   },
 ];

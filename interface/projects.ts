@@ -24,4 +24,5 @@ export interface IProject {
   githubUrl: string;
   features: string[];
   techStack: ITechStack[];
+  longDescription?: string;
 }
