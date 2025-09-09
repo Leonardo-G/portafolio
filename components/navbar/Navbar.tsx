@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className='mx-auto max-w-[1280px]'>
         <motion.button
           onClick={handleToogleMenu}
-          className={`bg-orange-primary fixed top-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl`}
+          className={`bg-orange-primary fixed top-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl lg:hidden`}
           whileTap={{ scale: 0.95 }}
         >
           <motion.div
@@ -43,7 +43,7 @@ const Navbar = () => {
         </motion.button>
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <motion.nav
               initial={{
                 clipPath: 'circle(28px at 52px 52px)',
                 background: '#f97316',
@@ -57,8 +57,32 @@ const Navbar = () => {
                 background: '#f97316',
               }}
               transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-              className='fixed inset-0 z-40 h-full w-full bg-white'
-            ></motion.div>
+              className='fixed inset-0 z-40 flex h-full w-full flex-col items-center justify-center gap-y-6 bg-white'
+            >
+              {navItems.map((item, index) => (
+                <Link
+                  href={
+                    pathname !== '/' && item.href.startsWith('#')
+                      ? (item.page ?? '/') + item.href
+                      : item.href
+                  }
+                  key={item.name}
+                  onClick={handleToogleMenu}
+                >
+                  <motion.li
+                    className='list-none text-lg uppercase'
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.4 + index * 0.1,
+                    }}
+                  >
+                    {item.name}
+                  </motion.li>
+                </Link>
+              ))}
+            </motion.nav>
           )}
         </AnimatePresence>
         <nav className='hidden w-full items-center justify-between py-4 lg:flex'>
