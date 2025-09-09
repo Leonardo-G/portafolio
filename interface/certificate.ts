@@ -22,6 +22,7 @@ type TypeTechnologies =
   | 'JavaScript'
   | 'TypeScript'
   | 'React.js'
+  | 'React Native'
   | 'Redux'
   | 'Jest'
   | 'Router'
@@ -33,6 +34,8 @@ type TypeTechnologies =
   | 'PUG'
   | 'MongoDB'
   | 'Mongoose'
+  | 'SQL'
+  | 'PostgreSQL'
   | 'MySQL con Sequelize'
   | 'MySQL'
   | 'JWT'
@@ -45,4 +48,6 @@ type TypeTechnologies =
   | 'Yargs'
   | 'RESTServer'
   | 'GIT'
-  | 'GITHUB';
+  | 'GITHUB'
+  | 'AWS'
+  | 'Y mas..';

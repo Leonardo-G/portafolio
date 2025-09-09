@@ -9,7 +9,7 @@ interface IProps {
   certificate: ICertificate;
 }
 export default function Certificate({ certificate }: IProps) {
-  const [expandedCert, setExpandedCert] = useState<number | null>(1);
+  const [expandedCert, setExpandedCert] = useState<number | null>(0);
 
   const toggleCertificate = (id: number) => {
     setExpandedCert(expandedCert === id ? null : id);

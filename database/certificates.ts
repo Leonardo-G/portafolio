@@ -2,6 +2,39 @@ import { ICertificate } from '../interface/certificate';
 
 export const certificatesDB: ICertificate[] = [
   {
+    id: 0,
+    certificate: 'Tecnico en Programación',
+    linkCertificate: '',
+    education: 'Teclab Instituto Técnico Superior',
+    type: 'Certificado',
+    year: '2023-2025',
+    imgCertificate: '/diplomas/tecnicatura-superior-en-programacion.png',
+    knowledge: [
+      'Desarrollar software sobre plataformas web en HTML, CSS y JAVASCRIPT.',
+      'Configurar, diseñar e implementar bases de datos con SQL y PostgreSQL.',
+      'Aplicar principios de análisis, diseño, desarrollo, implementación y mantenimiento de sistemas de información.',
+      'Comprender los principios fundamentales de la infraestructura en AWS.',
+      'Administrar el ciclo de vida del software.',
+      'Entender las bases de la programación: estructuras de datos, programación orientada a objetos, programación funcional y programación reactiva.',
+      'Programar en dispositivos móviles y herramientas de desarrollo Android como Android Studio y AVD.',
+      'Crear apps con Material Design y Responsive Design.',
+      'Y más...',
+    ],
+    technologies: [
+      'HTML5',
+      'JavaScript',
+      'React.js',
+      'React Native',
+      'Node.js',
+      'SQL',
+      'PostgreSQL',
+      'AWS',
+      'GIT',
+      'GITHUB',
+      'Y mas..',
+    ],
+  },
+  {
     id: 1,
     certificate: 'Desarrollador Full Stack',
     linkCertificate:
