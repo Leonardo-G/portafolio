@@ -20,7 +20,7 @@ export default function CategorySelector() {
   );
 
   return (
-    <section className='mx-auto my-30 w-full max-w-[1280px]'>
+    <section className='mx-auto my-30 w-full max-w-[1280px]' id='proyects'>
       <Title title='Proyectos' />
       <ProyectCard />
 
