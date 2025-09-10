@@ -1,0 +1,284 @@
+'use client';
+import { useState } from 'react';
+import {
+  FaCss3Alt,
+  FaHtml5,
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+} from 'react-icons/fa';
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNestjs,
+  SiTypeorm,
+  SiMysql,
+  SiPostgresql,
+  SiAmazoncognito,
+  SiJest,
+  SiCypress,
+} from 'react-icons/si';
+import { IoLogoJavascript } from 'react-icons/io5';
+import { TbBrandReactNative } from 'react-icons/tb';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { IconType } from 'react-icons';
+import { AnimatePresence, motion } from 'motion/react';
+import Title from '../UI/Title';
+import SkillDescription from '../skills/SkillDescription';
+import DotGrid from '../UI/DotGrid';
+
+type Skill = {
+  name: string;
+  icon: IconType;
+  code: 'front' | 'back' | 'extra';
+};
+
+export const skills: Skill[] = [
+  {
+    name: 'HTML5',
+    icon: FaHtml5,
+    code: 'front',
+  },
+  {
+    name: 'CSS3',
+    icon: FaCss3Alt,
+    code: 'front',
+  },
+  {
+    name: 'Typescript',
+    icon: SiTypescript,
+    code: 'front',
+  },
+  {
+    name: 'Javascript',
+    icon: IoLogoJavascript,
+    code: 'front',
+  },
+  {
+    name: 'Next.js',
+    icon: SiNextdotjs,
+    code: 'front',
+  },
+  {
+    name: 'React.js',
+    icon: FaReact,
+    code: 'front',
+  },
+  {
+    name: 'Tailwind',
+    icon: SiTailwindcss,
+    code: 'front',
+  },
+  {
+    name: 'React Native',
+    icon: TbBrandReactNative,
+    code: 'front',
+  },
+  {
+    name: 'Node.js',
+    icon: FaNodeJs,
+    code: 'back',
+  },
+  {
+    name: 'Nest.js',
+    icon: SiNestjs,
+    code: 'back',
+  },
+  {
+    name: 'TypeORM',
+    icon: SiTypeorm,
+    code: 'back',
+  },
+  {
+    name: 'Mysql',
+    icon: SiMysql,
+    code: 'back',
+  },
+  {
+    name: 'Postgresql',
+    icon: SiPostgresql,
+    code: 'back',
+  },
+  {
+    name: 'Cognito AWS',
+    icon: SiAmazoncognito,
+    code: 'back',
+  },
+  {
+    name: 'Jest',
+    icon: SiJest,
+    code: 'extra',
+  },
+  {
+    name: 'Cypress',
+    icon: SiCypress,
+    code: 'extra',
+  },
+  {
+    name: 'Docker',
+    icon: FaDocker,
+    code: 'extra',
+  },
+];
+
+const allSkillsTopic = [
+  {
+    code: 'all',
+    description: 'Todas las skills',
+  },
+  {
+    code: 'front',
+    description: 'Front-end y lenguajes',
+  },
+  {
+    code: 'back',
+    description: 'Backend ',
+  },
+  {
+    code: 'extra',
+    description: 'Herramientas y Test',
+  },
+];
+
+const SHOW_SKILLS_IN_SECTION = 8;
+
+export default function MySkills() {
+  const [skillsTopic, setSkillsTopic] = useState('all');
+  const [page, setPage] = useState(1);
+  const skillDescription = allSkillsTopic.filter(
+    (skill) => skill.code === skillsTopic,
+  );
+  const filteredSkills =
+    skillsTopic === 'all'
+      ? skills
+      : skills.filter((skill) => skill.code === skillsTopic);
+
+  const totalPages = Math.ceil(filteredSkills.length / SHOW_SKILLS_IN_SECTION);
+  const handleChangeTopic = (topic: string) => {
+    setPage(1);
+    setSkillsTopic(topic);
+  };
+
+  const handleNextSkills = () => {
+    if (page >= totalPages) {
+      setPage(1);
+    } else {
+      setPage((prev) => prev + 1);
+    }
+  };
+
+  const handlePrevSkills = () => {
+    if (page === 1) {
+      setPage(Math.ceil(totalPages));
+      return;
+    }
+    setPage((prev) => prev - 1);
+  };
+
+  return (
+    <div className='mx-auto w-full max-w-[1280px]'>
+      <Title title='My skills' />
+
+      <div className='flex flex-col-reverse items-center justify-between gap-x-10 lg:flex-row'>
+        <div className='w-full'>
+          <div className='flex justify-end lg:justify-start'>
+            <div className='border-orange-primary mt-15 border-l-3 pl-3'>
+              <p className='text-sm leading-relaxed text-gray-600'>
+                {skillDescription[0].description}
+              </p>
+            </div>
+          </div>
+          <div className='relative mt-7 w-full'>
+            <div className='absolute top-[40%] left-[2%] flex -translate-x-[100%] -translate-y-[50%] flex-col gap-2.5 min-[1300px]:gap-[12px]'>
+              <DotGrid />
+            </div>
+            <div className='absolute left-[2%] -z-1 h-[255px] w-[255px] rounded-full bg-[#F597381F]'></div>
+            <div className='grid grid-cols-2 place-items-center gap-x-5 gap-y-10 min-[1300px]:gap-x-10 sm:grid-cols-4 sm:grid-rows-2'>
+              <AnimatePresence mode='popLayout'>
+                {filteredSkills
+                  .slice(
+                    (page - 1) * SHOW_SKILLS_IN_SECTION,
+                    SHOW_SKILLS_IN_SECTION * page,
+                  )
+                  .map((skill, idx) => {
+                    const Icon = skill.icon;
+                    return (
+                      <SkillDescription
+                        key={`${skill.name}-${skillsTopic}`}
+                        skill={skill}
+                        Icon={Icon}
+                        idx={idx}
+                      />
+                    );
+                  })}
+              </AnimatePresence>
+            </div>
+
+            <div className='mt-10 flex h-20 items-center justify-center gap-x-5'>
+              {filteredSkills.length > SHOW_SKILLS_IN_SECTION && (
+                <>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    className='hover:text-orange-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-gray-400 shadow-lg transition-colors duration-300'
+                    onClick={handlePrevSkills}
+                  >
+                    <FaChevronLeft className='m-auto' />
+                  </motion.div>
+                  <div className='flex items-center gap-3'>
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                      (pageNumber) => (
+                        <div
+                          className={`h-3 w-3 rounded-full transition-all duration-300 ${page === pageNumber ? 'bg-orange-secondary' : 'bg-gray-400'}`}
+                          key={pageNumber}
+                        ></div>
+                      ),
+                    )}
+                  </div>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    className='hover:text-orange-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-gray-400 shadow-lg transition-colors duration-300'
+                    onClick={handleNextSkills}
+                  >
+                    <FaChevronRight className='m-auto' />
+                  </motion.div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className='mt-10 w-full lg:w-fit'>
+          <div className='relative flex h-full w-full flex-col items-end justify-end gap-6'>
+            {allSkillsTopic.map((skillTopic) => (
+              <div
+                key={skillTopic.code}
+                onClick={() => handleChangeTopic(skillTopic.code)}
+                className={`group relative w-full cursor-pointer rounded-sm border-l-4 bg-white px-4 py-2 text-gray-500 hover:text-gray-700 lg:w-[250px] ${
+                  skillsTopic === skillTopic.code
+                    ? 'border-orange-secondary font-medium text-gray-700 shadow-lg'
+                    : 'border-transparent'
+                }`}
+              >
+                {skillsTopic === skillTopic.code && (
+                  <motion.div
+                    layoutId='circle-highlight'
+                    className='bg-orange-secondary absolute top-1/2 right-px z-10 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full'
+                    transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                  />
+                )}
+
+                <p className='relative z-20 text-sm'>
+                  {skillTopic.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
