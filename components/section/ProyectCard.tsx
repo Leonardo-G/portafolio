@@ -35,33 +35,6 @@ const featuredProjects: FeaturedProject[] = [
     category: 'Web App',
     year: '2023',
   },
-  {
-    id: 2,
-    slug: 'taskflow-api',
-    title: 'TaskFlow API',
-    description:
-      'API RESTful robusta para gestión de tareas con autenticación JWT y arquitectura escalable.',
-    type: 'backend',
-    tags: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-    image: '/placeholder.svg?height=400&width=600',
-    githubUrl: 'https://github.com/username/taskflow-api',
-    category: 'API',
-    year: '2023',
-  },
-  {
-    id: 3,
-    slug: 'ecommerce-dashboard',
-    title: 'E-Commerce Dashboard',
-    description:
-      'Panel de administración moderno con análisis en tiempo real y gestión completa de inventario.',
-    type: 'frontend',
-    tags: ['React', 'Redux', 'Material UI', 'Chart.js'],
-    image: '/placeholder.svg?height=400&width=600',
-    liveUrl: 'https://example.com/ecommerce-dashboard',
-    githubUrl: 'https://github.com/username/ecommerce-dashboard',
-    category: 'Dashboard',
-    year: '2023',
-  },
 ];
 
 export default function ProyectCard() {

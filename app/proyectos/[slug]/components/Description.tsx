@@ -24,7 +24,7 @@ export default function Description({
           {longDescription}
         </p>
       </div>
-      <div className='mt-10 grid grid-cols-12 gap-5'>
+      <div className='mt-10 grid-cols-12 gap-5 sm:grid'>
         <div className='col-span-7'>
           <h3 className='mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100'>
             Características principales
@@ -46,7 +46,7 @@ export default function Description({
             ))}
           </div>
         </div>
-        <div className='col-start-[-5] col-end-[-1]'>
+        <div className='col-start-[-5] col-end-[-1] mt-10 sm:mt-0'>
           <h3 className='mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100'>
             Stack tecnológico
           </h3>

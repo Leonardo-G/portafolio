@@ -33,8 +33,8 @@ export default function PageDetail({ params }: IProps) {
   }
 
   return (
-    <div>
-      <div className='mx-auto my-10 w-full max-w-[1280px]'>
+    <>
+      <div className='mx-auto my-10 w-[95%] max-w-[1280px]'>
         <TopInfo type={project.type} category={project.category} />
         <Text as='h1' className='mt-5'>
           {project.title}
@@ -59,6 +59,6 @@ export default function PageDetail({ params }: IProps) {
         <div className='my-10 mb-16 h-px w-full bg-gradient-to-r from-transparent via-orange-200 to-transparent dark:via-orange-700'></div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
