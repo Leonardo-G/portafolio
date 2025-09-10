@@ -8,13 +8,15 @@ import MySkills from '@/components/section/Skills';
 
 export default function HomePage() {
   return (
-    <main className='mx-auto w-[95%]'>
-      <NotificationGroup />
-      <HeroSection />
-      <MySkills key={'skills'} />
-      <CategorySelector />
-      <Experience />
-      <Certificates />
+    <main>
+      <div className='mx-auto w-[95%]'>
+        <NotificationGroup />
+        <HeroSection />
+        <MySkills key={'skills'} />
+        <CategorySelector />
+        <Experience />
+        <Certificates />
+      </div>
       <Contacto />
     </main>
   );

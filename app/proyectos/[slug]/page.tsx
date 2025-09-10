@@ -10,7 +10,7 @@ import Description from './components/Description';
 import Footer from '@/components/footer/Footer';
 
 interface IProps {
-  params: IParams;
+  params: Promise<IParams>;
 }
 
 interface IParams {
@@ -21,9 +21,8 @@ export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export default function PageDetail({ params }: IProps) {
-  const { slug } = params;
-  console.log(slug);
+export default async function PageDetail({ params }: IProps) {
+  const { slug } = await params;
   const project: IProject | undefined = projects.find(
     (proj) => proj.slug === slug,
   );
