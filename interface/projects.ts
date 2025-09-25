@@ -6,7 +6,7 @@ export type IProjectCategory =
   | 'Aplicación Móvil'
   | 'Otro';
 
-export type ITechCategory = 'Frontend';
+export type ITechCategory = 'Frontend' | 'Backend' | 'Tools';
 
 export interface ITechStack {
   category: ITechCategory;
@@ -22,7 +22,9 @@ export interface IProject {
   category: IProjectCategory;
   mainSkills: string[];
   githubUrl: string;
+  liveUrl?: string;
   features: string[];
   techStack: ITechStack[];
   longDescription?: string;
+  gridImages: number;
 }

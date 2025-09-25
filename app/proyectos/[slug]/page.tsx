@@ -48,7 +48,11 @@ export default async function PageDetail({ params }: IProps) {
         </div>
         <ProjectButtons githubUrl={project.githubUrl} />
         <div className='mt-10'>
-          <Gallery title={project.title} images={project.images} />
+          <Gallery
+            title={project.title}
+            images={project.images}
+            gridImages={project.gridImages}
+          />
         </div>
         <Description
           features={project.features}
