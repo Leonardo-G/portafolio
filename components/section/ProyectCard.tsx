@@ -30,8 +30,21 @@ const featuredProjects: FeaturedProject[] = [
     type: 'frontend',
     tags: ['React', 'Next.js', 'Tailwind CSS', 'API'],
     image: '/placeholder.svg?height=400&width=600',
-    liveUrl: 'https://example.com/moviehub',
     githubUrl: 'https://github.com/username/moviehub',
+    category: 'Web App',
+    year: '2023',
+  },
+  {
+    id: 2,
+    slug: 'tecnologia-ecommerce',
+    title: 'Tecnología Ecommerce',
+    description:
+      'Aplicación de ecommerce de productos tecnológicos desarrollada con React y Firebase, con catálogo dinámico, carrito de compras y generación de órdenes de compra.',
+    type: 'frontend',
+    tags: ['React', 'Next.js', 'Stripe', 'Tailwind Css'],
+    image: '/placeholder.svg?height=400&width=600',
+    liveUrl: 'https://react-ecommerce-tecnologia.vercel.app/',
+    githubUrl: 'https://github.com/Leonardo-G/React-ecommerce-tecnologia',
     category: 'Web App',
     year: '2023',
   },
@@ -81,7 +94,7 @@ export default function ProyectCard() {
                     {project.category}
                   </div>
 
-                  <p className='text-sm leading-relaxed text-gray-600 dark:text-gray-300'>
+                  <p className='line-clamp-3 h-15 text-sm leading-relaxed text-gray-600 dark:text-gray-300'>
                     {project.description}
                   </p>
                 </div>

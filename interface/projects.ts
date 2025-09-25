@@ -22,6 +22,7 @@ export interface IProject {
   category: IProjectCategory;
   mainSkills: string[];
   githubUrl: string;
+  liveUrl?: string;
   features: string[];
   techStack: ITechStack[];
   longDescription?: string;
