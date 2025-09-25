@@ -8,13 +8,14 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-
+type GridKey = 6 | 7;
 interface IProps {
   title: string;
   images: string[];
+  gridImages: number;
 }
 
-export default function Gallery({ title, images }: IProps) {
+export default function Gallery({ title, images, gridImages = 6 }: IProps) {
   const [zoomOpen, setZoomOpen] = useState(false);
   const [currentIndexImage, setCurrentIndexImage] = useState(0);
 
@@ -22,13 +23,24 @@ export default function Gallery({ title, images }: IProps) {
     setZoomOpen(!zoomOpen);
   };
 
-  const classPositionGrid = [
-    'col-span-2 row-span-2',
-    'row-span-1',
-    'row-span-1',
-    'col-span-2 row-span-2',
-    'row-span-2',
-  ];
+  const gridPosition: Record<GridKey, string[]> = {
+    6: [
+      'col-span-2 row-span-2',
+      'row-span-1',
+      'row-span-1',
+      'col-span-2 row-span-2',
+      'row-span-2',
+    ],
+    7: [
+      'col-span-2 row-span-2',
+      'row-span-1',
+      'row-span-1',
+      'col-span-1 row-span-2',
+      'row-span-1',
+      'col-span-2 row-span-1',
+      'row-span-2',
+    ],
+  };
 
   const handleNextImage = () => {
     setCurrentIndexImage(
@@ -38,7 +50,7 @@ export default function Gallery({ title, images }: IProps) {
 
   const handlePrevImage = () => {
     setCurrentIndexImage(
-      images.length === 0 ? images.length - 1 : currentIndexImage - 1,
+      currentIndexImage === 0 ? images.length - 1 : currentIndexImage - 1,
     );
   };
 
@@ -56,7 +68,7 @@ export default function Gallery({ title, images }: IProps) {
   }, [zoomOpen]);
 
   return (
-    <div className='grid h-[60vh] max-h-[600px] grid-cols-3 grid-rows-4 gap-4'>
+    <div className='grid h-[60vh] max-h-[600px] grid-cols-4 grid-rows-3 gap-4'>
       {zoomOpen && (
         <div
           className='scroll-none fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-black/90'
@@ -113,7 +125,7 @@ export default function Gallery({ title, images }: IProps) {
           transition={{ duration: 0.6, delay: 0.1 }}
           className={cn(
             'group relative cursor-pointer overflow-hidden rounded-lg shadow-xl',
-            classPositionGrid[index],
+            gridPosition[gridImages as GridKey][index],
           )}
           onClick={() => {
             handleZoomToggle();

@@ -41,6 +41,7 @@ export const projects: IProject[] = [
         ],
       },
     ],
+    gridImages: 6,
     longDescription:
       'Plataforma simulando Mercado Libre, desarrollada con Next.js (React/TS). Implementa rendering híbrido (Server-Side Rendering, Static Site Generation) y consume una API backend separada (Nest/Node) para lectura de productos. Incluye carruseles y fetch con Axios.',
   },
@@ -73,6 +74,7 @@ export const projects: IProject[] = [
       'Webhook de Stripe para confirmar transacciones (checkout.session.completed)',
       'Persistencia en Firestore tanto de productos como de órdenes.',
     ],
+    gridImages: 7,
     techStack: [
       {
         category: 'Frontend',
@@ -84,6 +86,14 @@ export const projects: IProject[] = [
           'Tailwind Css',
           'Css',
         ],
+      },
+      {
+        category: 'Backend',
+        techs: ['Firebase'],
+      },
+      {
+        category: 'Tools',
+        techs: ['Git', 'Github', 'Vercel'],
       },
     ],
     longDescription:
