@@ -116,7 +116,7 @@ export const projects: IProject[] = [
     type: 'frontend',
     category: 'Aplicación Web',
     mainSkills: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/Leonardo-G/frontend-mentor-challenges',
+    githubUrl: 'https://github.com/Leonardo-G/front-mentor',
     features: [
       'Conjunto de retos prácticos de Frontend Mentor resueltos con distintos stacks.',
       'Implementación de diseño responsive en todos los proyectos.',

@@ -57,7 +57,7 @@ const featuredProjects: FeaturedProject[] = [
     type: 'frontend',
     tags: ['HTML', 'CSS', 'JavaScript', 'React', 'SASS'],
     image: '/placeholder.svg?height=400&width=600',
-    githubUrl: 'https://github.com/Leonardo-G/frontend-mentor-challenges',
+    githubUrl: 'https://github.com/Leonardo-G/front-mentor',
     category: 'Web App',
     year: '2024',
   },

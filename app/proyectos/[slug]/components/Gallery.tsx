@@ -26,29 +26,29 @@ export default function Gallery({ title, images, gridImages = 6 }: IProps) {
 
   const gridPosition: Record<GridKey, string[]> = {
     6: [
-      'col-span-2 row-span-2',
+      'md:col-span-2 row-span-2',
       'row-span-1',
       'row-span-1',
-      'col-span-2 row-span-2',
+      'md:col-span-2 row-span-2',
       'row-span-2',
     ],
     7: [
-      'col-span-2 row-span-2',
-      'row-span-1',
-      'row-span-1',
-      'col-span-1 row-span-2',
-      'row-span-1',
-      'col-span-2 row-span-1',
-      'row-span-2',
+      'md:col-span-2 row-span-2',
+      'md:row-span-1',
+      'md:row-span-1',
+      'md:col-span-1 row-span-2',
+      'md:row-span-1',
+      'md:col-span-2 row-span-1',
+      'md:row-span-2',
     ],
     '7B': [
-      'col-span-2 row-span-2',
-      'col-span-1 row-span-1',
-      'col-span-1 row-span-1',
-      'col-span-2 row-span-1',
-      'col-span-1 row-span-2',
-      'col-span-1 row-span-1',
-      'col-span-2 row-span-1',
+      'md:col-span-4 row-span-3',
+      'md:col-span-2 row-span-3',
+      'md:col-span-2 row-span-3',
+      'md:col-span-2 row-span-2',
+      'md:col-span-2 row-span-4',
+      'md:col-span-2 row-span-2',
+      'md:col-span-2 row-span-1',
     ],
   };
 
@@ -78,7 +78,40 @@ export default function Gallery({ title, images, gridImages = 6 }: IProps) {
   }, [zoomOpen]);
 
   return (
-    <div className='grid h-[60vh] max-h-[600px] grid-cols-4 grid-rows-3 gap-4'>
+    <div
+      className={`grid h-[60vh] max-h-[600px] md:grid ${
+        gridImages === '7B'
+          ? 'grid-cols-2 md:grid-cols-6 md:grid-rows-7'
+          : 'grid-cols-2 grid-rows-6 md:grid-cols-4 md:grid-rows-3'
+      } gap-4`}
+    >
+      {images.map((image, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className={cn(
+            'group relative cursor-pointer overflow-hidden rounded-lg shadow-xl',
+            gridPosition[gridImages as GridKey][index],
+          )}
+          onClick={() => {
+            handleZoomToggle();
+            setCurrentIndexImage(index);
+          }}
+        >
+          <Image
+            src={image || '/placeholder.svg'}
+            alt={`${title} - Vista ${index + 1}`}
+            fill
+            className='object-cover transition-all duration-300 ease-out select-none group-hover:scale-105 group-hover:brightness-90'
+          />
+
+          <div className='absolute top-1/2 left-1/2 z-10 flex -translate-1/2 items-center justify-center rounded-full bg-black/50 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+            <FaExternalLinkAlt className='h-4 w-4 text-gray-300' />
+          </div>
+        </motion.div>
+      ))}
       {zoomOpen && (
         <div
           className='scroll-none fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-black/90'
@@ -127,33 +160,6 @@ export default function Gallery({ title, images, gridImages = 6 }: IProps) {
           </motion.div>
         </div>
       )}
-      {images.map((image, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className={cn(
-            'group relative cursor-pointer overflow-hidden rounded-lg shadow-xl',
-            gridPosition[gridImages as GridKey][index],
-          )}
-          onClick={() => {
-            handleZoomToggle();
-            setCurrentIndexImage(index);
-          }}
-        >
-          <Image
-            src={image || '/placeholder.svg'}
-            alt={`${title} - Vista ${index + 1}`}
-            fill
-            className='object-cover transition-all duration-300 ease-out select-none group-hover:scale-105 group-hover:brightness-90'
-          />
-
-          <div className='absolute top-1/2 left-1/2 z-10 flex -translate-1/2 items-center justify-center rounded-full bg-black/50 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
-            <FaExternalLinkAlt className='h-4 w-4 text-gray-300' />
-          </div>
-        </motion.div>
-      ))}
       {zoomOpen && (
         <div className='fixed bottom-10 left-0 z-50 mt-2 flex h-4 w-4 w-full items-center justify-center gap-5 text-center text-sm text-gray-300'>
           {Array.from({ length: images.length }, (_, idx) => idx + 1).map(
