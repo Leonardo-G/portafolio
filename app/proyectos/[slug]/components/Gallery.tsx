@@ -8,11 +8,12 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-type GridKey = 6 | 7;
+import { GridKey } from '@/interface/projects';
+
 interface IProps {
   title: string;
   images: string[];
-  gridImages: number;
+  gridImages: GridKey;
 }
 
 export default function Gallery({ title, images, gridImages = 6 }: IProps) {
@@ -39,6 +40,15 @@ export default function Gallery({ title, images, gridImages = 6 }: IProps) {
       'row-span-1',
       'col-span-2 row-span-1',
       'row-span-2',
+    ],
+    '7B': [
+      'col-span-2 row-span-2',
+      'col-span-1 row-span-1',
+      'col-span-1 row-span-1',
+      'col-span-2 row-span-1',
+      'col-span-1 row-span-2',
+      'col-span-1 row-span-1',
+      'col-span-2 row-span-1',
     ],
   };
 

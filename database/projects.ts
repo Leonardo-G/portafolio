@@ -99,4 +99,44 @@ export const projects: IProject[] = [
     longDescription:
       'Aplicación web de comercio electrónico enfocada en productos tecnológicos. Permite a los usuarios navegar por un catálogo de productos, visualizar detalles individuales, añadir artículos al carrito y finalizar la compra mediante un formulario con validación. El sistema genera un identificador único de pedido y almacena la información en una base de datos en la nube',
   },
+  {
+    title: 'Proyectos de Frontend Mentor',
+    slug: 'project-frontend-mentor',
+    images: [
+      '/proyectos/frontend-mentor/1.webp',
+      '/proyectos/frontend-mentor/2.webp',
+      '/proyectos/frontend-mentor/3.webp',
+      '/proyectos/frontend-mentor/5.webp',
+      '/proyectos/frontend-mentor/4.webp',
+      '/proyectos/frontend-mentor/6.webp',
+      '/proyectos/frontend-mentor/7.webp',
+    ],
+    description:
+      'Colección de proyectos realizados a partir de distintos retos de Frontend Mentor, enfocados en landing pages, componentes UI y dashboards responsivos.',
+    type: 'frontend',
+    category: 'Aplicación Web',
+    mainSkills: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/Leonardo-G/frontend-mentor-challenges',
+    features: [
+      'Conjunto de retos prácticos de Frontend Mentor resueltos con distintos stacks.',
+      'Implementación de diseño responsive en todos los proyectos.',
+      'Aplicación de buenas prácticas de accesibilidad (semántica HTML, etiquetas ARIA).',
+      'Estilos con CSS puro, Tailwind CSS y en algunos casos frameworks UI.',
+      'Uso de React.js en retos más complejos (dashboards, componentes dinámicos).',
+      'Organización modular de código para facilitar mantenimiento y escalabilidad.',
+    ],
+    techStack: [
+      {
+        category: 'Frontend',
+        techs: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS'],
+      },
+      {
+        category: 'Tools',
+        techs: ['Git', 'Github', 'Vercel'],
+      },
+    ],
+    gridImages: '7B',
+    longDescription:
+      'Este proyecto agrupa distintos desafíos completados en la plataforma Frontend Mentor, cada uno diseñado para mejorar habilidades en maquetación, estilos, accesibilidad y componentes interactivos. Incluye desde simples landing pages hasta interfaces más complejas como dashboards y aplicaciones con React. Todos los proyectos son totalmente responsivos y aplican prácticas modernas de desarrollo frontend.',
+  },
 ];
