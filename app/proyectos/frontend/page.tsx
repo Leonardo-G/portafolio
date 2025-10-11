@@ -9,6 +9,6 @@ const PATHNAME_SPLIT = '/proyectos/';
 export default function ProjectPage() {
   const pathname = usePathname();
   const structureProject = pathname.split(PATHNAME_SPLIT);
-
+  console.log(structureProject);
   return <ProjectsGroup projectType={structureProject[1] as IProjectType} />;
 }

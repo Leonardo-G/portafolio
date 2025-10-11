@@ -28,4 +28,6 @@ export interface IProject {
   techStack: ITechStack[];
   longDescription?: string;
   gridImages: GridKey;
+  year: number;
+  sizeCard: 'xl' | 'md';
 }
