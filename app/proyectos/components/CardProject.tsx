@@ -52,7 +52,7 @@ export default function CardProject({ project, index, size }: IProps) {
               <div className='mb-6'>
                 <h4
                   className={clsx(
-                    'mb-3 text-3xl leading-tight font-extralight text-gray-800 dark:text-gray-100',
+                    'font-space-grotesk mb-3 text-3xl leading-tight font-extralight text-gray-800 dark:text-gray-100',
                     size === 'xl' ? 'md:text-4xl' : 'text-xl',
                   )}
                 >

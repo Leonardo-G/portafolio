@@ -1,6 +1,5 @@
 'use client';
 
-import Title from '@/components/UI/Title';
 import { projects } from '@/database/projects';
 import { IProjectType } from '@/interface/proyectos';
 import { AnimatePresence, motion } from 'motion/react';
@@ -13,8 +12,21 @@ export default function ProjectsGroup({ projectType }: IProps) {
   const filteredProjects = projects.filter((p) => p.type === projectType);
 
   return (
-    <section className='relative mx-auto w-full max-w-6xl overflow-hidden px-4 py-24'>
-      <Title title='Proyectos' />
+    <section className='relative mx-auto w-full max-w-6xl overflow-hidden px-4 py-15'>
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className='font-space-grotesk mb-3 text-xl tracking-[0.3em]'
+      >
+        PROYECTOS
+      </motion.h1>
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1, delay: 0.3, ease: 'easeInOut' }}
+        className='h-[1px] w-full origin-left bg-gray-200'
+      />
       <motion.div
         key='project-list-frontend'
         initial={{ opacity: 0 }}
@@ -22,7 +34,7 @@ export default function ProjectsGroup({ projectType }: IProps) {
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
       >
-        <div className='mt-20 grid w-full auto-rows-[70px] grid-cols-12 gap-x-10 gap-y-4'>
+        <div className='mt-10 grid w-full auto-rows-[70px] grid-cols-12 gap-x-10 gap-y-4'>
           <AnimatePresence mode='wait'>
             {filteredProjects.map((project, index) => (
               <CardProject
