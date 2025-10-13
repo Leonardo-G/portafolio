@@ -41,7 +41,7 @@ export default async function PageDetail({ params }: IProps) {
         <Text className='mt-5 text-center text-xl text-gray-500'>
           {project.description}
         </Text>
-        <div className='mt-6 flex justify-center gap-3'>
+        <div className='mt-6 flex flex-wrap justify-center gap-3'>
           {project.mainSkills.map((skill) => (
             <Badge key={skill} text={skill} variant='gray' />
           ))}

@@ -3,7 +3,7 @@ import { ICertificate } from '../interface/certificate';
 export const certificatesDB: ICertificate[] = [
   {
     id: 0,
-    certificate: 'Tecnico en Programación',
+    certificate: 'Técnico en Programación',
     linkCertificate: '',
     education: 'Teclab Instituto Técnico Superior',
     type: 'Certificado',

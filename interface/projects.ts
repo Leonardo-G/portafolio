@@ -7,6 +7,7 @@ export type IProjectCategory =
   | 'Otro';
 
 export type ITechCategory = 'Frontend' | 'Backend' | 'Tools';
+export type GridKey = 6 | 7 | '7B';
 
 export interface ITechStack {
   category: ITechCategory;
@@ -26,5 +27,7 @@ export interface IProject {
   features: string[];
   techStack: ITechStack[];
   longDescription?: string;
-  gridImages: number;
+  gridImages: GridKey;
+  year: number;
+  sizeCard: 'xl' | 'md';
 }

@@ -1,6 +1,6 @@
 import Navbar from '@/components/navbar/Navbar';
 import { ThemeProvider } from 'next-themes';
-import { Open_Sans, Roboto } from 'next/font/google';
+import { Open_Sans, Roboto, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
@@ -15,6 +15,12 @@ const roboto = Roboto({
   weight: ['300', '400', '700'],
 });
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  weight: ['400'],
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -24,7 +30,7 @@ export default function RootLayout({
     <html
       lang='es'
       suppressHydrationWarning
-      className={`${openSans.variable} ${roboto.variable} scroll-smooth`}
+      className={`${openSans.variable} ${roboto.variable} ${spaceGrotesk.variable} scroll-smooth`}
     >
       <head>
         <title>Leonardo Guanuco</title>

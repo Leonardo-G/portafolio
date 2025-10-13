@@ -48,6 +48,19 @@ const featuredProjects: FeaturedProject[] = [
     category: 'Web App',
     year: '2023',
   },
+  {
+    id: 3,
+    slug: 'project-frontend-mentor',
+    title: 'Proyectos Frontend Mentor',
+    description:
+      'Colección de proyectos desarrollados a partir de distintos retos de Frontend Mentor. Incluyen landing pages, dashboards y componentes UI con foco en diseño responsivo y buenas prácticas.',
+    type: 'frontend',
+    tags: ['HTML', 'CSS', 'JavaScript', 'React', 'SASS'],
+    image: '/placeholder.svg?height=400&width=600',
+    githubUrl: 'https://github.com/Leonardo-G/front-mentor',
+    category: 'Web App',
+    year: '2024',
+  },
 ];
 
 export default function ProyectCard() {
