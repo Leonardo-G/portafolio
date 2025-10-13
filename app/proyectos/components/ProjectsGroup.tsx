@@ -34,7 +34,7 @@ export default function ProjectsGroup({ projectType }: IProps) {
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
       >
-        <div className='mt-10 grid w-full auto-rows-[70px] grid-cols-12 gap-x-10 gap-y-4'>
+        <div className='mt-10 grid w-full gap-x-4 gap-y-4 min-[500px]:grid-cols-2 sm:auto-rows-[70px] sm:grid-cols-12 sm:gap-x-10'>
           <AnimatePresence mode='wait'>
             {filteredProjects.map((project, index) => (
               <CardProject

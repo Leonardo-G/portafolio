@@ -19,9 +19,9 @@ interface IProps {
 }
 
 const gridPositions: Record<number, string> = {
-  0: 'col-span-8 row-span-8',
-  1: 'col-span-4 row-span-4',
-  2: 'col-span-4 row-span-4',
+  0: 'sm:col-span-6 md:col-span-8 sm:row-span-8',
+  1: 'sm:col-span-6 md:col-span-4 sm:row-span-4',
+  2: 'sm:col-span-6 md:col-span-4 sm:row-span-4',
 };
 
 const VISIBLE = 3;
@@ -61,8 +61,8 @@ export default function CardProject({ project, index, size }: IProps) {
               <div className='mb-6'>
                 <h4
                   className={clsx(
-                    'font-space-grotesk mb-3 text-3xl leading-tight font-extralight text-gray-800 dark:text-gray-100',
-                    size === 'xl' ? 'md:text-4xl' : 'text-xl',
+                    'font-space-grotesk mb-3 leading-tight font-extralight text-gray-800 dark:text-gray-100',
+                    size === 'xl' ? 'text-xl md:text-4xl' : 'text-xl',
                   )}
                 >
                   {project.title}
@@ -71,7 +71,7 @@ export default function CardProject({ project, index, size }: IProps) {
                 <div
                   className={clsx(
                     'mb-4 tracking-wider text-gray-500 uppercase dark:text-gray-400',
-                    size === 'xl' ? 'text-xs' : 'text-[10px]',
+                    size === 'xl' ? 'text-[10px] sm:text-xs' : 'text-[10px]',
                   )}
                 >
                   {project.category}
@@ -80,14 +80,16 @@ export default function CardProject({ project, index, size }: IProps) {
                 <p
                   className={clsx(
                     'text-sm leading-relaxed text-gray-600 dark:text-gray-300',
-                    size === 'xl' ? 'line-clamp-3' : 'line-clamp-2',
+                    size === 'xl'
+                      ? 'line-clamp-3'
+                      : 'line-clamp-3 sm:line-clamp-2',
                   )}
                 >
                   {project.description}
                 </p>
               </div>
 
-              {size === 'xl' ? (
+              <div className={clsx(size === 'xl' ? '' : 'sm:hidden')}>
                 <div className='mb-6 flex flex-wrap gap-1'>
                   {project.mainSkills.slice(0, 3).map((tag, tagIndex) => (
                     <span
@@ -103,7 +105,7 @@ export default function CardProject({ project, index, size }: IProps) {
                     </span>
                   )}
                 </div>
-              ) : null}
+              </div>
 
               <div className='mb-6 h-px w-full origin-left scale-x-0 transform bg-gradient-to-r from-transparent via-gray-200 to-transparent transition-transform duration-500 group-hover:scale-x-100 dark:via-gray-700'></div>
 
