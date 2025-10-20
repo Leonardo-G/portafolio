@@ -66,16 +66,17 @@ const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 4,
-    slug: 'project-frontend-mentor',
-    title: 'Proyectos Frontend Mentor',
+    slug: 'arquitectura-proyecto',
+    title: 'Arquitectura Proyecto',
     description:
-      'Colección de proyectos desarrollados a partir de distintos retos de Frontend Mentor. Incluyen landing pages, dashboards y componentes UI con foco en diseño responsivo y buenas prácticas.',
+      'Landing page de arquitectura con enfoque en diseño moderno, minimalista y totalmente responsivo. Incluye secciones de presentación, servicios, proyectos destacados y un formulario de contacto funcional, utilizando HTML, CSS y JavaScript puros.',
     type: 'frontend',
-    tags: ['HTML', 'CSS', 'JavaScript', 'React', 'SASS'],
-    image: '/placeholder.svg?height=400&width=600',
-    githubUrl: 'https://github.com/Leonardo-G/front-mentor',
-    category: 'Web App',
-    year: '2024',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'Animations'],
+    image: '/proyectos/arquitectura-proyecto/cover.png',
+    githubUrl: 'https://github.com/Leonardo-G/Arquitectura-Proyecto',
+    liveUrl: 'https://leonardo-g.github.io/Arquitectura-Proyecto/',
+    category: 'Landing Page',
+    year: '2023',
   },
 ];
 

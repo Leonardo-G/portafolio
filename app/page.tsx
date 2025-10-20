@@ -13,8 +13,8 @@ export default function HomePage() {
         <NotificationGroup />
         <HeroSection />
         <MySkills key={'skills'} />
-        <Experience />
         <CategorySelector />
+        <Experience />
         <Certificates />
       </div>
       <Contacto />
