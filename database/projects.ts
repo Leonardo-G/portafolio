@@ -147,4 +147,52 @@ export const projects: IProject[] = [
       'Este proyecto agrupa distintos desafíos completados en la plataforma Frontend Mentor, cada uno diseñado para mejorar habilidades en maquetación, estilos, accesibilidad y componentes interactivos. Incluye desde simples landing pages hasta interfaces más complejas como dashboards y aplicaciones con React. Todos los proyectos son totalmente responsivos y aplican prácticas modernas de desarrollo frontend.',
     sizeCard: 'md',
   },
+  {
+    title: 'Arquitectura Proyecto',
+    slug: 'arquitectura-proyecto',
+    images: [
+      '/proyectos/arquitectura/1.webp',
+      '/proyectos/arquitectura/2.webp',
+      '/proyectos/arquitectura/3.webp',
+      '/proyectos/arquitectura/4.webp',
+      '/proyectos/arquitectura/5.webp',
+      '/proyectos/arquitectura/6.webp',
+    ],
+    description:
+      'Landing pages, desarrollada con HTML, CSS y JavaScript, con enfoque en diseño minimalista, responsivo y con animaciones suaves. Incluye secciones de presentación, servicios, proyectos destacados y formulario de contacto funcional.',
+    type: 'frontend',
+    category: 'Aplicación Web',
+    mainSkills: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'Responsive Design',
+      'Animations',
+    ],
+    githubUrl: 'https://github.com/Leonardo-G/Arquitectura-Proyecto',
+    liveUrl: 'https://leonardo-g.github.io/Arquitectura-Proyecto/',
+    features: [
+      'Diseño moderno, limpio y orientado a destacar la identidad visual del estudio.',
+      'Estructura semántica en HTML con enfoque en accesibilidad y SEO.',
+      'Diseño completamente responsive y optimizado para distintos dispositivos.',
+      'Animaciones suaves con transiciones en scroll y efectos hover.',
+      'Sección de proyectos con galería de imágenes y descripciones.',
+      'Formulario de contacto funcional con validaciones de campos.',
+    ],
+    gridImages: 6,
+    year: 2023,
+    techStack: [
+      {
+        category: 'Frontend',
+        techs: ['HTML5', 'CSS3', 'JavaScript'],
+      },
+      {
+        category: 'Tools',
+        techs: ['Git', 'GitHub'],
+      },
+    ],
+    longDescription:
+      'Sitio web diseñado con el objetivo de transmitir profesionalismo y modernidad. Desarrollado utilizando tecnologías web estándar (HTML, CSS y JavaScript), cuenta con una estructura visual basada en secciones claras: presentación del estudio, servicios ofrecidos, proyectos realizados y un formulario de contacto. Se implementaron animaciones sutiles y un diseño adaptable a distintos dispositivos para garantizar una experiencia visual fluida y atractiva. El código está optimizado para carga rápida, mantenimiento sencillo y compatibilidad entre navegadores.',
+    sizeCard: 'md',
+  },
 ];

@@ -2,7 +2,7 @@ import { cn } from '@/utils/cn';
 import { ReactNode } from 'react';
 
 interface IProps {
-  variant?: 'default' | 'orange';
+  variant?: 'default' | 'orange' | 'black';
   children: ReactNode;
 }
 

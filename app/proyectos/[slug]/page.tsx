@@ -46,7 +46,10 @@ export default async function PageDetail({ params }: IProps) {
             <Badge key={skill} text={skill} variant='gray' />
           ))}
         </div>
-        <ProjectButtons githubUrl={project.githubUrl} />
+        <ProjectButtons
+          githubUrl={project.githubUrl}
+          liveUrl={project.liveUrl}
+        />
         <div className='mt-10'>
           <Gallery
             title={project.title}
