@@ -21,6 +21,38 @@ const spaceGrotesk = Space_Grotesk({
   weight: ['400'],
 });
 
+export const metadata = {
+  title: 'Leonardo Guanuco | Desarrollador de Software',
+  description:
+    'Portfolio de Leonardo Guanuco, desarrollador web especializado en React, Next.js, NestJS y bases de datos SQL/NoSQL. Creación de aplicaciones modernas, escalables y optimizadas.',
+  keywords: [
+    'Leonardo Guanuco',
+    'Desarrollador Web',
+    'Full Stack Developer',
+    'Next.js',
+    'React',
+    'NestJS',
+    'PostgreSQL',
+    'TypeScript',
+  ],
+  openGraph: {
+    title: 'Leonardo Guanuco | Desarrollador de Software',
+    description:
+      'Desarrollo de aplicaciones web modernas con Next.js, React, NestJS. Portafolio de Leonardo Guanuco.',
+    url: 'https://www.leonardoguanuco.com',
+    siteName: 'Leonardo Guanuco',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -33,6 +65,16 @@ export default function RootLayout({
       className={`${openSans.variable} ${roboto.variable} ${spaceGrotesk.variable} scroll-smooth`}
     >
       <head>
+        <head>
+          <meta
+            name='description'
+            content='Portfolio de Leonardo Guanuco, desarrollador de software especializado en React, Next.js, NestJS y bases de datos SQL/NoSQL.'
+          />
+          <meta
+            name='keywords'
+            content='Leonardo Guanuco, Desarrollador de software, Web, Full Stack, Next.js, React, TypeScript'
+          />
+        </head>
         <title>Leonardo Guanuco</title>
       </head>
       <body className='font-roboto'>
