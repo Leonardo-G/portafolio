@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const navItems = [
   { name: 'inicio', href: '/' },
-  { name: 'proyectos', href: '#proyects' },
+  { name: 'proyectos', href: '#proyects', tag: '/proyectos' },
   { name: 'contacto', href: '#contacto', page: '/' },
 ];
 
@@ -104,7 +104,8 @@ const Navbar = () => {
                   </p>
                 </Link>
                 <AnimatePresence mode='wait'>
-                  {pathname === item.href && (
+                  {pathname === item.href ||
+                  (item.tag && pathname.startsWith(item.tag)) ? (
                     <motion.div
                       className='-bottom absolute left-[50%] h-[5px] w-[5px] rounded-full bg-black'
                       transition={{ type: 'spring', duration: 0.6 }}
@@ -115,7 +116,7 @@ const Navbar = () => {
                         y: 10,
                       }}
                     ></motion.div>
-                  )}
+                  ) : null}
                 </AnimatePresence>
               </div>
             ))}
