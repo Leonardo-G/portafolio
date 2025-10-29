@@ -4,9 +4,10 @@ export type IProjectCategory =
   | 'API'
   | 'Dashboard'
   | 'Aplicación Móvil'
+  | 'Base de Datos / Automatización'
   | 'Otro';
 
-export type ITechCategory = 'Frontend' | 'Backend' | 'Tools';
+export type ITechCategory = 'Frontend' | 'Backend' | 'Tools' | 'Automatización';
 export type GridKey = 6 | 7 | '7B';
 
 export interface ITechStack {

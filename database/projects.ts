@@ -195,4 +195,60 @@ export const projects: IProject[] = [
       'Sitio web diseñado con el objetivo de transmitir profesionalismo y modernidad. Desarrollado utilizando tecnologías web estándar (HTML, CSS y JavaScript), cuenta con una estructura visual basada en secciones claras: presentación del estudio, servicios ofrecidos, proyectos realizados y un formulario de contacto. Se implementaron animaciones sutiles y un diseño adaptable a distintos dispositivos para garantizar una experiencia visual fluida y atractiva. El código está optimizado para carga rápida, mantenimiento sencillo y compatibilidad entre navegadores.',
     sizeCard: 'md',
   },
+  {
+    title: 'Proyectos SQL y Bash – freeCodeCamp',
+    slug: 'sql-bash-freecodecamp',
+    images: [
+      '/proyectos/freecodecamp/1.webp',
+      '/proyectos/freecodecamp/2.webp',
+      '/proyectos/freecodecamp/3.webp',
+      '/proyectos/freecodecamp/4.webp',
+      '/proyectos/freecodecamp/5.webp',
+      '/proyectos/freecodecamp/6.webp',
+    ],
+    description:
+      'Colección de proyectos de bases de datos y automatización desarrollados durante el curso Relational Database de freeCodeCamp. Incluye scripts Bash y consultas SQL para modelar, poblar y analizar bases de datos en PostgreSQL.',
+    type: 'backend',
+    category: 'Base de Datos / Automatización',
+    mainSkills: ['PostgreSQL', 'SQL', 'Bash', 'Shell Script', 'Automatización'],
+    githubUrl: 'https://github.com/Leonardo-G/proyectos-psql',
+    features: [
+      'Incluye todos los proyectos del módulo “Relational Database” de freeCodeCamp: World Cup Database, Periodic Table Database, Salon Appointment Scheduler, Number Guessing Game y Universe Database.',
+      'Cada proyecto contiene su propio script Bash (`.sh`) para crear, poblar y consultar las bases de datos.',
+      'Uso intensivo de PostgreSQL para definir estructuras relacionales, llaves primarias y foráneas, y relaciones entre entidades.',
+      'Automatización completa de inserción y consultas mediante comandos en Bash.',
+      'Integración de datos desde archivos CSV externos y validaciones previas a las inserciones.',
+      'Consultas analíticas para obtener estadísticas, relaciones jerárquicas y cálculos agregados.',
+      'Ejemplo de buenas prácticas de modelado relacional y manipulación de datos con psql CLI.',
+    ],
+    techStack: [
+      {
+        category: 'Backend',
+        techs: ['PostgreSQL', 'SQL'],
+      },
+      {
+        category: 'Automatización',
+        techs: ['Bash', 'Shell Script'],
+      },
+      {
+        category: 'Tools',
+        techs: ['psql CLI', 'Git', 'GitHub'],
+      },
+    ],
+    year: 2025,
+    gridImages: 6,
+    longDescription: `Sobre este proyecto
+
+Este conjunto de proyectos forma parte del curso “Relational Database” de freeCodeCamp, enfocado en la administración de bases de datos con PostgreSQL y la automatización mediante Bash scripting. Cada carpeta representa un proyecto con su propio esquema SQL y scripts para crear, poblar y consultar los datos.
+
+Entre los ejercicios desarrollados se encuentran:
+- World Cup Database – Carga automatizada de partidos desde CSV y consultas estadísticas.
+- Periodic Table Database – Modelado de una tabla periódica con relaciones entre elementos y propiedades.
+- Salon Appointment Scheduler – Aplicación de consola que gestiona reservas de un salón mediante SQL interactivo.
+- Number Guessing Game – Script en Bash que implementa lógica de juego y persistencia en base de datos.
+- Universe Database – Modelado de un universo con galaxias, estrellas, planetas y lunas, con claves foráneas y relaciones múltiples.
+
+Cada proyecto refuerza conceptos como modelado relacional, normalización, manejo de claves primarias y foráneas, y automatización de tareas administrativas con shell scripting.`,
+    sizeCard: 'xl',
+  },
 ];

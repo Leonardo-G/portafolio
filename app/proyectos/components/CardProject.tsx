@@ -22,6 +22,7 @@ const gridPositions: Record<number, string> = {
   0: 'sm:col-span-6 md:col-span-8 sm:row-span-8',
   1: 'sm:col-span-6 md:col-span-4 sm:row-span-4',
   2: 'sm:col-span-6 md:col-span-4 sm:row-span-4',
+  3: 'sm:col-span-6 md:col-span-8 sm:row-span-4',
 };
 
 const VISIBLE = 3;
