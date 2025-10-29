@@ -20,9 +20,9 @@ export default function Description({
         <h2 className='mb-6 text-3xl font-bold text-gray-900 dark:text-gray-100'>
           Sobre este proyecto
         </h2>
-        <p className='text-lg leading-relaxed text-gray-600 dark:text-gray-300'>
+        <pre className='font-roboto text-lg leading-relaxed whitespace-pre-wrap text-gray-600 dark:text-gray-300'>
           {longDescription}
-        </p>
+        </pre>
       </div>
       <div className='mt-10 grid-cols-12 gap-5 sm:grid'>
         <div className='col-span-7'>

@@ -5,19 +5,12 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Title from '../UI/Title';
 import ProyectCard from './ProyectCard';
-import useNotificationStore from '@/stores/notification.store';
 import Link from 'next/link';
-
-const PROJECT_BACKEND = 'PROJECT_BACKEND';
 
 export default function CategorySelector() {
   const [hoveredCategory, setHoveredCategory] = useState<
     'frontend' | 'backend' | null
   >(null);
-
-  const handleShowNotification = useNotificationStore(
-    (state) => state.handleShowNotification,
-  );
 
   return (
     <section className='mx-auto my-30 w-full max-w-[1280px]' id='proyects'>
@@ -89,15 +82,7 @@ export default function CategorySelector() {
           onMouseEnter={() => setHoveredCategory('backend')}
           onMouseLeave={() => setHoveredCategory(null)}
         >
-          <div
-            className='block'
-            onClick={() =>
-              handleShowNotification(
-                'Pronto podrás ver los proyectos backend.',
-                PROJECT_BACKEND,
-              )
-            }
-          >
+          <Link className='block' href='/proyectos/backend'>
             <div className='group relative overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-900 dark:shadow-gray-950/30'>
               <div className='relative z-10 p-10 md:p-12'>
                 <div className='flex h-full flex-col'>
@@ -143,7 +128,7 @@ export default function CategorySelector() {
                 {'{...}'}
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
